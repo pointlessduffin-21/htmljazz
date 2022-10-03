@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+.header{ /*Selextor*/
+    background: black;  /* Declaration */
+    color: #f1f1f1;
+    position: fixed;
+    top: 0;
+    visibility: show; /* Visibility = Property, Show is Value  */
+    width: 100%;
+    height: 60px;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: all ease .5s;
+    box-shadow: 0px 0px 5px black;
+    text-decoration: none;
+    overflow: scroll;
+    z-index: 999; 
+}
+
+.header img {
+    visibility: show;
+    height: 60px;
+    float: left;
+}
+
+.header b {
+    font-family: Arial, Helvetica, sans-serif;
+    color:white;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 6px 7px;
+    margin-top: 14px;
+    float: left;
+    font-size: 25pt;
+}
+
+.header a {
+    font-family: sans-serif;
+    color:white;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 6px 11px;
+    margin-top: 14px;
+    float: right;
+    font-size: 15pt;
+    margin-right: 15px;
+}
+
+.header a:hover {
+    font-family: sans-serif;
+    color:white;
+    font-weight: bold;
+    text-decoration: underline white 3px;
+    padding: 6px 7px;
+    margin-top: 14px;
+    transition: all ease .5s;
+}
+
+.banner {
+    background-image: url("../img/blur.png");
+    background-size: auto;
+    background-attachment: auto;
+    position: relative;
+    background-position: center 0px;
+    background-color: white;   
+    max-width: 100%;
+    margin-top: 60px;
+    height: 300px;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    overflow-wrap: nowrap;
+    display: block;
+}
+
+.banner-text {
+    font-size: 35px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    position: relative;
+    top: 115px;
+    color: black;;
+}
+
+.sitemap img {
+    max-width: 100%;
+}
