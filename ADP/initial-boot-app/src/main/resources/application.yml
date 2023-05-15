@@ -1,0 +1,19 @@
+spring:
+  profiles: dev
+server:
+  port: 8000
+---
+spring:
+  profiles: test
+server:
+  port: 9000
+
+# BEFORE EXECUTING!!!
+# 1. Run the application with the following command:
+# mvn spring-boot
+# 2. Then run the following command:
+# java -Dspring.profiles.active=dev -jar ./target/demo-0.0.1-SNAPSHOT.jar (For dev profile)
+# java -Dspring.profiles.active=test -jar ./target/demo-0.0.1-SNAPSHOT.jar (For test profile)
+# 3. Open your web browser and type the following URL:
+# http://localhost:8000/ (For dev profile)
+# http://localhost:9000/ (For test profile)
