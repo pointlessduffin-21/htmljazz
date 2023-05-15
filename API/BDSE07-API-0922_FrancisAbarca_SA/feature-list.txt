@@ -1,0 +1,14 @@
+Features to add on the summative:
+
+- Description
+- Instant Messaging
+- Search Sorting System
+- Email Notification System (use the yeems214.xyz email to send emails to users about new cars)
+- Cleaner and more elegant Design
+- Use AI pictures 
+- Maybe add some animation and javascript onto the site (especially modals)
+
+The Goal:
+- Integrate a Sign-In API for your project. (i.e. Sign in from GitHub, Sign in
+  from Facebook.
+- Use React.js for the Front End of the website.
