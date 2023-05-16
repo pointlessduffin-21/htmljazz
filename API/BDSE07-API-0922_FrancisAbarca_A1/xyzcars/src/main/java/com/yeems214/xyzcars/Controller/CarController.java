@@ -14,5 +14,37 @@ public class CarController {
         return "index";
     }
 
+    @GetMapping("/about")
+    public String about() {
+        return "about";
+    }
+
+    @GetMapping("/login")
+    public String login() {
+        return "login";
+    }
+
+    @GetMapping("/register")
+    public String register() {
+        return "register";
+    }
+
+    @GetMapping("/contact")
+    public String contact() {
+        return "contact";
+    }
+
+    @GetMapping("/portal")
+    public String carPortal() {
+        return "portal";
+    }
+
+    @GetMapping("/portal/car")
+    public String carView() {
+        return
+    }
+
+
+
 
 }
