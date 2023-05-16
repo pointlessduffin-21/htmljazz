@@ -10,7 +10,9 @@ public class CarController {
     CarImpl carService;
 
     @GetMapping("/")
-    public String home {
+    public String home() {
         return "index";
     }
+
+
 }
