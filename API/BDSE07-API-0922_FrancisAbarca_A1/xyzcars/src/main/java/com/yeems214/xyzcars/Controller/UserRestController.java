@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserRestController {
     @Autowired
     UserService userService;
+    @Autowired
     JwtProvider jwtProvider;
 
     @GetMapping("/testrest")
@@ -40,7 +41,4 @@ public class UserRestController {
             return ResponseEntity.badRequest().body("Login Failed!");
         }
     }
-
-
-
 }
