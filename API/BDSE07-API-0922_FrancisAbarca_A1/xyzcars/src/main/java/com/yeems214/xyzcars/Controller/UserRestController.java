@@ -4,7 +4,7 @@ import com.yeems214.xyzcars.Entity.Users;
 import com.yeems214.xyzcars.Service.CarService;
 import com.yeems214.xyzcars.Service.UserService;
 import com.yeems214.xyzcars.Service.CarImpl;
-import com.yeems214.xyzcars.Service.UserImpl;
+import com.yeems214.xyzcars.Component.JwtProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserRestController {
     @Autowired
     UserService userService;
+    JwtProvider jwtProvider;
 
     @GetMapping("/testrest")
     public String testRest() {
