@@ -22,6 +22,7 @@ public class RestApiController {
 
     @PostMapping(value = "/register")
     public String register(@RequestBody User u) {
+        System.out.println(u);
         restApiService.addData(u);
         return "register success";
     }
