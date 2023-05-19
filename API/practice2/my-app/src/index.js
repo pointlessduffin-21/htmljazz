@@ -6,10 +6,14 @@ import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+<<<<<<< HEAD
   <React.StrictMode>
     <App />
   </React.StrictMode>
   document.getElementById('root')
+=======
+    React.createElement("h1",null"Welcome")
+>>>>>>> 229b8ea8b359ec3824d097376076d9a59996f616
 );
 
 // If you want to start measuring performance in your app, pass a function
