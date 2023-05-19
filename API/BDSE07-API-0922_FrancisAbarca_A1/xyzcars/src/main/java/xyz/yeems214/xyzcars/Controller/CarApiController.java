@@ -54,8 +54,9 @@ public class CarApiController {
     }
 
     // Search Car by Price
-    @GetMapping(value = "/searchCarByPrice/{min}/{max}")
-    public List<Car> searchCarByPrice(@PathVariable String min, @PathVariable String max) {
-        return carRestApiService.searchByPrice(min, max);
+    @GetMapping(value = "/searchCarByPrice")
+    public List<Car> searchCarByPrice(@RequestParam String min, @RequestParam String max) {
+        List<Car> carPriceResult = carRestApiService.searchByPrice(min, max);
+        return carPriceResult;
     }
 }
