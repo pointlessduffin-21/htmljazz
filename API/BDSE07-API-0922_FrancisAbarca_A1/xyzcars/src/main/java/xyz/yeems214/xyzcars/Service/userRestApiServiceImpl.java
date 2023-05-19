@@ -25,6 +25,16 @@ public class userRestApiServiceImpl implements userRestApiService {
     }
 
     @Override
+    public void deleteById(Integer id) {
+        usersRepository.deleteById(id);
+    }
+
+    @Override
+    public void deleteUser(Integer id) {
+        usersRepository.deleteById(id);
+    }
+
+    @Override
     public List<Users> getAllUsers() {
         return usersRepository.findAll();
     }

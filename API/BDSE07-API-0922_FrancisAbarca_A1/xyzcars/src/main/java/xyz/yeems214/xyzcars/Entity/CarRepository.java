@@ -18,4 +18,5 @@ public interface CarRepository extends JpaRepository<Car, Integer> {
     public List<Car> searchByPrice(@Param("min") String min, @Param("max") String max);
 
 
+    void deleteById(Integer id);
 }

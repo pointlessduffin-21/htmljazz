@@ -18,4 +18,6 @@ public interface UsersRepository extends JpaRepository<Users, Integer> {
             "u.userEmail LIKE %:key% OR " +
             "u.phoneNumber LIKE %:key%")
     List<Users> search(@Param("key") String key);
+
+    void deleteById(Integer id);
 }

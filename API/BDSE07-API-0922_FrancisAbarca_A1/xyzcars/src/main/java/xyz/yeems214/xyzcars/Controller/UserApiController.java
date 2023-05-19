@@ -22,9 +22,9 @@ public class UserApiController {
     }
 
     // Delete User
-    @DeleteMapping(value="/deleteUser")
-    public String delete(@RequestBody Users u) {
-        userRestApiService.deleteUser(u);
+    @DeleteMapping(value="/deleteUser/{id}")
+    public String delete(@PathVariable Integer id) {
+        userRestApiService.deleteUser(id);
         return "User deleted";
     }
 

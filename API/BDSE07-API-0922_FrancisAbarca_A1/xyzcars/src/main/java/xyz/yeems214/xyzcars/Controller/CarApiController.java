@@ -29,9 +29,9 @@ public class CarApiController {
     }
 
     // Delete Car
-    @DeleteMapping(value = "/deleteCar")
-    public String delete(@RequestBody Car c) {
-        carRestApiService.deleteCar(c);
+    @DeleteMapping(value = "/deleteCar/{id}")
+    public String delete(@PathVariable Integer id) {
+        carRestApiService.deleteCar(id);
         return "Car deleted";
     }
 

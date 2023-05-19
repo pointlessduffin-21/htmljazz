@@ -21,9 +21,9 @@ public class carRestApiServiceImpl implements carRestApiService {
     }
 
     @Override
-    public void deleteCar(Car C) {
+    public void deleteCar(Integer id) {
         // TODO Auto-generated method stub
-        carRepository.delete(C);
+        carRepository.deleteById(id);
     }
 
     @Override

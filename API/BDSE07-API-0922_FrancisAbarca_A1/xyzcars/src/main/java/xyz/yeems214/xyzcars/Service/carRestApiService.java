@@ -9,7 +9,7 @@ public interface carRestApiService {
 
     void addCar(Car c);
 
-    void deleteCar(Car C);
+    void deleteCar(Integer id);
 
     List<Car> getAllCars();
     Optional<Car> getCarById(Integer id);
