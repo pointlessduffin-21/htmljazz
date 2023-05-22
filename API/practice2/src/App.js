@@ -1,3 +1,4 @@
+import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Home from './Component/Home';
@@ -5,9 +6,10 @@ import About from './Component/About';
 import Yeems214 from './Component/yeems214';
 import { BrowserRouter as Router,Routes,Route,Link } from 'react-router-dom';
 
-function App() {
-  return (
-    <Router>
+class App extends Component {
+  render() {
+    return (
+      <Router>
     <h1>Practice 2</h1>
     <div className="App">
       <Link to="/myhome">Home</Link> 
@@ -21,8 +23,8 @@ function App() {
       <Route path="/yeems214" element={<Yeems214 />} />
     </Routes>
   </Router>
-    
-  );
+    )
+  }
 }
 
 export default App;
