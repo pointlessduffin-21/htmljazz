@@ -11,38 +11,28 @@ import CarManagementPage from './components/CarManagementPage';
 import CarAddForm from './components/CarAddForm';
 import CarListPage from './components/CarListPage';
 import Search from './components/Search';
-import { Button, Container, Row, Col , ComponentName } from 'bootstrap';
+import { Button, Container, Row, Col , ComponentName } from 'bootstrap'; // assuming you have these components from 'bootstrap'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 class App extends Component {
   render() {
     return (
-      <Router>
-        <div className="App">
-          <Header />
-          <Link to ="/Home">Home</Link>
-          <Link to ="/Register">Register</Link>
-          <Link to ="/Login">Login</Link>
-          <Link to ="/CarViewPage">Car View Page</Link>
-          <Link to ="/CarManagementPage">Car Management Page</Link>
-          <Link to ="/CarAddForm">Car AddF orm</Link>
-          <Link to ="/CarListPage">Car List Page</Link>
-          <Link to ="/Search">Search</Link>
-          <Footer />
-        </div>
-          
-
-          <Routes>
-            <Route path="/Home" element={<Home />} />
-            <Route path="/Register" element={<Register />} />
-            <Route path="/Login" element={<Login />} />
-            <Route path="/CarViewPage" element={<CarViewPage />} />
-            <Route path="/CarManagementPage" element={<CarManagementPage />} />
-            <Route path="/CarAddForm" element={<CarAddForm />} />
-            <Route path="/CarListPage" element={<CarListPage />} />
-            <Route path="/Search" element={<Search />} />
-          </Routes>
-      </Router>
+        <Router>
+          <div className="App">
+            <Header />
+            <Routes>
+              <Route exact path="/" element={<Home />} />
+              <Route path="/Register" element={<Register />} />
+              <Route path="/Login" element={<Login />} />
+              <Route path="/CarViewPage" element={<CarViewPage />} />
+              <Route path="/CarManagementPage" element={<CarManagementPage />} />
+              <Route path="/CarAddForm" element={<CarAddForm />} />
+              <Route path="/CarListPage" element={<CarListPage />} />
+              <Route path="/Search" element={<Search />} />
+            </Routes>
+            <Footer />
+          </div>
+        </Router>
     );
   }
 }

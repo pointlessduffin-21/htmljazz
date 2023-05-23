@@ -1,48 +1,35 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import Footer from './Footer';
+import Register from './Register';
+import Login from './Login';
+import Home from './Home';
+import CarViewPage from './CarViewPage';
+import CarManagementPage from './CarManagementPage';
+import CarAddForm from './CarAddForm';
+import CarListPage from './CarListPage';
+import Search from './Search';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 class Header extends Component {
     render() {
         return (
-            <div>
-                <header>
-                    <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-                        <a className="navbar-brand" href="#">Fixed navbar</a>
-                        <button className="navbar-toggler" type="button" data-toggle="collapse"
-                                data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
-                                aria-label="Toggle navigation">
-                            <span className="navbar-toggler-icon"></span>
-                        </button>
-                        <div className="collapse navbar-collapse" id="navbarCollapse">
-                            <ul className="navbar-nav mr-auto">
-                                <li className="nav-item active">
-                                    <a className="nav-link" href="#">Home <span
-                                        className="sr-only">(current)</span></a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link" href="#">Link</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link disabled" href="#">Disabled</a>
-                                </li>
-                                <li className="nav-item dropdown">
-                                    <a className="nav-link dropdown-toggle" href="#" id="dropdown10"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                                    <div className="dropdown-menu" aria-labelledby="dropdown10">
-                                        <a className="dropdown-item" href="#">Action</a>
-                                        <a className="dropdown-item" href="#">Another action</a>
-                                        <a className="dropdown-item" href="#">Something else here</a>
-                                    </div>
-                                </li>
-                            </ul>
-                            <form className="form-inline mt-2 mt-md-0">
-                                <input className="form-control mr-sm-2" type="text" placeholder="Search"
-                                    aria-label="Search" />
-                                <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                            </form>
-                        </div>
-                    </nav>
-                </header>
-            </div>
+            <React.Fragment>
+                <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                <div>
+                    <Link to="/">Home</Link>
+                    <Link to="/Register">Register</Link>
+                    <Link to="/Login">Login</Link>
+                    <Link to="/CarViewPage">Car View Page</Link>
+                    <Link to="/CarManagementPage">Car Management Page</Link>
+                    <Link to="/CarAddForm">Car Add Form</Link>
+                    <Link to="/CarListPage">Car List Page</Link>
+                    <Link to="/Search">Search</Link>
+                </div>
+
+                
+
+                </nav>
+            </React.Fragment>
         )
     }
 }
