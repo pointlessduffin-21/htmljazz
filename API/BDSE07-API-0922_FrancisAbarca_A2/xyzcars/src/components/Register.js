@@ -1,39 +1,47 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 class Register extends Component {
     constructor(props) {
         super(props);
-
         this.state = {
-            form: {
-                firstName: '',
-                lastName: '',
-                address: '',
-                username: '',
-                email: '',
-                phone: '',
-                password: '',
-                confirmPassword: ''
-            },
+            firstName: '',
+            lastName: '',
+            address: '',
+            username: '',
+            email: '',
+            phone: '',
+            password: '',
+            confirmPassword: ''
         };
     }
 
     handleInputChange = (event) => {
         this.setState({
-            form: {
-                ...this.state.form,
-                [event.target.id]: event.target.value,
-            }
+            [event.target.id]: event.target.value
         });
     }
 
     handleSubmit = (event) => {
         event.preventDefault();
-        console.log(this.state.form);
-        // submit the form here
-    };
-
+        if (this.state.password !== this.state.confirmPassword) {
+            alert("Password and confirm password do not match");
+            return;
+        }
+        
+        console.log(this.state); 
+    
+        const { confirmPassword, ...formData } = this.state;
+    
+        axios.post('addUser', formData)
+        .then(res => {
+            console.log(res.data);
+        })
+        .catch(error => {
+            console.error(error);
+        });
+    }
+    
     render() {
         return (
             <main className="page contact-us-page">
@@ -43,9 +51,8 @@ class Register extends Component {
                             <h2 className="text-info">Register</h2>
                             <p>Come and utilize our services!</p>
                         </div>
-
                         <form onSubmit={this.handleSubmit} className="was-validated">
-                            <div className="form-group">
+                        <div className="form-group">
                                 <label htmlFor="firstName">First Name:</label>
                                 <input type="text" className="form-control" id="firstName" placeholder="First Name" required onChange={this.handleInputChange}/>
                             </div>
@@ -62,7 +69,7 @@ class Register extends Component {
                             <br />
                             <div className="form-group">
                                 <label htmlFor="username">Username:</label>
-                                <input type="text" className="form-control" id="address" placeholder="Username" required onChange={this.handleInputChange}/>
+                                <input type="text" className="form-control" id="username" placeholder="username" required onChange={this.handleInputChange}/>
                             </div>
                             <br />
                             <div className="form-group">
@@ -87,7 +94,6 @@ class Register extends Component {
                             <br />
                             <input type="submit" value="Register" className="btn btn-primary" />
                         </form>
-                        
                         <div style={{margin: '80px'}}></div>
                     </div>
                 </section>
