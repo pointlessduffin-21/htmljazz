@@ -3,12 +3,8 @@ import Footer from './Footer';
 import Register from './Register';
 import Login from './Login';
 import Home from './Home';
-import CarViewPage from './CarViewPage';
-import CarManagementPage from './CarManagementPage';
-import UserManagementPage from './UserManagementPage';
-import CarAddForm from './CarAddForm';
-import CarListPage from './CarListPage';
-import Search from './Search';
+import SearchResult from './SearchResult';
+import UserManager from './UserManager';
 import { Navbar, Nav, Container, Button, Form, FormControl } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
@@ -33,11 +29,8 @@ class Header extends Component {
                                 <Nav.Link as={Link} to="/">Home</Nav.Link>
                                 <Nav.Link as={Link} to="/Register">Register</Nav.Link>
                                 <Nav.Link as={Link} to="/login">Login</Nav.Link>
-                                <Nav.Link as={Link} to="/CarViewPage">Car View Page</Nav.Link>
-                                <Nav.Link as={Link} to="/CarAddForm">Car Add Form</Nav.Link>
-                                <Nav.Link as={Link} to="/CarListPage">Car Management</Nav.Link>
-                                <Nav.Link as={Link} to="/UserManagementPage">User Management</Nav.Link>
-                                <Nav.Link as={Link} to="/Search">Search</Nav.Link>
+                                <Nav.Link as={Link} to="/SearchResult">Search Result</Nav.Link>
+                                <Nav.Link as={Link} to="/UserManager">User Manager</Nav.Link>
                             </Nav>
                         </Navbar.Collapse>
                     </Container>

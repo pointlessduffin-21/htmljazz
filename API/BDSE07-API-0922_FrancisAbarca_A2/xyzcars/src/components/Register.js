@@ -49,30 +49,37 @@ class Register extends Component {
                                 <label htmlFor="firstName">First Name:</label>
                                 <input type="text" className="form-control" id="firstName" placeholder="First Name" required onChange={this.handleInputChange}/>
                             </div>
+                            <br />
                             <div className="form-group">
                                 <label htmlFor="lastName">Last Name:</label>
                                 <input type="text" className="form-control" id="lastName" placeholder="Last Name" required onChange={this.handleInputChange}/>
                             </div>
+                            <br />
                             <div className="form-group">
                                 <label htmlFor="address">Address:</label>
                                 <input type="text" className="form-control" id="address" placeholder="Address" required onChange={this.handleInputChange}/>
                             </div>
+                            <br />
                             <div className="form-group">
                                 <label htmlFor="username">Username:</label>
                                 <input type="text" className="form-control" id="address" placeholder="Username" required onChange={this.handleInputChange}/>
                             </div>
+                            <br />
                             <div className="form-group">
                                 <label htmlFor="email">Email Address:</label>
                                 <input type="text" className="form-control" id="email" placeholder="Email Address" required onChange={this.handleInputChange}/>
                             </div>
+                            <br />
                             <div className="form-group">
                                 <label htmlFor="phone">Phone Number:</label>
                                 <input type="text" className="form-control" id="phone" placeholder="Phone Number" required onChange={this.handleInputChange}/>
                             </div>
+                            <br />
                             <div className="form-group">
                                 <label htmlFor="password">Password:</label>
                                 <input type="password" className="form-control" id="password" placeholder="Password" required onChange={this.handleInputChange}/>
                             </div>
+                            <br />
                             <div className="form-group">
                                 <label htmlFor="confirmPassword">Confirm Password:</label>
                                 <input type="password" className="form-control" id="confirmPassword" placeholder="Confirm Password" required onChange={this.handleInputChange}/>
