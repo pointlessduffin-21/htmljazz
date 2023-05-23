@@ -35,3 +35,5 @@ class CarAddForm extends Component {
         )
     }
 }
+
+export default CarAddForm;
