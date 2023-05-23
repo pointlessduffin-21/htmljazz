@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.10",
+    "source-map-loader": "^4.0.1"
+  }
+}

@@ -11,7 +11,7 @@ import CarManagementPage from './components/CarManagementPage';
 import CarAddForm from './components/CarAddForm';
 import CarListPage from './components/CarListPage';
 import Search from './components/Search';
-import { Button, Container, Row, Col } from 'reactstrap';
+import { Button, Container, Row, Col , ComponentName } from 'bootstrap';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 class App extends Component {
@@ -28,8 +28,9 @@ class App extends Component {
           <Link to ="/CarAddForm">Car AddF orm</Link>
           <Link to ="/CarListPage">Car List Page</Link>
           <Link to ="/Search">Search</Link>
-        </div>
           <Footer />
+        </div>
+          
 
           <Routes>
             <Route path="/Home" element={<Home />} />
