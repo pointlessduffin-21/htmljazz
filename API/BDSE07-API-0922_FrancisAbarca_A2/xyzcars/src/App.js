@@ -8,6 +8,7 @@ import Login from './components/Login';
 import Home from './components/Home';
 import CarViewPage from './components/CarViewPage';
 import CarManagementPage from './components/CarManagementPage';
+import UserManagementPage from './components/UserManagementPage';
 import CarAddForm from './components/CarAddForm';
 import CarListPage from './components/CarListPage';
 import Search from './components/Search';
@@ -29,6 +30,7 @@ class App extends Component {
               <Route path="/CarAddForm" element={<CarAddForm />} />
               <Route path="/CarListPage" element={<CarListPage />} />
               <Route path="/Search" element={<Search />} />
+              <Route path="/UserManagementPage" element={<UserManagementPage />} />
             </Routes>
             <Footer />
           </div>
