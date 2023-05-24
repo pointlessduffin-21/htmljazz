@@ -8,9 +8,9 @@ class Register extends Component {
             firstName: '',
             lastName: '',
             address: '',
-            username: '',
-            email: '',
-            phone: '',
+            userName: '',
+            userEmail: '',
+            phoneNumber: '',
             password: '',
             confirmPassword: ''
         };
@@ -70,18 +70,18 @@ class Register extends Component {
                             </div>
                             <br />
                             <div className="form-group">
-                                <label htmlFor="username">Username:</label>
-                                <input type="text" className="form-control" id="username" placeholder="username" required onChange={this.handleInputChange}/>
+                                <label htmlFor="userName">Username:</label>
+                                <input type="text" className="form-control" id="userName" placeholder="userName" required onChange={this.handleInputChange}/>
                             </div>
                             <br />
                             <div className="form-group">
-                                <label htmlFor="email">Email Address:</label>
-                                <input type="text" className="form-control" id="email" placeholder="Email Address" required onChange={this.handleInputChange}/>
+                                <label htmlFor="userEmail">Email Address:</label>
+                                <input type="text" className="form-control" id="userEmail" placeholder="Email Address" required onChange={this.handleInputChange}/>
                             </div>
                             <br />
                             <div className="form-group">
-                                <label htmlFor="phone">Phone Number:</label>
-                                <input type="text" className="form-control" id="phone" placeholder="Phone Number" required onChange={this.handleInputChange}/>
+                                <label htmlFor="phoneNumber">Phone Number:</label>
+                                <input type="text" className="form-control" id="phoneNumber" placeholder="Phone Number" required onChange={this.handleInputChange}/>
                             </div>
                             <br />
                             <div className="form-group">
