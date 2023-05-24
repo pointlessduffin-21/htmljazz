@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Footer from './Footer';
 import Register from './Register';
 import Login from './Login';
 import Home from './Home';
