@@ -19,11 +19,21 @@ class Login extends Component {
         });
     }
 
-    handleSubmit = (event) => {
+    handleSubmit = async (event) => {
         event.preventDefault();
-        console.log(this.state);
-        // TODO: add login logic here
+    
+        const response = await fetch(`/login?userName=${encodeURIComponent(this.state.username)}&password=${encodeURIComponent(this.state.password)}`);
+        const data = await response.text();
+        
+        if (data === 'Login success!') {
+            this.setState({ success_login: 'Successfully logged in!', error_string: null });
+        } else {
+            this.setState({ error_string: 'Login failed!', success_login: null });
+        }
     }
+    
+    
+    
 
     render() {
         return (
@@ -61,7 +71,7 @@ class Login extends Component {
                                 <div className="mb-3 mt-3">
                                     <label htmlFor="username" className="form-label">User name:</label>
                                     <input type="text" className="form-control" id="userName" 
-                                           placeholder="Enter username" name="username" value={this.state.username}
+                                           placeholder="Enter username" name="username" value={this.state.userName}
                                            onChange={this.handleInputChange} required />
                                     <div className="valid-feedback">Valid.</div>
                                     <div className="invalid-feedback">Please fill out this field.</div>
@@ -71,7 +81,7 @@ class Login extends Component {
                                     <input type="password" className="form-control" id="password"
                                            placeholder="Enter password" name="password" value={this.state.password}
                                            onChange={this.handleInputChange} required />
-                                    <div className="valid-feedback">Valid.</div>
+                                    <div cliassName="valid-feedback">Valid.</div>
                                     <div className="invalid-feedback">Please fill out this field.</div>
                                 </div>
                                 
