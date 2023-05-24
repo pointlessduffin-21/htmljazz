@@ -32,13 +32,15 @@ class Register extends Component {
         console.log(this.state); 
     
         const { confirmPassword, ...formData } = this.state;
-    
+        
         axios.post('addUser', formData)
         .then(res => {
             console.log(res.data);
+            alert("User registered successfully");
         })
         .catch(error => {
             console.error(error);
+            alert("Failed to register user!");
         });
     }
     
