@@ -26,9 +26,9 @@ class Login extends Component {
         const data = await response.text();
         
         if (data === 'Login success!') {
-            this.setState({ success_login: 'Successfully logged in!', error_string: null });
+            this.setState({ success_login: 'Successfully logged in! ', error_string: null });
         } else {
-            this.setState({ error_string: 'Login failed!', success_login: null });
+            this.setState({ error_string: 'Login failed! ', success_login: null });
         }
     }
     
@@ -48,14 +48,14 @@ class Login extends Component {
                         {this.state.error_string && (
                             <div className="alert alert-danger">
                                 {this.state.error_string}
-                                Click here to <Link to="/register_user"> Register</Link>
+                                Click here to <Link to="/Register"> Register</Link>
                             </div>
                         )}
 
                         {this.state.success_login && (
                             <div className="alert alert-success">
                                 {this.state.success_login}
-                                Click here to navigate to <Link to="/home"> Home</Link>
+                                Click here to navigate to <Link to="/"> Home</Link>
                             </div>
                         )}
 
@@ -73,20 +73,17 @@ class Login extends Component {
                                     <input type="text" className="form-control" id="userName" 
                                            placeholder="Enter username" name="username" value={this.state.userName}
                                            onChange={this.handleInputChange} required />
-                                    <div className="valid-feedback">Valid.</div>
-                                    <div className="invalid-feedback">Please fill out this field.</div>
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="password" className="form-label">Password:</label>
                                     <input type="password" className="form-control" id="password"
                                            placeholder="Enter password" name="password" value={this.state.password}
                                            onChange={this.handleInputChange} required />
-                                    <div cliassName="valid-feedback">Valid.</div>
-                                    <div className="invalid-feedback">Please fill out this field.</div>
                                 </div>
                                 
-                                <br />
-                                <input type="submit" name="Login" value="Sign In" className="btn btn-primary" />
+                                
+                                <input type="submit" name="Login" value="Sign In"  className="btn btn-primary"  />
+                                <p>   </p>
                                 <Link to="/Register" className="btn btn-primary">Register</Link>
                             </form>
                         )}

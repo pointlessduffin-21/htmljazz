@@ -36,7 +36,7 @@ class SearchResult extends Component {
 
                         <form onSubmit={this.handleSubmit} className="mb-3">
                             <input type="text" placeholder="Search term" value={this.state.searchTerm} onChange={this.handleInputChange} />
-                            <input type="submit" value="Search" />
+                            <input type="submit" value="Search" className="btn btn-primary" />
                         </form>
 
                         <table className="table table-striped">

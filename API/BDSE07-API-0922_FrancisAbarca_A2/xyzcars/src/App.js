@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Header from './components/Header';
 import Register from './components/Register';
@@ -7,7 +6,6 @@ import Login from './components/Login';
 import Home from './components/Home';
 import SearchResult from './components/SearchResult';
 import UserManager from './components/UserManager';
-import { Button, Container, Row, Col , ComponentName } from 'bootstrap'; // assuming you have these components from 'bootstrap'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 class App extends Component {
