@@ -14,7 +14,7 @@ public class UserApiController {
     @Autowired
     userRestApiServiceImpl userRestApiService;
 
-    @GetMapping(value = "/user")
+    @GetMapping(value = "/userGrab")
     public Principal getUser(final Principal user) {
         return user;
     }

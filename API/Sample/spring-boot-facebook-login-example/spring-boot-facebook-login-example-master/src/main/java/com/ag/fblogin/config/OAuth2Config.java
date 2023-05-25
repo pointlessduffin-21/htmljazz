@@ -20,3 +20,4 @@ public class OAuth2Config extends WebSecurityConfigurerAdapter {
                 .authenticated();
     }
 }
+
