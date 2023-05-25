@@ -6,12 +6,18 @@ import xyz.yeems214.xyzcars.Service.userRestApiServiceImpl;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
 import java.util.List;
 
 @RestController
 public class UserApiController {
     @Autowired
     userRestApiServiceImpl userRestApiService;
+
+    @GetMapping(value = "/user")
+    public Principal getUser(final Principal user) {
+        return user;
+    }
 
     // Add User
     @PostMapping(value="/addUser")
