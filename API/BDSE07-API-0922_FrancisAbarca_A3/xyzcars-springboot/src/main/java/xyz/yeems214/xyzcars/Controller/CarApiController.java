@@ -15,9 +15,9 @@ public class CarApiController {
     carRestApiServiceImpl carRestApiService;
 
     // Test
-    @GetMapping(value = "/test")
-    public String test() {
-        return "test";
+    @GetMapping(value = "/t3st")
+    public String t3st() {
+        return "t3st";
     }
 
     // Add Car
