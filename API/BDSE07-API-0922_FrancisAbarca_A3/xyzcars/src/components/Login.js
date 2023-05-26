@@ -21,17 +21,25 @@ class Login extends Component {
 
     handleSubmit = async (event) => {
         event.preventDefault();
-    
-        const response = await fetch(`/login?userName=${encodeURIComponent(this.state.username)}&password=${encodeURIComponent(this.state.password)}`);
-        const data = await response.text();
         
-        if (data === 'Login success!') {
+        const loginResponse = await fetch(`/login?userName=${encodeURIComponent(this.state.username)}&password=${encodeURIComponent(this.state.password)}`);
+        const loginData = await loginResponse.text();
+            
+        if (loginData === 'Login success!') {
             this.setState({ success_login: 'Successfully logged in! ', error_string: null });
         } else {
             this.setState({ error_string: 'Login failed! ', success_login: null });
         }
-    }
     
+        const authResponse = await fetch(`/checkAuthentication`);
+        const authData = await authResponse.json();
+        
+        if (authData.authenticated) {
+            this.setState({ success_login: 'Successfully logged in! ', error_string: null });
+        } else {
+            this.setState({ error_string: 'Login failed! ', success_login: null });
+        }
+    } 
     
     
 
@@ -85,6 +93,8 @@ class Login extends Component {
                                 <input type="submit" name="Login" value="Sign In"  className="btn btn-primary"  />
                                 <p>   </p>
                                 <Link to="/Register" className="btn btn-primary">Register</Link>
+                                <p>   </p>
+                                <button onClick={() => window.open("http://172.16.222.125:9090/login", "_blank", "height=600,width=600")} className="btn btn-primary">Login with Facebook</button>
                             </form>
                         )}
                         
