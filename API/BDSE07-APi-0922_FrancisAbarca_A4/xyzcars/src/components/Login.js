@@ -99,7 +99,6 @@ class Login extends Component {
                                 <p>   </p>
                                 <Link to="/Register" className="btn btn-primary">Register</Link>
                                 <p>   </p>
-                                <button onClick={this.redirectToFBLogin} className="btn btn-primary">Login with Facebook</button>
                             </form>
                         )}
                         

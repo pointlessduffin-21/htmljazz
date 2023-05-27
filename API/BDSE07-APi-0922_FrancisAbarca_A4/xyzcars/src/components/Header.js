@@ -30,6 +30,7 @@ class Header extends Component {
                                 <Nav.Link as={Link} to="/login">Login</Nav.Link>
                                 <Nav.Link as={Link} to="/SearchResult">Search</Nav.Link>
                                 <Nav.Link as={Link} to="/UserManager">User Manager</Nav.Link>
+                                <Nav.Link as={Link} to="/Message">Message</Nav.Link>
                             </Nav>
                         </Navbar.Collapse>
                     </Container>

@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Register from './components/Register';
 import Login from './components/Login';
 import Home from './components/Home';
+import Message from './components/Message';
 import SearchResult from './components/SearchResult';
 import UserManager from './components/UserManager';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
@@ -20,6 +21,7 @@ class App extends Component {
               <Route path="/Login" element={<Login />} />
               <Route path="/SearchResult" element={<SearchResult />} />
               <Route path="/UserManager" element={<UserManager />} />
+              <Route path="/Message" element={<Message />} />
             </Routes>
           </div>
         </Router>
