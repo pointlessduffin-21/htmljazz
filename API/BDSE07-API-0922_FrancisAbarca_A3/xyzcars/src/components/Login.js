@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 class Login extends Component {
+    redirectToFBLogin = () => {
+        window.location.href ="http://localhost:9090/login";  // Backend-handled Facebook Login API URL
+    };
+
+
     constructor(props) {
         super(props);
         this.state = {
@@ -94,7 +99,7 @@ class Login extends Component {
                                 <p>   </p>
                                 <Link to="/Register" className="btn btn-primary">Register</Link>
                                 <p>   </p>
-                                <button onClick={() => window.open("http://172.16.222.125:9090/login", "_blank", "height=600,width=600")} className="btn btn-primary">Login with Facebook</button>
+                                <button onClick={this.redirectToFBLogin} className="btn btn-primary">Login with Facebook</button>
                             </form>
                         )}
                         

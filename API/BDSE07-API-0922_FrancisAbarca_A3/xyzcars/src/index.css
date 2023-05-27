@@ -11,24 +11,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-.navbar {
-  z-index: 1030;
-}
-
-.navbar-collapse {
-  background-color: #ffffff;
-}
-
-@media (max-width: 991px) {
-  .navbar-nav {
-      margin-left: 0;
-  }
-  .navbar-nav .nav-item {
-      float: none;
-  }
-  .navbar-nav .nav-link {
-      padding-left: 15px;
-      padding-right: 15px;
-  }
-}
