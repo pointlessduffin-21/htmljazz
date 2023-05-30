@@ -23,7 +23,7 @@ public class MessageService {
             JsonProcessingException{
         Map<String,String> myMap=new HashMap<String, String>();
 
-        myMap.put("xyzcars","T0594P85XGV/B059QKXCU13/d2pUrNS0xULtYB6UMxJ1m4Oa");
+        myMap.put("xyzcars","T0594P85XGV/B059TEV4G67/HfY5C25IsgqNyOOK7MsxaKDc");
 
         String userChannelId = myMap.get(userName);
         System.out.println("username: "+userChannelId);
@@ -37,6 +37,6 @@ public class MessageService {
         HttpEntity<String> entity = new HttpEntity<>(messageJson,headers);
         System.out.println(userWebhookUrl);
 
-        restTemplate.exchange("https://hooks.slack.com/services/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", HttpMethod.POST, entity, String.class);
+        restTemplate.exchange("https://hooks.slack.com/services/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", HttpMethod.POST, entity, String.class);
     }
 }
