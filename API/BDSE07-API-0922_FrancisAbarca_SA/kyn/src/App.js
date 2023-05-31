@@ -8,6 +8,7 @@ import Terms from './Components/Terms';
 import About from './Components/About';
 import Contact from './Components/Contact';
 import Search from './Components/Search';
+import Message from './Components/Message';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
@@ -25,6 +26,7 @@ function App() {
           <Route path="/search" element={<Search />} />
           <Route path="/register" element={<Register />} />
           <Route path="/Terms" element={<Terms />} />
+          <Route path="/Message" element={<Message />} />
         </Routes>
         <Footer />
         </div>

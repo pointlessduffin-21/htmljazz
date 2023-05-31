@@ -22,7 +22,8 @@ public class Users {
     public Users() {
     }
 
-    public Users(String userName, String password, String email, String firstName, String lastName, String address, String phoneNumber, String role) {
+    public Users(Long id, String userName, String password, String email, String firstName, String lastName, String address, String phoneNumber, String role) {
+        this.id = id;
         this.userName = userName;
         this.password = password;
         this.email = email;
@@ -31,6 +32,10 @@ public class Users {
         this.address = address;
         this.phoneNumber = phoneNumber;
         this.role = role;
+    }
+
+    public Long getId() {
+        return id;
     }
 
     public String getUserName() {
@@ -63,6 +68,10 @@ public class Users {
 
     public String getRole() {
         return role;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public void setUserName(String userName) {

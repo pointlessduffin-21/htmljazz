@@ -20,7 +20,7 @@ public class UserController {
     }
 
     // Add User
-    @PostMapping(value="/addUser")
+    @PostMapping(value="/register")
     public String register(@RequestBody Users u) {
         System.out.println(u); // Prints the user information inputted by the user
         userService.addUser(u);

@@ -9,6 +9,7 @@ import javax.persistence.Id;
 public class Store {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
     private String name;
     private String address;
     private String city;
@@ -19,7 +20,8 @@ public class Store {
     public Store() {
     }
 
-    public Store(String name, String address, String city, String state, String zip, String phone) {
+    public Store(Long id, String name, String address, String city, String state, String zip, String phone) {
+        this.id = id;
         this.name = name;
         this.address = address;
         this.city = city;
@@ -28,6 +30,9 @@ public class Store {
         this.phone = phone;
     }
 
+    public Long getId() {
+        return id;
+    }
     public String getName() {
         return name;
     }
@@ -50,6 +55,9 @@ public class Store {
 
     public String getPhone() {
         return phone;
+    }
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public void setName(String name) {
