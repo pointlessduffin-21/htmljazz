@@ -3,8 +3,7 @@ package xyz.yeems214.kyn.Controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import xyz.yeems214.kyn.Entity.User;
-import xyz.yeems214.kyn.Service.UserService;
+import xyz.yeems214.kyn.Entity.Users;
 import xyz.yeems214.kyn.Service.UserServiceImpl;
 
 import java.security.Principal;
@@ -22,7 +21,7 @@ public class UserController {
 
     // Add User
     @PostMapping(value="/addUser")
-    public String register(@RequestBody User u) {
+    public String register(@RequestBody Users u) {
         System.out.println(u); // Prints the user information inputted by the user
         userService.addUser(u);
         return "User added";
@@ -37,13 +36,13 @@ public class UserController {
 
     // Show All Uesrs
     @GetMapping(value="/allUsers")
-    public List<User> getAllUsers() {
+    public List<Users> getAllUsers() {
         return userService.getAllUsers();
     }
 
     // Search User by Keyword
     @GetMapping(value="/searchUser")
-    public List<User> searchUser(@RequestParam String key) {
+    public List<Users> searchUser(@RequestParam String key) {
         return userService.searchByName(key);
     }
 

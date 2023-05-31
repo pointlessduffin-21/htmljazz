@@ -1,26 +1,20 @@
 package xyz.yeems214.kyn.Security;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
-import xyz.yeems214.kyn.Entity.User;
-import xyz.yeems214.kyn.Repository.UserRepository;
 import xyz.yeems214.kyn.Service.UserServiceImpl;
-
+import xyz.yeems214.kyn.Repository.UserRepository;
 
 @Configuration
 @EnableWebSecurity
-public class SecurityConfig extends WebSecurityConfigurerAdapter {
+public class SecurityConfig {
 
     @Autowired
     private UserServiceImpl userService;
@@ -40,7 +34,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/", "/login**", "/webjars/**", "/error**")
+                .antMatchers("/","/test", "/login**", "/webjars/**", "/error**")
                 .permitAll()
                 .anyRequest()
                 .authenticated()
