@@ -6,6 +6,14 @@ class Login extends Component {
         window.location.href ="http://localhost:9090/login";  // Backend-handled Facebook Login API URL
     };
 
+    redirectToGoogleLogin = () => {
+        window.location.href = "http://localhost:9090/google-login";  // Backend-handled Google Login API URL
+    };
+
+    redirectToGitHubLogin = () => {
+        window.location.href = "http://localhost:9090/github-login";  // Backend-handled GitHub Login API URL
+    };
+    
 
     constructor(props) {
         super(props);
@@ -80,7 +88,7 @@ class Login extends Component {
                         )}
 
                         {(!this.state.success_login && !this.state.success_logout) && (
-                            <form onSubmit={this.handleSubmit} className="was-validated">
+                            <form onSubmit={this.handleSubmit} className="was-validated ordinaryauth">
                                 <div className="mb-3 mt-3">
                                     <label htmlFor="username" className="form-label">User name:</label>
                                     <input type="text" className="form-control" id="userName" 
@@ -99,9 +107,15 @@ class Login extends Component {
                                 <p>   </p>
                                 <Link to="/Register" className="btn btn-primary">Register</Link>
                                 <p>   </p>
-
                                 <div className="flex-row">
-            <button className="btn google">
+                                    </div>
+                                    </div>
+                                    </div>
+                                    </form> )}
+
+    <>
+                                    <div className="flex-row">
+            <button className="btn google 3rdpartyauth">
               <svg
                 xmlSpace="preserve"
                 style={{ enableBackground: "new 0 0 512 512" }}
@@ -152,12 +166,10 @@ class Login extends Component {
               Facebook
             </button>
           </div>
-                            </form>
-                        )}
                         
                         
                         <div style={{margin: '80px'}}></div>
-                    </div>
+                        </>
                 </section>
             </main>
         );

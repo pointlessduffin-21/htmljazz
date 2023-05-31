@@ -4,7 +4,7 @@ import xyz.yeems214.kyn.Entity.Users;
 
 import java.util.List;
 
-public interface UserService {
+public interface userRestApiService {
     void addUser(Users u);
     void deleteUser(Users u);
 

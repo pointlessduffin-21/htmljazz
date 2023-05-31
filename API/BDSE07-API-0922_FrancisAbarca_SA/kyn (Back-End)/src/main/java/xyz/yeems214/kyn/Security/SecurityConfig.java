@@ -9,23 +9,20 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
-import xyz.yeems214.kyn.Service.UserServiceImpl;
-import xyz.yeems214.kyn.Repository.UserRepository;
+import xyz.yeems214.kyn.Service.userRestApiServiceImpl;
+import xyz.yeems214.kyn.Repository.UsersRepository;
 
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
 
     @Autowired
-    private UserServiceImpl userService;
+    private userRestApiServiceImpl userService;
 
     @Autowired
-    private BCryptPasswordEncoder bCryptPasswordEncoder;
+    private UsersRepository userRepository;
 
-    @Autowired
-    private UserRepository userRepository;
-
-    public SecurityConfig(UserRepository userRepository) {
+    public SecurityConfig(UsersRepository userRepository) {
         this.userRepository = userRepository;
     }
 
@@ -34,7 +31,7 @@ public class SecurityConfig {
         http
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/","/test", "/login**", "/webjars/**", "/error**")
+                .antMatchers("/","/test","/addUser","/login","/webjars/**", "/error**")
                 .permitAll()
                 .anyRequest()
                 .authenticated()
@@ -46,10 +43,5 @@ public class SecurityConfig {
                 .oauth2Login();
 
         return http.build();
-    }
-
-    @Autowired
-    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(userService).passwordEncoder(bCryptPasswordEncoder);
     }
 }

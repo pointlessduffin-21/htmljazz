@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
-import '../Styles/Terms.css';
 
 class Terms extends Component {
     render() {

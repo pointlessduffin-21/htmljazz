@@ -9,116 +9,101 @@ import javax.persistence.Id;
 public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
-    private String userName;
-    private String password;
-    private String email;
+
+    private Integer userId;
     private String firstName;
     private String lastName;
     private String address;
+    private String userName;
+    private String userEmail;
     private String phoneNumber;
-    private String role;
+    private String password;
 
     public Users() {
     }
 
-    public Users(Long id, String userName, String password, String email, String firstName, String lastName, String address, String phoneNumber, String role) {
-        this.id = id;
-        this.userName = userName;
-        this.password = password;
-        this.email = email;
+    public Users(Integer userId, String firstName, String lastName, String address, String userName, String userEmail, String phoneNumber, String password) {
+        super();
+        this.userId = userId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
+        this.userName = userName;
+        this.userEmail = userEmail;
         this.phoneNumber = phoneNumber;
-        this.role = role;
+        this.password = password;
     }
 
-    public Long getId() {
-        return id;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public String getUserName() {
-        return userName;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public String getEmail() {
-        return email;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     public String getFirstName() {
         return firstName;
     }
 
+    public void setFirstName(String firstName) {
+        this.firstName= firstName;
+    }
+
     public String getLastName() {
         return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName= lastName;
     }
 
     public String getAddress() {
         return address;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public void setAddress(String address) {
+        this.address= address;
     }
 
-    public String getRole() {
-        return role;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
+    public String getUserName() {
+        return userName;
     }
 
     public void setUserName(String userName) {
         this.userName = userName;
     }
 
-    public void setPassword(String password) {
-    	this.password = password;
+    public String getUserEmail() {
+        return userEmail;
     }
 
-    public void setEmail(String email) {
-    	this.email = email;
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
     }
 
-    public void setFirstName(String firstName) {
-    	this.firstName = firstName;
-    }
-
-    public void setLastName(String lastName) {
-    	this.lastName = lastName;
-    }
-
-    public void setAddress(String address) {
-    	this.address = address;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
     public void setPhoneNumber(String phoneNumber) {
-    	this.phoneNumber = phoneNumber;
+        this.phoneNumber= phoneNumber;
     }
 
-    public void setRole(String role) {
-    	this.role = role;
+    public String getPassword() {
+        return password;
     }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
 
     @Override
     public String toString() {
-        return "User{" +
-                "userName='" + userName + '\'' +
-                ", password=" + password +
-                ", email='" + email + '\'' +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", address=" + address +
-                ", phoneNumber=" + phoneNumber +
-                ", role=" + role +
-                '}';
+        return "Users [userId=" + userId + ", firstName=" + firstName
+                + ", lastName=" + lastName + ", address=" + address
+                + ", userName=" + userName + ", userEmail=" + userEmail
+                + ", phoneNumber=" + phoneNumber + ", password=" + password + "]";
     }
-
-
 }
