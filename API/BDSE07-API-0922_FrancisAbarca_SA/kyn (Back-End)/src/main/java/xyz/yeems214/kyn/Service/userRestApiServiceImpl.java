@@ -54,7 +54,7 @@ public class userRestApiServiceImpl implements userRestApiService {
     @Override
     public boolean userExists(String userName, String password) {
         Users u = usersRepository.findByUserName(userName);
-        if (u != null && u.getPassword().equals(password)) {
+        if (u != null && passwordEncoder.matches(password, u.getPassword())) {
             return true;
         }
         return false;
