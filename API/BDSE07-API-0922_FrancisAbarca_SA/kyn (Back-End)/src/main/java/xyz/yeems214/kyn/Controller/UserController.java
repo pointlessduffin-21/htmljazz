@@ -42,7 +42,7 @@ public class UserController {
     }
 
     // Login
-    @GetMapping(value="/login")
+    @GetMapping(value="/oldLogin")
     public String login(@RequestParam String userName, @RequestParam String password) {
         if (userRestApiService.userExists(userName, password)) {
             return "Login success!";
@@ -50,4 +50,15 @@ public class UserController {
             return "Login failed!";
         }
     }
+
+    // New Login
+    @PostMapping(value="/internalLogin")
+    public String login(@RequestBody Users u) {
+        if (userRestApiService.userExists(u.getUserName(), u.getPassword())) {
+            return "Login success!";
+        } else {
+            return "Login failed!";
+        }
+    }
+
 }

@@ -31,7 +31,7 @@ public class SecurityConfig {
         http
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/","/test","/addUser","/login","/webjars/**", "/error**")
+                .antMatchers("/","/test","/addUser", "/internalLogin", "/oldLogin" ,"/login","/webjars/**", "/error**")
                 .permitAll()
                 .anyRequest()
                 .authenticated()
