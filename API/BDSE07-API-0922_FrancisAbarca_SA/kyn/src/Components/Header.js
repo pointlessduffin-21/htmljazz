@@ -13,7 +13,7 @@ class Header extends Component {
     render() {
         return (
             <>
-                <Navbar bg="light" expand="lg" fixed="top" className="deez">
+                <Navbar bg="light" expand="lg" fixed="top" className="deez navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
                     <Container>
                         <Navbar.Brand href="/">
                             <img 

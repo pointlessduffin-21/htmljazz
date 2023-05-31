@@ -6,7 +6,7 @@ class Home extends Component {
         return (
             <div>
                 <main class="page landing-page">
-        <section className="clean-block clean-hero" style={{ backgroundImage: "url('assets/img/tech/image4.jpg')", color: "rgba(9, 162, 255, 0.85)" }}>
+                    <section className="clean-block clean-hero" style={{ backgroundImage: "url('(https://gpupv.yeems214.xyz/R%20e%20p%20o%20s%20i%20t%20o%20r%20y/assets/img/OIG.jpg')", color: "rgba(9, 162, 255, 0.85)" }}>
                         <div className="text">
                             <h2>Lorem ipsum dolor sit amet.</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo.</p>
