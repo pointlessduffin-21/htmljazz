@@ -3,16 +3,9 @@ import { Link } from 'react-router-dom';
 
 class Login extends Component {
     redirectToFBLogin = () => {
-        window.location.href ="http://localhost:8546/login";  // Backend-handled Facebook Login API URL
+        window.location.href ="http://localhost:9090/login";  // Backend-handled Facebook Login API URL
     };
 
-    redirectToGoogleLogin = () => {
-        window.location.href = "http://localhost:8546/oauth2/authorization/google";  // Backend-handled Google Login API URL
-    };
-
-    redirectToGitHubLogin = () => {
-        window.location.href = "http://localhost:8546/oauth2/authorization/github";  // Backend-handled GitHub Login API URL
-    };
 
     constructor(props) {
         super(props);
@@ -52,6 +45,8 @@ class Login extends Component {
             this.setState({ error_string: 'Login failed! ', success_login: null });
         }
     } 
+    
+    
 
     render() {
         return (
@@ -85,11 +80,11 @@ class Login extends Component {
                         )}
 
                         {(!this.state.success_login && !this.state.success_logout) && (
-                            <form onSubmit={this.handleSubmit} className="was-validated ordinaryauth">
+                            <form onSubmit={this.handleSubmit} className="was-validated">
                                 <div className="mb-3 mt-3">
                                     <label htmlFor="username" className="form-label">User name:</label>
-                                    <input type="text" className="form-control" id="username" 
-                                           placeholder="Enter username" name="username" value={this.state.username}
+                                    <input type="text" className="form-control" id="userName" 
+                                           placeholder="Enter username" name="username" value={this.state.userName}
                                            onChange={this.handleInputChange} required />
                                 </div>
                                 <div className="mb-3">
@@ -104,30 +99,12 @@ class Login extends Component {
                                 <p>   </p>
                                 <Link to="/Register" className="btn btn-primary">Register</Link>
                                 <p>   </p>
-                                <div className="flex-row">
-                                    <button className="btn google 3rdpartyauth" onClick={this.redirectToGoogleLogin}>
-                                        <svg xmlSpace="preserve" style={{ enableBackground: "new 0 0 512 512" }} viewBox="0 0 512 512" y="0px" x="0px" xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" id="Layer_1" width="20" version="1.1">
-                                            {/* svg code */}
-                                        </svg>
-                                        Google
-                                    </button>
-                                    <button className="btn fb" onClick={this.redirectToFBLogin}>
-                                        <svg className="" xmlSpace="preserve" style={{enableBackground: "new 0 0 512 512"}} viewBox="0 0 408.788 408.788" y="0" x="0" width="20" xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
-                                            {/* svg code */}
-                                        </svg>
-                                        Facebook
-                                    </button>
-                                    <button className="btn github" onClick={this.redirectToGitHubLogin}>
-                                        <svg className="" xmlSpace="preserve" style={{enableBackground: "new 0 0 512 512"}} viewBox="0 0 408.788 408.788" y="0" x="0" width="20" xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
-                                            {/* svg code */}
-                                        </svg>
-                                        GitHub
-                                    </button>
-                                </div>
+                                <button onClick={this.redirectToFBLogin} className="btn btn-primary">Login with Facebook</button>
                             </form>
                         )}
+                        
+                        <div style={{margin: '80px'}}></div>
                     </div>
-                    <div style={{margin: '80px'}}></div>
                 </section>
             </main>
         );

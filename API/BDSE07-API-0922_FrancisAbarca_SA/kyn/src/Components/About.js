@@ -12,7 +12,7 @@ class About extends Component {
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-sm-6 col-lg-4">
-                        <div class="card text-center clean-card"><img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar1.jpg" />
+                        <div class="card text-center clean-card"><img class="card-img-top w-100 d-block" src="https://gpupv.yeems214.xyz/R%20e%20p%20o%20s%20i%20t%20o%20r%20y/jsmith.png" />
                             <div class="card-body info">
                                 <h4 class="card-title">John Smith</h4>
                                 <p class="card-text">CEO</p>
@@ -21,7 +21,7 @@ class About extends Component {
                         </div>
                     </div>
                     <div class="col-sm-6 col-lg-4">
-                        <div class="card text-center clean-card"><img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar2.jpg" />
+                        <div class="card text-center clean-card"><img class="card-img-top w-100 d-block" src="https://gpupv.yeems214.xyz/R%20e%20p%20o%20s%20i%20t%20o%20r%20y/rdownturn2.png" />
                             <div class="card-body info">
                                 <h4 class="card-title">Robert Downturn</h4>
                                 <p class="card-text">COO</p>
@@ -30,7 +30,7 @@ class About extends Component {
                         </div>
                     </div>
                     <div class="col-sm-6 col-lg-4">
-                        <div class="card text-center clean-card"><img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar3.jpg" />
+                        <div class="card text-center clean-card"><img class="card-img-top w-100 d-block" src="https://gpupv.yeems214.xyz/R%20e%20p%20o%20s%20i%20t%20o%20r%20y/asanders2.png" />
                             <div class="card-body info">
                                 <h4 class="card-title">Ally Sanders</h4>
                                 <p class="card-text">CFO</p>
