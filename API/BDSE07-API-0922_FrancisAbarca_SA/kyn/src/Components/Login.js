@@ -3,22 +3,6 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 class Login extends Component {
-
-    componentDidMount() {
-        const sessionToken = this.getCookie('sessionToken');
-    
-        if (sessionToken) {
-            // If the session token cookie exists, automatically log the user in
-            this.setState({ success_login: 'Successfully logged in! ', error_string: null });
-        }
-    }
-    
-    getCookie(name) {
-        const cookie = document.cookie.split('; ').find(row => row.startsWith(name));
-        return cookie?.split('=')[1];
-    }
-    
-
     redirectToFBLogin = () => {
         window.location.href ="http://localhost:9584/login";  // Backend-handled Facebook Login API URL
     };
@@ -38,8 +22,7 @@ class Login extends Component {
             password: '',
             error_string: null,
             success_login: null,
-            success_logout: null,
-            rememberMe: false
+            success_logout: null
         };
     }
 
@@ -58,49 +41,14 @@ class Login extends Component {
     
             if (loginData === 'Login success!') {
                 this.setState({ success_login: 'Successfully logged in! ', error_string: null });
-    
-                // After a successful login, store the session token in a cookie
-                const sessionToken = loginResponse.data.sessionToken; // This depends on the actual response format
-                document.cookie = `sessionToken=${sessionToken}; path=/`;
             } else {
                 this.setState({ error_string: 'Login failed! ', success_login: null });
             }
         } catch (error) {
             console.error("An error occurred during login:", error);
-            // Optionally set an error message in the state
             this.setState({ error_string: 'An error occurred during login.' });
         }
     }
-
-    logout = async () => {
-        try {
-            // Call your server's logout endpoint
-            // Assuming it's a POST request that expects the session token as a Bearer token
-            const sessionToken = this.getCookie('sessionToken');
-            await axios.post('http://localhost:8546/logout', {}, {
-                headers: { Authorization: `Bearer ${sessionToken}` }
-            });
-    
-            // Delete the session token cookie
-            document.cookie = 'sessionToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-    
-            // Update the state to reflect that the user is no longer logged in
-            this.setState({ success_login: null, success_logout: 'Successfully logged out!' });
-        } catch (error) {
-            console.error("An error occurred during logout:", error);
-            // Optionally set an error message in the state
-            this.setState({ error_string: `An error occurred during logout. Error details: ${error.message}` });
-        }
-    }
-    
-    
-
-    handleRememberMeChange = (event) => {
-        this.setState({
-            rememberMe: event.target.checked
-        });
-    }
-    
     
 
     render() {
@@ -124,9 +72,7 @@ class Login extends Component {
                             <div className="alert alert-success">
                                 {this.state.success_login}
                                 Click here to navigate to <Link to="/"> Home</Link>
-                                <button onClick={this.logout} className="btn btn-primary">Logout</button>
                             </div>
-                            
                         )}
 
                         {this.state.success_logout && (
@@ -151,12 +97,6 @@ class Login extends Component {
                                            onChange={this.handleInputChange} required />
                                 </div>
                                 
-                                <div className="mb-3">
-                                    <label htmlFor="rememberMe" className="form-label">Remember me:</label>
-                                    <input type="checkbox" id="rememberMe" name="rememberMe" 
-                                    checked={this.state.rememberMe} 
-                                    onChange={this.handleRememberMeChange} />
-                                </div>
                                 
                                 <input type="submit" name="Login" value="Sign In"  className="btn btn-primary"  />
                                 <p>   </p>

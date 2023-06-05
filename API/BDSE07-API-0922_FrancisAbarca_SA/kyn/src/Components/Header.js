@@ -6,7 +6,6 @@ import Terms from './Terms';
 import About from './About';
 import Contact from './Contact';
 import Search from './Search';
-import Message from './Message';
 import { Navbar, Nav, Container, Button, Form, FormControl } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
@@ -33,7 +32,6 @@ class Header extends Component {
                                 <Nav.Link as={Link} to="/register">Register</Nav.Link>
                                 <Nav.Link as={Link} to="/Terms">Terms and Conditions</Nav.Link>
                                 <Nav.Link as={Link} to="/contact">Contact Us</Nav.Link>
-                                <Nav.Link as={Link} to="/message">Message Us</Nav.Link>
                                 <Nav.Link as={Link} to="/about">About Us</Nav.Link>
                                 <Nav.Link as={Link} to="/search">Search</Nav.Link>
                             </Nav>
