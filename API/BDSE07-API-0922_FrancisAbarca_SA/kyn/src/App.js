@@ -47,10 +47,10 @@ function App() {
       <div className="App">
       <Header success={success} logout={logout} />
         <Routes>
-          <Route exact path="/" element={<Home />} />
+          <Route exact path="/" element={<Home />} component={Home}/>
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/login" element={<Login login={login} loggedIn={loggedIn} setLoggedIn={setLoggedIn} />} />
+          <Route path="/login" element={<Login login={login} loggedIn={loggedIn} setLoggedIn={setLoggedIn} component={Login}/>} />
           <Route path="/search" element={<Search />} />
           <Route path="/register" element={<Register />} />
           <Route path="/Terms" element={<Terms />} />

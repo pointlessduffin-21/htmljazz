@@ -1,8 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import $ from 'jquery';
 
 const Login = ({ login, loggedIn, setLoggedIn }) => {  // receive onLogin as a prop from App.js
+    const [userName, setUserName] = useState('');
+    const [password, setPassword] = useState('');
+    const [userDetails, setUserDetails] = useState({});
+
+    const [success, setSuccess] = useState(() => {
+        try {
+            return JSON.parse(localStorage.getItem('success')) || false;
+        } catch {
+            return false;
+        }
+    });
+
+    const [name, setName] = useState(() => {
+        try {
+            return JSON.parse(localStorage.getItem('name')) || "";
+        } catch {
+            return "";
+        }
+    });
+
     const [state, setState] = useState({
         username: '',
         password: '',
@@ -12,7 +33,10 @@ const Login = ({ login, loggedIn, setLoggedIn }) => {  // receive onLogin as a p
     });
 
     const redirectToFBLogin = () => {
-        window.location.href ="http://localhost:9584/login";
+        window.location.href = "http://localhost:9584/login";
+        setLoggedIn(true);
+        setSuccess(true);
+        setName(userDetails.name);
     };
 
     const redirectToGoogleLogin = () => {
@@ -23,12 +47,43 @@ const Login = ({ login, loggedIn, setLoggedIn }) => {  // receive onLogin as a p
         window.location.href = "http://localhost:8546/oauth2/authorization/github";
     };
 
+    useEffect(() => {
+        try {
+            const name = JSON.parse(localStorage.getItem('name'));
+            if (name) {
+                setName(name);
+            }
+        } catch (error) {
+            console.error('Error parsing name from localStorage:', error);
+        }
+
+        try {
+            const success = JSON.parse(localStorage.getItem('success'));
+            if (typeof success === 'boolean') {
+                setSuccess(success);
+            }
+        } catch (error) {
+            console.error('Error parsing success from localStorage:', error);
+        }
+    }, []);
+
+    useEffect(() => {
+        try {
+            localStorage.setItem('success', JSON.stringify(success));
+            localStorage.setItem('name', JSON.stringify(name));
+        } catch (error) {
+            console.error('Error setting localStorage:', error);
+        }
+    }, [success, name]);
+    
+
     const handleInputChange = (event) => {
+        const { name, value } = event.target;
         setState({
-            ...state,
-            [event.target.name]: event.target.value
+          ...state,
+          [name]: value,
         });
-    };
+      };
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -95,11 +150,18 @@ const Login = ({ login, loggedIn, setLoggedIn }) => {  // receive onLogin as a p
                                 )
                             )}
 
+                            {userDetails.name && (
+                                <div className="alert alert-success">
+                                    Successfully logged in as {userDetails.name}!
+                                    Click here to navigate to <a href="http://localhost:3000">Home</a>
+                                </div>
+                            )}
+
                             {state.success_login && (
                                 <div className="alert alert-success">
                                     {state.success_login}
-                                    Successfully logged in as {state.username}!
-                                    Click here to navigate to <Link to="/"> Home</Link>
+                                    Successfully logged in as {state.username} {userDetails.name}!
+                                    Click here to navigate to <Link to={{ pathname: '/', state: { username: state.username } }}>Home</Link>
                                 </div>
                             )}
 

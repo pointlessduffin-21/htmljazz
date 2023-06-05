@@ -18,7 +18,22 @@ import java.util.Map;
 public class AuthController {
     @GetMapping
     public Principal getUser(final Principal user) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        User users = new User();
+        users.setName(authentication.getName());
         return user;
+    }
+
+    private static class User {
+        private String name;
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
     }
 
 }
