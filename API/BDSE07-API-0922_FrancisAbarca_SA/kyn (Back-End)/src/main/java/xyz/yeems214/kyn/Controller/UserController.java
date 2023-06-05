@@ -1,18 +1,29 @@
 package xyz.yeems214.kyn.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import xyz.yeems214.kyn.Entity.Users;
 import xyz.yeems214.kyn.Service.userRestApiServiceImpl;
 
+import javax.servlet.http.HttpServletRequest;
 import java.security.Principal;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 public class UserController {
     @Autowired
     userRestApiServiceImpl userRestApiService;
+
+    // Test
+    @GetMapping(value="/test")
+    public String test() {
+        return "Test successful!";
+    }
 
     // Add User
     @PostMapping(value="/addUser")
@@ -42,6 +53,7 @@ public class UserController {
     }
 
     // Login
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping(value="/oldLogin")
     public String login(@RequestParam String userName, @RequestParam String password) {
         if (userRestApiService.userExists(userName, password)) {
@@ -52,6 +64,7 @@ public class UserController {
     }
 
     // New Login
+    @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping(value="/internalLogin")
     public String login(@RequestBody Users u) {
         if (userRestApiService.userExists(u.getUserName(), u.getPassword())) {
@@ -60,5 +73,31 @@ public class UserController {
             return "Login failed!";
         }
     }
+
+    // Logout
+    @CrossOrigin(origins = "http://localhost:3000")
+    @PostMapping(value="/logout")
+    public String logout(HttpServletRequest request) {
+        // Invalidate the session, removing any session attributes
+        request.getSession().invalidate();
+        // Return a success message
+        return "Logout successful!";
+    }
+
+    @CrossOrigin(origins = "http://localhost:3000")
+    @GetMapping(value="/checkAuthentication")
+    public Map<String, Object> checkAuthentication() {
+        Map<String, Object> map = new HashMap<>();
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+
+        if (auth != null && auth.isAuthenticated()) {
+            map.put("authenticated", true);
+        } else {
+            map.put("authenticated", false);
+        }
+
+        return map;
+    }
+
 
 }

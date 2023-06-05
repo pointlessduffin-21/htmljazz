@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 class Login extends Component {
     redirectToFBLogin = () => {
-        window.location.href ="http://localhost:8546/login";  // Backend-handled Facebook Login API URL
+        window.location.href ="http://localhost:9584/login";  // Backend-handled Facebook Login API URL
     };
 
     redirectToGoogleLogin = () => {
@@ -33,25 +34,23 @@ class Login extends Component {
 
     handleSubmit = async (event) => {
         event.preventDefault();
-        
-        const loginResponse = await fetch(`/login?userName=${encodeURIComponent(this.state.username)}&password=${encodeURIComponent(this.state.password)}`);
-        const loginData = await loginResponse.text();
-            
-        if (loginData === 'Login success!') {
-            this.setState({ success_login: 'Successfully logged in! ', error_string: null });
-        } else {
-            this.setState({ error_string: 'Login failed! ', success_login: null });
-        }
     
-        const authResponse = await fetch(`/checkAuthentication`);
-        const authData = await authResponse.json();
-        
-        if (authData.authenticated) {
-            this.setState({ success_login: 'Successfully logged in! ', error_string: null });
-        } else {
-            this.setState({ error_string: 'Login failed! ', success_login: null });
+        try {
+            const loginResponse = await axios.get(`http://localhost:8546/oldLogin?userName=${encodeURIComponent(this.state.username)}&password=${encodeURIComponent(this.state.password)}`);
+            const loginData = loginResponse.data;
+    
+            if (loginData === 'Login success!') {
+                this.setState({ success_login: 'Successfully logged in! ', error_string: null });
+            } else {
+                this.setState({ error_string: 'Login failed! ', success_login: null });
+            }
+        } catch (error) {
+            console.error("An error occurred during login:", error);
+            // Optionally set an error message in the state
+            this.setState({ error_string: 'An error occurred during login.' });
         }
-    } 
+    }
+    
 
     render() {
         return (

@@ -9,6 +9,8 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
+import org.springframework.security.web.firewall.HttpFirewall;
+import org.springframework.security.web.firewall.StrictHttpFirewall;
 import xyz.yeems214.kyn.Service.userRestApiServiceImpl;
 import xyz.yeems214.kyn.Repository.UsersRepository;
 
@@ -27,11 +29,18 @@ public class SecurityConfig {
     }
 
     @Bean
+    public HttpFirewall allowUrlEncodedSlashHttpFirewall() {
+        StrictHttpFirewall firewall = new StrictHttpFirewall();
+        firewall.setAllowUrlEncodedDoubleSlash(true);
+        return firewall;
+    }
+
+    @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/","/test","/addUser", "/internalLogin", "/oldLogin" ,"/login","/webjars/**", "/error**")
+                .antMatchers("/","/test","/addUser", "/internalLogin", "/oldLogin" ,"/login","/webjars/**", "/error**", "/searchUser", "/allUsers")
                 .permitAll()
                 .anyRequest()
                 .authenticated()

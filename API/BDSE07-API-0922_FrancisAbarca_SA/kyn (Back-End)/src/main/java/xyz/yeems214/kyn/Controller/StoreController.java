@@ -19,31 +19,31 @@ public class StoreController {
         this.storeService = storeService;
     }
 
-    @GetMapping
+    @GetMapping("/getAllStore")
     public List<Store> getAllStores() {
         return storeService.getAllStores();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/getStore/{id}")
     public ResponseEntity<Store> getStoreById(@PathVariable Long id) {
         return storeService.getStoreById(id)
                 .map(store -> ResponseEntity.ok().body(store))
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    @PostMapping
+    @PostMapping("/addStore")
     public Store createStore(@RequestBody Store store) {
         return storeService.createStore(store);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/updateStore/{id}")
     public ResponseEntity<Store> updateStore(@PathVariable Long id, @RequestBody Store store) {
         return storeService.updateStore(id, store)
                 .map(updatedStore -> ResponseEntity.ok().body(updatedStore))
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/deleteStore/{id}")
     public ResponseEntity<?> deleteStore(@PathVariable Long id) {
         return storeService.deleteStore(id)
                 ? ResponseEntity.ok().build()

@@ -22,26 +22,27 @@ class Register extends Component {
         });
     }
 
-    handleSubmit = (event) => {
+    handleSubmit = async (event) => {
         event.preventDefault();
         if (this.state.password !== this.state.confirmPassword) {
-            alert("Password and confirm password do not match");
+            alert("Passwords do not match!");
             return;
         }
         
-        console.log(this.state); 
-    
-        const { confirmPassword, ...formData } = this.state;
-        
-        axios.post('addUser', formData)
-        .then(res => {
-            console.log(res.data);
-            alert("User registered successfully");
-        })
-        .catch(error => {
-            console.error(error);
-            alert("Failed to register user!");
-        });
+        const { confirmPassword, ...userData } = this.state;
+
+        try {
+            const response = await axios.post('http://localhost:8546/addUser', userData);
+            if (response.status === 200) {
+                alert('User registered successfully!');
+            } else {
+                console.error('Failed to register user, response status:', response.status);
+                alert('Failed to register user. Please try again.');
+            }
+        } catch (error) {
+            console.error('An error occurred while registering the user:', error);
+            alert('An error occurred while registering. Please try again.');
+        }
     }
     
     render() {
