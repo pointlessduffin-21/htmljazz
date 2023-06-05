@@ -6,6 +6,7 @@ import Terms from './Terms';
 import About from './About';
 import Contact from './Contact';
 import Search from './Search';
+import StoreManager from './StoreManager';
 import { Navbar, Nav, Container, Button, Form, FormControl } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
@@ -29,6 +30,7 @@ class Header extends Component {
                         <><Navbar.Toggle aria-controls="basic-navbar-nav" /><Navbar.Collapse id="basic-navbar-nav">
                                 <Nav className="mr-auto">
                                     <Nav.Link as={Link} to="/">Home</Nav.Link>
+                                    {/* <Nav.Link as={Link} to="/storemanager">Store Manager</Nav.Link> */}
                                     <Nav.Link as={Link} to="/login" onClick={logout}>Logout</Nav.Link>
                                     <Nav.Link as={Link} to="/Terms">Terms and Conditions</Nav.Link>
                                     <Nav.Link as={Link} to="/contact">Contact Us</Nav.Link>

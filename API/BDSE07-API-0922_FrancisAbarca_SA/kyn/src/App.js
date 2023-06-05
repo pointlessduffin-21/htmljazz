@@ -8,6 +8,7 @@ import Terms from './Components/Terms';
 import About from './Components/About';
 import Contact from './Components/Contact';
 import Search from './Components/Search';
+import StoreManager from './Components/StoreManager';
 import axios from 'axios';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import logo from './logo.svg';
@@ -49,6 +50,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Home />} component={Home}/>
           <Route path="/about" element={<About />} />
+          {/* <Route path="/storemanager" element={<StoreManager />} /> */}
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login login={login} loggedIn={loggedIn} setLoggedIn={setLoggedIn} component={Login}/>} />
           <Route path="/search" element={<Search />} />

@@ -9,11 +9,14 @@ class StoreManager extends Component {
     }
 
     componentDidMount() {
-        fetch('/allStores')
+        fetch('http://localhost:8546/getAllStores')
             .then(response => response.json())
-            .then(data => this.setState({ stores: data }));
+            .then(data => {
+                console.log(data);
+                this.setState({ stores: data })
+            });
     }
-
+    
     render() {
         return (
             <main className="page contact-us-page">
