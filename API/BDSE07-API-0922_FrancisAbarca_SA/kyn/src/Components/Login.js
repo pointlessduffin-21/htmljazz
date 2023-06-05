@@ -34,7 +34,16 @@ class Login extends Component {
     handleSubmit = async (event) => {
         event.preventDefault();
         
-        const loginResponse = await fetch(`/login?userName=${encodeURIComponent(this.state.username)}&password=${encodeURIComponent(this.state.password)}`);
+        const loginResponse = await fetch(`/internalLogin`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                userName: this.state.username,
+                password: this.state.password,
+            }),
+        });
         const loginData = await loginResponse.text();
             
         if (loginData === 'Login success!') {
@@ -51,7 +60,7 @@ class Login extends Component {
         } else {
             this.setState({ error_string: 'Login failed! ', success_login: null });
         }
-    } 
+    }
 
     render() {
         return (
