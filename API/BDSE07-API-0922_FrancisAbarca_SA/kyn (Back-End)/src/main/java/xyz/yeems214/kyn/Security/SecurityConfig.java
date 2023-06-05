@@ -28,6 +28,7 @@ public class SecurityConfig {
         this.userRepository = userRepository;
     }
 
+
     @Bean
     public HttpFirewall allowUrlEncodedSlashHttpFirewall() {
         StrictHttpFirewall firewall = new StrictHttpFirewall();
@@ -40,7 +41,7 @@ public class SecurityConfig {
         http
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/","/test","/addUser", "/internalLogin", "/oldLogin" ,"/login","/webjars/**", "/error**", "/searchUser", "/allUsers")
+                .antMatchers("/","/test","/addUser", "/internalLogin", "/oldLogin" ,"/login","/webjars/**", "/error**", "/searchUser", "/allUsers", "/index")
                 .permitAll()
                 .anyRequest()
                 .authenticated()

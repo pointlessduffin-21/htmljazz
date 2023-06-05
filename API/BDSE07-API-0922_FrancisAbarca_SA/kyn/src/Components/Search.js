@@ -18,7 +18,7 @@ class Search extends Component {
     handleSubmit = async (event) => {
         event.preventDefault();
 
-        const response = await fetch(`/searchUser?key=${encodeURIComponent(this.state.searchTerm)}`);
+        const response = await fetch(`http://localhost:8546/searchUser?key=${encodeURIComponent(this.state.searchTerm)}`);
         const data = await response.json();
         
         this.setState({ searchResults: data });
