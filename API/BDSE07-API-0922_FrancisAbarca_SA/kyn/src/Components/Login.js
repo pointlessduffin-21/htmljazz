@@ -34,27 +34,6 @@ class Login extends Component {
 
     handleSubmit = async (event) => {
         event.preventDefault();
-<<<<<<< HEAD
-=======
-        
-        const loginResponse = await fetch(`/internalLogin`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                userName: this.state.username,
-                password: this.state.password,
-            }),
-        });
-        const loginData = await loginResponse.text();
-            
-        if (loginData === 'Login success!') {
-            this.setState({ success_login: 'Successfully logged in! ', error_string: null });
-        } else {
-            this.setState({ error_string: 'Login failed! ', success_login: null });
-        }
->>>>>>> ae4d7d62d452f92c86a7d8c6039b20afd4fa5ccc
     
         try {
             const loginResponse = await axios.get(`http://localhost:8546/oldLogin?userName=${encodeURIComponent(this.state.username)}&password=${encodeURIComponent(this.state.password)}`);
@@ -71,10 +50,7 @@ class Login extends Component {
             this.setState({ error_string: 'An error occurred during login.' });
         }
     }
-<<<<<<< HEAD
     
-=======
->>>>>>> ae4d7d62d452f92c86a7d8c6039b20afd4fa5ccc
 
     render() {
         return (
