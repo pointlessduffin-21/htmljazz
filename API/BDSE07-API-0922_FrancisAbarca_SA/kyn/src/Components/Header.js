@@ -11,6 +11,7 @@ import { Link } from 'react-router-dom';
 
 class Header extends Component {
     render() {
+        const { logout, success } = this.props;
         return (
             <>
                 <Navbar bg="light" expand="lg" fixed="top" className="deez navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
@@ -24,19 +25,31 @@ class Header extends Component {
                                 className="d-inline-block align-top"
                             />
                         </Navbar.Brand>
-                        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                        <Navbar.Collapse id="basic-navbar-nav">
-                            <Nav className="mr-auto">
-                                <Nav.Link as={Link} to="/">Home</Nav.Link>
-                                <Nav.Link as={Link} to="/login">Login</Nav.Link>
-                                <Nav.Link as={Link} to="/register">Register</Nav.Link>
-                                <Nav.Link as={Link} to="/Terms">Terms and Conditions</Nav.Link>
-                                <Nav.Link as={Link} to="/contact">Contact Us</Nav.Link>
-                                <Nav.Link as={Link} to="/about">About Us</Nav.Link>
-                                <Nav.Link as={Link} to="/search">Search</Nav.Link>
-                            </Nav>
-                        </Navbar.Collapse>
-                    </Container>
+                        {success ? (
+                        <><Navbar.Toggle aria-controls="basic-navbar-nav" /><Navbar.Collapse id="basic-navbar-nav">
+                                <Nav className="mr-auto">
+                                    <Nav.Link as={Link} to="/">Home</Nav.Link>
+                                    <Nav.Link as={Link} to="/login" onClick={logout}>Logout</Nav.Link>
+                                    <Nav.Link as={Link} to="/Terms">Terms and Conditions</Nav.Link>
+                                    <Nav.Link as={Link} to="/contact">Contact Us</Nav.Link>
+                                    <Nav.Link as={Link} to="/about">About Us</Nav.Link>
+                                    <Nav.Link as={Link} to="/search">Search</Nav.Link>
+                                </Nav>
+                            </Navbar.Collapse></>
+                        ) : (
+                            <><Navbar.Toggle aria-controls="basic-navbar-nav" /><Navbar.Collapse id="basic-navbar-nav">
+                                    <Nav className="mr-auto">
+                                        <Nav.Link as={Link} to="/">Home</Nav.Link>
+                                        <Nav.Link as={Link} to="/login">Login</Nav.Link>
+                                        <Nav.Link as={Link} to="/register">Register</Nav.Link>
+                                        <Nav.Link as={Link} to="/Terms">Terms and Conditions</Nav.Link>
+                                        <Nav.Link as={Link} to="/contact">Contact Us</Nav.Link>
+                                        <Nav.Link as={Link} to="/about">About Us</Nav.Link>
+                                        <Nav.Link as={Link} to="/search">Search</Nav.Link>
+                                    </Nav>
+                                </Navbar.Collapse></> 
+                        ) }
+                        </Container>
                 </Navbar>
 
                 <br />

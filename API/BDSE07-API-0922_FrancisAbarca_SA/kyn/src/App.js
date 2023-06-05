@@ -15,49 +15,42 @@ import './App.css';
 
 function App() {
 
-  const [success, setSuccess] = useState(
-    JSON.parse(localStorage.getItem('success')) || false
-  );
+  const [success, setSuccess] = useState(JSON.parse(localStorage.getItem('success')) || false);
+  const [loggedIn, setLoggedIn] = useState(false);
 
-  // const navigate = useNavigate();
-
-
-  const handleLogout = () => {
+  const logout = () => {
     setSuccess(false);
+    setLoggedIn(false);
     localStorage.removeItem('success');
     window.location.reload();
   };
 
-  const handleSubmit = async (username, password) => {
-    // event.preventDefault();
-
+  const login = async (userName, password) => {
     try {
-      const response = await axios.post('http://localhost:8546/internalLogin', { username, password });
+      const response = await axios.post('http://localhost:8546/internalLogin', { userName, password });
 
       if (response.data === 'Login success!') {
-        this.setState({ success_login: 'Successfully logged in! ', error_string: null });
-        // navigate('/home');
+        console.log('Login successful');
         setSuccess(true);
+        setLoggedIn(true);
         localStorage.setItem('success', JSON.stringify(true));
       } else {
-        this.setState({ error_string: 'Login failed! ', success_login: null });
+        console.log('Login failed');
       }
     } catch (error) {
-      console.error("An error occurred during login:", error);
-      this.setState({ error_string: 'An error occurred during login.' });
+      console.log('Login failed:', error);
     }
-    
   };
 
   return (
     <Router>
       <div className="App">
-        <Header />
+      <Header success={success} logout={logout} />
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<Login login={login} loggedIn={loggedIn} setLoggedIn={setLoggedIn} />} />
           <Route path="/search" element={<Search />} />
           <Route path="/register" element={<Register />} />
           <Route path="/Terms" element={<Terms />} />
