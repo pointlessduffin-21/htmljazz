@@ -45,7 +45,6 @@ class Header extends Component {
                                         <Nav.Link as={Link} to="/Terms">Terms and Conditions</Nav.Link>
                                         <Nav.Link as={Link} to="/contact">Contact Us</Nav.Link>
                                         <Nav.Link as={Link} to="/about">About Us</Nav.Link>
-                                        <Nav.Link as={Link} to="/search">Search</Nav.Link>
                                     </Nav>
                                 </Navbar.Collapse></> 
                         ) }

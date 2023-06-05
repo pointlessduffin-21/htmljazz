@@ -95,6 +95,8 @@ const Login = ({ login, loggedIn, setLoggedIn }) => {  // receive onLogin as a p
     
             if (loginData === 'Login success!') {
                 handleLogin(state.username, state.password);
+                localStorage.setItem('success', JSON.stringify(success));
+                localStorage.setItem('name', JSON.stringify(name));
                 setState({ ...state, success_login: 'Successfully logged in as ${state.username}! ', error_string: null , success_login: true});
                 login(state.username, state.password); // Use the login function passed in props
                 setLoggedIn(true);  // Set loggedIn to true when a user successfully logs in
@@ -193,23 +195,9 @@ const Login = ({ login, loggedIn, setLoggedIn }) => {  // receive onLogin as a p
                                     <Link to="/Register" className="btn btn-primary">Register</Link>
                                     <p>   </p>
                                     <div className="flex-row">
-                                        <button className="btn google 3rdpartyauth" onClick={redirectToGoogleLogin}>
-                                            <svg xmlSpace="preserve" style={{ enableBackground: "new 0 0 512 512" }} viewBox="0 0 512 512" y="0px" x="0px" xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" id="Layer_1" width="20" version="1.1">
-                                                {/* svg code */}
-                                            </svg>
-                                            Google
-                                        </button>
-                                        <button className="btn fb" onClick={redirectToFBLogin}>
-                                            <svg className="" xmlSpace="preserve" style={{enableBackground: "new 0 0 512 512"}} viewBox="0 0 408.788 408.788" y="0" x="0" width="20" xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
-                                                {/* svg code */}
-                                            </svg>
+                                        <button className="btn btn-primary " onClick={redirectToFBLogin}>
+                                            <i className="bi bi-facebook"></i> Login with
                                             Facebook
-                                        </button>
-                                        <button className="btn github" onClick={redirectToGitHubLogin}>
-                                            <svg className="" xmlSpace="preserve" style={{enableBackground: "new 0 0 512 512"}} viewBox="0 0 408.788 408.788" y="0" x="0" width="20" xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
-                                                {/* svg code */}
-                                            </svg>
-                                            GitHub
                                         </button>
                                     </div>
                                 </form>

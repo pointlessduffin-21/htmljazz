@@ -12,8 +12,7 @@ const Home = () => {
                     <div className="text">
                         <h2>Know Your Neighborhood</h2>
                         <p>Unearth the Charm, Discover Your Neighborhood!</p>
-                        <p className="userName-print">Welcome back! {username}</p>
-                        <button className="btn btn-outline-light btn-lg" type="button">Learn More</button>
+                        <button className="btn btn-outline-light btn-lg" type="button" href="#perks">Learn More</button>
                     </div>
                 </section>
                 <section className="clean-block clean-info dark">
@@ -24,7 +23,7 @@ const Home = () => {
                         </div>
                     </div>
                 </section>
-                <section class="clean-block features">
+                <section id="#perks" class="clean-block features">
                     <div class="container">
                         <div class="block-heading">
                             <h2 class="text-info">Our Perks</h2>
