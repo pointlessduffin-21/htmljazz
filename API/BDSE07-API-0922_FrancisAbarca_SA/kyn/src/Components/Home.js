@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import Login from './Login';
+import About from './About';
 
 const Home = () => {
     const location = useLocation();
@@ -12,7 +13,7 @@ const Home = () => {
                     <div className="text">
                         <h2>Know Your Neighborhood</h2>
                         <p>Unearth the Charm, Discover Your Neighborhood!</p>
-                        <button className="btn btn-outline-light btn-lg" type="button" href="#perks">Learn More</button>
+                        <button className="btn btn-outline-light btn-lg" type="button" href="http://localhost:3000/about">Learn More</button>
                     </div>
                 </section>
                 <section className="clean-block clean-info dark">
