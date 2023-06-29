@@ -1,0 +1,433 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+.banner {
+    background-image: url("../img/team.png");
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    background-position: center 0px;
+    background-color: white;
+    margin-top: 60px;
+    height: 400px;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    overflow-wrap: nowrap;
+    display: block;
+}
+
+.banner-image {
+    background-image: url("../img/team.png");
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    background-position: center 0px;
+    background-color: white;
+    margin-top: 60px;
+    height: 400px;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    overflow-wrap: nowrap;
+    display: block;
+}
+
+.banner-text {
+    font-size: 35px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    position: relative;
+    top: 165px;
+    color: black;;
+}
+
+.vision-image {
+    background-color: rgb(55, 198, 255, 0.6);
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    background-position: center 0px;
+    height: 400px;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    overflow-wrap: nowrap;
+    display: block;
+}
+
+.mission-image {
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    background-position: center 0px;
+    background-color: rgba(46, 255, 84, 0.8);
+    height: 400px;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    overflow-wrap: nowrap;
+    display: block;
+}
+
+.history { /* PLEASE USE THIS FOR THE HOMEPAGE OR ELSE YOU WILL DIE*/
+}
+
+.history h1, .history p {
+    padding-left: 45%;
+    display: flex;  
+    flex-wrap: wrap;
+    position: relative;
+    left: -27px;
+    top: 129px;
+    margin-right: 37px;
+    margin-bottom: -70px;
+}
+
+.history h1 {
+    font-size: 50px;
+}
+
+.history p {
+    top: 219px;
+    font-size: 24px;
+}
+
+.history img { /* ENDS HERE */
+    margin-left: 80px;
+    border: 5px solid black;
+    box-shadow: 999px black;
+    display: flex;  
+    position: relative;
+    top: -49px;
+}
+
+.achievements { /* PLEASE USE THIS FOR THE HOMEPAGE OR ELSE YOU WILL DIE*/
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.achievements h1 {
+    top: 999px;
+    font-size: 55px;
+}
+
+.achieveaa {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.achieveaa h1, .achieveaa p {
+    padding-left: 43%;
+    display: flex;  
+    flex-wrap: wrap;
+    position: relative;
+    left: 5px;
+    top: 99px;
+    margin-right: 37px;
+    margin-bottom: -70px;
+}
+
+.achieveaa h1 {
+    font-size: 50px;
+}
+
+.achieveaa p {
+    top: 199px;
+    font-size: 24px;
+}
+
+.achieveaa img { /* ENDS HERE */
+    margin-left: 80px;
+    border: 5px solid black;
+    box-shadow: 999px black;
+    display: flex;  
+    position: relative;
+    top: -79px;
+}
+
+.achievebb {
+    background-color: rgba(0, 0, 0, 0.2);
+    margin-bottom: -129px;
+}
+
+.achievebb h1, .achievebb p {
+    padding-left: 43%;
+    display: flex;  
+    flex-wrap: wrap;
+    position: relative;
+    left: 5px;
+    top: 99px;
+    margin-right: 37px;
+    margin-bottom: -70px;
+}
+
+.achievebb h1 {
+    font-size: 50px;
+}
+
+.achievebb p {
+    top: 199px;
+    font-size: 24px;
+}
+
+.achievebb img { /* ENDS HERE */
+    margin-left: 80px;
+    border: 5px solid black;
+    box-shadow: 999px black;
+    display: flex;  
+    position: relative;
+    top: -79px;
+}
+
+.gallery {
+    background-color: rgba(255, 255, 255, 0);
+    text-align: center;
+    font-size: 23px;
+    margin-top: 159px;
+}
+
+.gallery2 img {
+    margin-top: 35px;
+    display: block;
+    float: right;
+    margin-right: 110px;
+    width: 25%;
+    text-align: center;
+    border: 10px solid rgb(112, 112, 112);
+    max-width: 100%;
+    box-shadow: 0px 0px 5px black;
+}
+
+.founder {
+    background-color: #7ba4c5;
+    margin-top: 1159px;
+    height: 548px;
+}
+
+.founder h1, .founder p {
+    padding-left: 43%;
+    display: flex;  
+    flex-wrap: wrap;
+    position: relative;
+    left: -111px;
+    top: 129px;
+    margin-right: 37px;
+    margin-bottom: -70px;
+}
+
+.founder h1 {
+    font-size: 50px;
+}
+
+.founder p {
+    top: 219px;
+    font-size: 23px;
+}
+
+.founder img { /* ENDS HERE */
+    margin-left: 80px;
+    border: 5px solid black;
+    box-shadow: 999px black;
+    display: flex;  
+    position: relative;
+    top: -49px;
+    left: 110px;
+}
+
+.staff {
+    text-align: center;
+}
+
+.html, .net, .office, .java {
+    display: block;
+    float: right;
+    margin-right: 110px;
+    padding: 15px;
+    max-width: fit-content;
+    width: 19%;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 120px;
+}
+
+.java {
+    padding: 18px;
+}
+
+.java img {
+    width: 305px;
+}
+
+.java h1 {
+    position: relative;
+    top: 9px;
+}
+
+.java p {
+    position: relative;
+    top: 18px;
+}
+
+.java a {
+    position: relative;
+    top: 45px;
+    color: white;
+    border: 3px solid black;
+    background-color: rgb(102,102,102);
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.java a:hover {
+    color: black;
+    border: 3px solid black;
+    background-color: rgb(255, 255, 255);
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.net {
+    border: 10pt;
+    padding: 18px;
+
+}
+
+.net img {
+    width: 320px;
+}
+
+.net h1 {
+    position: relative;
+    top: 9px;
+}
+
+.net p {
+    position: relative;
+    top: 18px;
+}
+
+.net a {
+    position: relative;
+    top: 45px;
+    color: white;
+    border: 3px solid black;
+    background-color: rgb(102,102,102);
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.net a:hover {
+    color: black;
+    border: 3px solid black;
+    background-color: rgb(255, 255, 255);
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.office {
+    margin-left: 19px;
+    border: 10pt;
+    padding: 18px;
+}
+
+.office img {
+    width: 280px;
+}
+
+.office h1 {
+    position: relative;
+    top: 9px;
+}
+
+.office p {
+    position: relative;
+    top: 18px;
+}
+
+.office a {
+    position: relative;
+    top: 45px;
+    color: white;
+    border: 3px solid black;
+    background-color: rgb(102,102,102);
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.office a:hover {
+    color: black;
+    border: 3px solid black;
+    background-color: rgb(255, 255, 255);
+    padding-left: 25px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.html {
+    margin-left: 10px;
+    border: 10pt;
+    padding: 18px;
+}
+
+.html img {
+    width: 320px;
+}
+
+.html h1 {
+    position: relative;
+    top: 9px;
+}
+
+.html p {
+    position: relative;
+    top: 18px;
+}
+
+.html a {
+    position: relative;
+    top: 45px;
+    color: white;
+    border: 3px solid black;
+    background-color: rgb(102,102,102);
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.html a:hover {
+    color: black;
+    border: 3px solid black;
+    background-color: rgb(255, 255, 255);
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+}

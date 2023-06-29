@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "admin"
+AuthUserFile C:\VirtualHosts\bdse09221131\.htpasswd
+Require valid-user

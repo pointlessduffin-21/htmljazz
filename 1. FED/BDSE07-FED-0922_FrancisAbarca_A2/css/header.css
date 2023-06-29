@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+.header{ /*Selextor*/
+    background: black;  /* Declaration */
+    color: #f1f1f1;
+    position: fixed;
+    top: 0;
+    visibility: show; /* Visibility = Property, Show is Value  */
+    width: 100%;
+    height: 60px;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: all ease .5s;
+    box-shadow: 0px 0px 5px black;
+    text-decoration: none;
+    overflow: hidden;
+    z-index: 999; 
+}
+
+.header img {
+    visibility: show;
+    height: 60px;
+    float: left;
+}
+
+.header b {
+    font-family: Arial, Helvetica, sans-serif;
+    color:white;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 6px 7px;
+    margin-top: 14px;
+    float: left;
+    font-size: 25pt;
+}
+
+.header a {
+    font-family: sans-serif;
+    color:white;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 6px 11px;
+    margin-top: 14px;
+    float: right;
+    font-size: 15pt;
+    margin-right: 15px;
+}
+
+.header a:hover {
+    font-family: sans-serif;
+    color:white;
+    font-weight: bold;
+    text-decoration: underline white 3px;
+    padding: 6px 7px;
+    margin-top: 14px;
+    transition: all ease .5s;
+}

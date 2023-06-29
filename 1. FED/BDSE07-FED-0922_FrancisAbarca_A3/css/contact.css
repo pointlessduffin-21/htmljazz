@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+.banner {
+    background-image: url("../img/contact3.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    background-position: center 0px;
+    background-color: white;
+    margin-top: 0px;
+    height: 500px;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    overflow-wrap: nowrap;
+    display: block;
+}
+
+.banner-text {
+    font-size: 35px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    position: relative;
+    top: 200px;
+    color: black;;
+    animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.ticket {
+    margin-top: 40px;
+    display: inline-block;
+    white-space: nowrap;
+    margin-left: 180px;
+    padding: 20px;
+    animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    } 
+}
+
+.ticket p {
+    margin-top: 15px;
+}
+
+button {
+    margin-left: 513px;
+    margin-top: 15px;
+    height: 35px;
+    width: 90px;
+}
+
+.otherinfo {
+    margin-top: 40px;
+    float: right;
+    display: inline-block;
+    word-wrap: break-word;
+    overflow: bottom;
+    margin-right: 300px;
+    size: 150px;
+}
+
+label {
+    margin-top: 300px;
+}
+
+input {
+    width: 209px;
+    padding: 12px;
+    margin-top: 8px;
+}
+
+textarea {
+    height: 300px;
+    width: 600px;
+    margin-top: 9px;
+}
+
+.otherinfo img {
+    max-width: 15%;
+    float: left;
+    padding: px 10px;
+    display: inherit;
+}
+
+.otherinfo {
+    padding: 15px;
+    animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    } 
+}
+
+.otherinfo a {
+    display: block;
+    margin-top: 19px;
+    margin-left: 59px;
+    height: 23px;
+    row-gap: 10px;
+    margin-bottom: 60px;
+    font-size: 27px;
+    padding-left: 30px;
+    padding-top: 18px;
+}
+
+.otherinfo email {
+    margin-top: 0px;
+    padding-top: 20px;
+}
+
+#logos {}
+
+.creds a {
+    display: grid;
+    height: 10px;
+    row-gap: 20px;
+    vertical-align: top;
+    margin-bottom: 60px;
+    float: right;
+}
+
+@media screen and (max-width: 600px) {
+    .column, input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+
+.reveal {
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: all 2s ease;
+}
+
+.reveal.active {
+    transform: translateY (0);
+    opacity: 1;
+}

@@ -1,0 +1,26 @@
+footer {
+    text-align: center;
+    margin-top: auto;
+    min-height: 190px;
+    background-color: rgb(255, 162, 41);
+    position: static;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    bottom: 100px;
+    left: 0;
+}
+
+.footer-text {
+    top: 50px;
+    text-align: center;
+    position: relative;
+    text-decoration: none;
+}
+
+.footer-text a {
+    margin-top: 12px;
+    color: black;
+    text-decoration: none;
+}

@@ -1,0 +1,4 @@
+AuthType Admin
+AuthName "Enter Admin Name"
+AuthUserFile C:/Apache24/htdocs/text2/.htpasswd
+Require valid-user

@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+.banner { 
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    background-position: center 0px;
+    background-color: white;
+    margin-top: 0px;
+    height: 400px;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    overflow-wrap: nowrap;
+    display: block;
+}
+
+.banner-image {
+    background-image: url("../../img/htmldesign2.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    background-position: center 0px;
+    background-color: white;
+    margin-top: 0px;
+    height: 460px;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    overflow-wrap: nowrap;
+    display: block;
+}
+
+.banner-text {
+    font-size: 35px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    position: relative;
+    top: 175px;
+    color: rgb(203, 203, 203);;
+    animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.navigation {
+    float: right;
+    padding-right: 37%;
+    animation: fadeIn 2s;
+}
+
+.navigation a {
+    text-decoration: none;
+    position: relative;
+    top: 95px;
+    color: white;
+    border: 3px solid black;
+    background-color: rgb(102,102,102);
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    z-index: 999;
+}
+
+.navigation a:hover {
+    color: black;
+    border: 3px solid black;
+    background-color: rgb(255, 255, 255);
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+}
+
+table, th, td {
+    border:1px solid black;
+    margin-left: 38px;
+    width: 35%;
+  }
+
+.reveal {
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: all 2s ease;
+}
+
+.reveal.active {
+    transform: translateY(0);
+    opacity: 1;
+}

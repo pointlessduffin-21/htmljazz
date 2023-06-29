@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+.banner {
+    background-image: url("../img/blur.png");
+    background-size: auto;
+    background-attachment: auto;
+    position: relative;
+    background-position: center 0px;
+    background-color: white;   
+    max-width: 100%;
+    margin-top: 0px;
+    height: 500px;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    overflow-wrap: nowrap;
+    display: block;
+}
+
+.banner-text {
+    font-size: 35px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    position: relative;
+    top: 230px;
+    color: black;;
+    animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.policy, .cookies, .log {
+    float: right;
+    margin-top: 30px;
+    margin-left: 2%;
+    margin-right: 1.7%
+    animation: fadeIn 2s;
+}
+
+.policy p, .cookies p, .log p {
+    margin-top: 15px;
+    animation: fadeIn 2s;
+}
