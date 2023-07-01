@@ -1,0 +1,57 @@
+
+
+.white-container {
+    background-color:grey;
+    padding: 20px;
+    border-radius: 5px;
+    /* box-shadow: 1px 1px 1px 1px; */
+}
+
+.light-container {
+    background-color: antiquewhite;
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.yellow-container {
+    background-color: #DDDD5B;
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.blue-container {
+    background-color: #16B0F7;
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.icon {
+    width: 100%;
+    height: auto;
+}
+
+.row-flex{
+    display: flex;
+    align-items: center; /* Centers items vertically */
+  }
+  
+.text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers items horizontally */
+    height: 100%; /* Ensures the container takes up the full height of the parent div */
+}
+
+.small-font {
+    font-size: 14px;
+}
+
+.smaller-font {
+    font-size: 10px;
+}
