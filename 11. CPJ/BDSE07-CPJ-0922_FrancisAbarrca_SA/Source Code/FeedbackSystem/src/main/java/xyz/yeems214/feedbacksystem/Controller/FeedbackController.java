@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.*;
 import xyz.yeems214.feedbacksystem.Entity.Feedback;
 import xyz.yeems214.feedbacksystem.Repository.FeedbackRepository;
 
+import java.time.LocalDateTime;
+
 
 @RestController
 @RequestMapping("/api/feedback")
@@ -20,6 +22,7 @@ public class FeedbackController {
 
     @PostMapping("/add")
     public Feedback addFeedback(@RequestBody Feedback feedback) {
+        feedback.setIssue_timestamp(LocalDateTime.now());
         return feedbackRepository.save(feedback);
     }
 }
