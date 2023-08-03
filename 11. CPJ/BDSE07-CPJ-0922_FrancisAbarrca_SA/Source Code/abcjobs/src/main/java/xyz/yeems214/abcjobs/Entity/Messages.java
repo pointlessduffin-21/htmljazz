@@ -4,6 +4,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 public class Messages {
     @Id
@@ -65,5 +66,31 @@ public class Messages {
         this.message_dateTime = message_dateTime;
     }
 
+    @Override
+    public String toString() {
+        return "Messages{" +
+                "id=" + id +
+                ", sender='" + sender + '\'' +
+                ", recipient='" + recipient + '\'' +
+                ", content='" + content + '\'' +
+                ", message_dateTime=" + message_dateTime +
+                '}';
+    }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Messages)) return false;
+        Messages messages = (Messages) o;
+        return getId().equals(messages.getId()) &&
+                getSender().equals(messages.getSender()) &&
+                getRecipient().equals(messages.getRecipient()) &&
+                getContent().equals(messages.getContent()) &&
+                getMessage_dateTime().equals(messages.getMessage_dateTime());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId(), getSender(), getRecipient(), getContent(), getMessage_dateTime());
+    }
 }
