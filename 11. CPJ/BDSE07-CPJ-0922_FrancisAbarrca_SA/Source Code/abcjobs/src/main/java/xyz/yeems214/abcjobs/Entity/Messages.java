@@ -1,11 +1,13 @@
 package xyz.yeems214.abcjobs.Entity;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
+@Entity
 public class Messages {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -15,15 +17,17 @@ public class Messages {
     private String recipient;
     private String content;
     private LocalDateTime message_dateTime;
+    private boolean isRead;
 
     public Messages() {
     }
 
-    public Messages(String sender, String recipient, String content, LocalDateTime message_dateTime) {
+    public Messages(String sender, String recipient, String content, LocalDateTime message_dateTime, boolean isRead) {
         this.sender = sender;
         this.recipient = recipient;
         this.content = content;
         this.message_dateTime = message_dateTime;
+        this.isRead = isRead;
     }
 
     public Long getId() {
@@ -46,6 +50,9 @@ public class Messages {
         return message_dateTime;
     }
 
+    public boolean isRead() {
+        return isRead;
+    }
     public void setId(Long id) {
         this.id = id;
     }
@@ -66,6 +73,9 @@ public class Messages {
         this.message_dateTime = message_dateTime;
     }
 
+    public void setRead(boolean read) {
+        isRead = read;
+    }
     @Override
     public String toString() {
         return "Messages{" +

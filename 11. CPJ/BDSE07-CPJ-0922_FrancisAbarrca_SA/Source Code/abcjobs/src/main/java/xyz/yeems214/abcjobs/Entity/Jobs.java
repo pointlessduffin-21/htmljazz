@@ -22,6 +22,7 @@ public class Jobs {
     private int job_range;
     private String job_status;
 
+
     public Jobs() {
     }
 
