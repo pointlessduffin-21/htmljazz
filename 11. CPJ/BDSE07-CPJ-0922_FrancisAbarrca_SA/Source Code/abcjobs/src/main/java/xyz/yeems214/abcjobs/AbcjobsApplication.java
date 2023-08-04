@@ -21,7 +21,7 @@ public class AbcjobsApplication {
         mailSender.setHost("smtp.mail.me.com");
         mailSender.setPort(587);
         mailSender.setUsername("abcjobs@yeems214.xyz");
-        mailSender.setPassword("cdeq-cxjj-gkru-wasd");
+        mailSender.setPassword("");
 
         Properties props = mailSender.getJavaMailProperties();
         props.put("mail.transport.protocol", "smtp");
