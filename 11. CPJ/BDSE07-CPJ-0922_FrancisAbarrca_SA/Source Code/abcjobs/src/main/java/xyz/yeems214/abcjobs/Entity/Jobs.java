@@ -1,10 +1,10 @@
 package xyz.yeems214.abcjobs.Entity;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Entity;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
+import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 public class Jobs {
@@ -22,6 +22,9 @@ public class Jobs {
     private int job_range;
     private String job_status;
 
+    @OneToMany(mappedBy = "job")
+    @JsonManagedReference
+    private List<JobApplicant> applicants;
 
     public Jobs() {
     }
@@ -78,6 +81,10 @@ public class Jobs {
         return job_status;
     }
 
+    public List<JobApplicant> getApplicants() {
+        return applicants;
+    }
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -118,6 +125,10 @@ public class Jobs {
         this.job_status = job_status;
     }
 
+    public void setApplicants(List<JobApplicant> applicants) {
+        this.applicants = applicants;
+    }
+
     @Override
     public String toString() {
         return "Jobs{" +
@@ -131,6 +142,7 @@ public class Jobs {
                 ", job_creation=" + job_creation +
                 ", job_range=" + job_range +
                 ", job_status='" + job_status + '\'' +
+                ", applicants=" + applicants +
                 '}';
     }
 }

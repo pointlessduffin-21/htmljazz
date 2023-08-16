@@ -1,22 +1,21 @@
 package xyz.yeems214.abcjobs.Entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 public class Thread {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-
     private Long id;
     private String creator;
     private String thread_title;
     private String thread_content;
     private int thread_likes;
     private LocalDateTime thread_dateTime;
+    @OneToMany
+    private List<Comment> comments;
 
     public Thread() {
     }
@@ -51,6 +50,10 @@ public class Thread {
 
     public LocalDateTime getThread_dateTime() {
         return thread_dateTime;
+    }
+
+    public List<Comment> getComments() {
+        return comments;
     }
 
     public void setId(Long id) {
