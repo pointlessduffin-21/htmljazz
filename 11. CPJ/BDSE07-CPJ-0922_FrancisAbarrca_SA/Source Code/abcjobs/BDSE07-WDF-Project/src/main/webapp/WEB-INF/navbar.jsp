@@ -67,12 +67,14 @@
                     ? "text-danger" : "text-white" %>" href="/abcjobs/profile" style="margin-left: -21px; margin-top:-21px;">Profile</a>
                 </li>
                 <% } %>
-            <% if((Boolean) session.getAttribute("isLogin") != null) { %>
-              <li class="nav-item">
-                <a class="nav-link fw-semibold <%= request.getServletPath().equals("/WEB-INF/views/administrator/index.jsp") 
-                ? "text-primary border-bottom border-3 border-primary" : request.getServletPath().equals("/WEB-INF/views/index.jsp") ? "text-white" : "text-dark border-bottom border-3  border-white" %>" href="<%= request.getContextPath() %>/admin">Admin</a>
-              </li>
-              <% } %>    
+           <% if((Boolean) session.getAttribute("isLogin") != null && ((String) session.getAttribute("roleId")).equals("1")) { %>
+   				 <li class="nav-item">
+        			<a class="nav-link <%= request.getServletPath().equals("/WEB-INF/views/administrator/index.jsp") 
+       				 ? "text-primary border-bottom border-3 border-primary" : "text-white" %>" href="<%= request.getContextPath() %>/admin" style="margin-left: -12px; margin-top:-21px;">Admin</a>
+    			</li>
+			<% } %>
+
+ 
                     
             <% if((Boolean) session.getAttribute("isLogin") != null) { %>
               <a href="logout" class="btn btn-danger">Logout</a>
