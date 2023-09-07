@@ -13,26 +13,27 @@ class Header extends Component {
         return (
             <>
                 <Navbar bg="light" expand="lg" fixed="top" className="deez navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
-                    <Container>
-                        <Navbar.Brand href="/">
-                            <img 
-                                alt="Know Your Neighborhood"
-                                src="https://cdn.discordapp.com/attachments/1077803645975928853/1113025138716315738/OIG.ZNbN1.png"
-                                width="30"
-                                height="auto"
-                                className="d-inline-block align-top"
-                            />
-                        </Navbar.Brand>
-                            <><Navbar.Toggle aria-controls="basic-navbar-nav" /><Navbar.Collapse id="basic-navbar-nav">
-                                    <Nav className="mr-auto">
-                                        <Nav.Link as={Link} to="/">Home</Nav.Link>
-                                        <Nav.Link as={Link} to="/Login">Login</Nav.Link>
-                                        <Nav.Link as={Link} to="/Register">Register</Nav.Link>
-                                        <Nav.Link as={Link} to="/Chat">Chat</Nav.Link>
-                                    </Nav>
-                                </Navbar.Collapse></> 
-                        </Container>
-                </Navbar>
+    <Container>
+        <Navbar.Brand href="/">
+            <img 
+                alt="Jumpstart"
+                src="https://gpupv.yeems214.xyz/R%20e%20p%20o%20s%20i%20t%20o%20r%20y/jumpstart/banner-logo.png"
+                width="125"
+                height="auto"
+                className="d-inline-block align-top"
+            />
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
+            <Nav>
+                <Nav.Link as={Link} to="/">Home</Nav.Link>
+                <Nav.Link as={Link} to="/Login">Login</Nav.Link>
+                <Nav.Link as={Link} to="/Register">Register</Nav.Link>
+                <Nav.Link as={Link} to="/Chat">Chat</Nav.Link>
+            </Nav>
+        </Navbar.Collapse>
+    </Container>
+</Navbar>
 
                 <br />
                 <br />
