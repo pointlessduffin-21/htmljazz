@@ -21,7 +21,7 @@ import java.util.List;
 import static org.aspectj.weaver.tools.cache.SimpleCacheFactory.path;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/store")
 public class StoreController {
     @Value("src/main/resources/images")
     private String uploadPath;
