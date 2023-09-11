@@ -22,28 +22,37 @@ class Register extends Component {
         });
     }
 
-    handleSubmit = async (event) => {
+    handleSubmit(event) {
         event.preventDefault();
+    
         if (this.state.password !== this.state.confirmPassword) {
-            alert("Passwords do not match!");
+            alert('Passwords do not match!');
             return;
         }
-        
-        const { confirmPassword, ...userData } = this.state;
-
-        try {
-            const response = await axios.post('http://localhost:8546/addUser', userData);
-            if (response.status === 200) {
-                alert('User registered successfully!');
-            } else {
-                console.error('Failed to register user, response status:', response.status);
-                alert('Failed to register user. Please try again.');
-            }
-        } catch (error) {
-            console.error('An error occurred while registering the user:', error);
-            alert('An error occurred while registering. Please try again.');
-        }
+    
+        const data = {
+            name: this.state.name,
+            username: this.state.username,
+            address: this.state.address,
+            phoneNumber: this.state.phoneNumber,
+            email: this.state.email,
+            password: this.state.password
+        };
+    
+        fetch('http://localhost:9583/api/user/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch((error) => {
+          console.error('Error:', error);
+        });
     }
+    
     
     render() {
         return (

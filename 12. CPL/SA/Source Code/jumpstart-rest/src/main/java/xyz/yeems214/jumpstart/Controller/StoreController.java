@@ -7,7 +7,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import xyz.yeems214.jumpstart.Entity.Category;
 import xyz.yeems214.jumpstart.Entity.Product;
+import xyz.yeems214.jumpstart.Repository.CategoryRepository;
 import xyz.yeems214.jumpstart.Repository.ProductRepository;
 
 import java.io.File;
@@ -29,8 +31,21 @@ public class StoreController {
     @Autowired
     private ProductRepository productRepository;
 
+    @Autowired
+    private CategoryRepository categoryRepository;
+
     @PostMapping("/add")
-    public ResponseEntity<Product> addProduct(@RequestBody Product product, @RequestParam("image") MultipartFile image) {
+    public ResponseEntity<Product> addProduct(@RequestParam("name") String name, @RequestParam("store") String store, @RequestParam("price") long price, @RequestParam("description") String description, @RequestParam("category_id") Long categoryId, @RequestParam("image") MultipartFile image) {
+        // Fetch the Category entity using the provided ID
+        Category category = categoryRepository.findById(categoryId).orElseThrow(() -> new RuntimeException("Category not found"));
+
+        Product product = new Product();
+        product.setName(name);
+        product.setStore(store);
+        product.setPrice(price);
+        product.setDescription(description);
+        product.setCategory(category);
+
         try {
             String fileName = StringUtils.cleanPath(image.getOriginalFilename());
             Path path = Paths.get(uploadPath + File.separator + fileName);
@@ -39,9 +54,11 @@ public class StoreController {
         } catch (IOException e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
+
         Product savedProduct = productRepository.save(product);
         return new ResponseEntity<>(savedProduct, HttpStatus.CREATED);
     }
+
 
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<Void> deleteProduct(@PathVariable Long id) {
