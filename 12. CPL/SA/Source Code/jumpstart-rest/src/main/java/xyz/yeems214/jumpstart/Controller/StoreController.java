@@ -34,6 +34,14 @@ public class StoreController {
     @Autowired
     private CategoryRepository categoryRepository;
 
+    @PostMapping("/add-category")
+    public ResponseEntity<Category> addCategory(@RequestParam("name") String name) {
+        Category category = new Category();
+        category.setName(name);
+        Category savedCategory = categoryRepository.save(category);
+        return new ResponseEntity<>(savedCategory, HttpStatus.CREATED);
+    }
+
     @PostMapping("/add")
     public ResponseEntity<Product> addProduct(@RequestParam("name") String name, @RequestParam("store") String store, @RequestParam("price") long price, @RequestParam("description") String description, @RequestParam("category_id") Long categoryId, @RequestParam("image") MultipartFile image) {
         // Fetch the Category entity using the provided ID

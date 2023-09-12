@@ -1,12 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './Components/Home';
-import Login from './Components/Login';
-import Register from './Components/Register';
-import Chat from './Components/Chat';
-import Product from './Components/Product';
-import Header from './Components/Header';
+import Home from './Components/home';
+import Login from './Components/login';
+import Register from './Components/register';
+import Chat from './Components/chat';
+import Product from './Components/product';
+import Header from './Components/header';
 
 
 function App() {
