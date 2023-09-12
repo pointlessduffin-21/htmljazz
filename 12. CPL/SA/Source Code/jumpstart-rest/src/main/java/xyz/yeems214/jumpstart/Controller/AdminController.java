@@ -1,12 +1,18 @@
 package xyz.yeems214.jumpstart.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import xyz.yeems214.jumpstart.Repository.BranchRepository;
-import xyz.yeems214.jumpstart.Repository.RoleRepository;
-import xyz.yeems214.jumpstart.Repository.StockRepository;
+import xyz.yeems214.jumpstart.Entity.*;
+import xyz.yeems214.jumpstart.Repository.*;
+
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 @RestController
 @RequestMapping("/admin")
@@ -15,24 +21,29 @@ public class AdminController {
     private BranchRepository branchRepository;
 
     @Autowired
-    private StockRepository stockRepository;
-
-    @Autowired
     private RoleRepository roleRepository;
 
-    @GetMapping("/all-branches")
-    public String getAllBranches() {
-        return branchRepository.findAll().toString();
-    }
+    @Autowired
+    private UserRepository userRepository;
 
-    @GetMapping("/all-stocks/{id}")
-    public String getAllStocksByBranchId(Long id) {
-        return stockRepository.findAll().toString();
+    @Autowired
+    private ProductRepository productRepository;
+
+    @GetMapping("/all-branches")
+    public ResponseEntity<List<Branch>> getAllBranches() {
+        List<Branch> branches = branchRepository.findAll();
+        return new ResponseEntity<>(branches, HttpStatus.OK);
     }
 
     @GetMapping("/all-roles")
-    public String getAllRoles() {
-        return roleRepository.findAll().toString();
+    public ResponseEntity<List<Role>> getAllRoles() {
+        List<Role> roles = roleRepository.findAll();
+        return new ResponseEntity<>(roles, HttpStatus.OK);
     }
 
+    @GetMapping("/all-users")
+    public ResponseEntity<List<User>> getAllUsers() {
+        List<User> users = userRepository.findAll();
+        return new ResponseEntity<>(users, HttpStatus.OK);
+    }
 }
