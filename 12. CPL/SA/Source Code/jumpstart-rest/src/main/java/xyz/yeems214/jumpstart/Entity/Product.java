@@ -1,12 +1,13 @@
 package xyz.yeems214.jumpstart.Entity;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Product {
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO)
-
     private Long id;
     private String name;
     private String store;
@@ -17,6 +18,9 @@ public class Product {
     @ManyToOne
     @JoinColumn(name = "category_id", nullable = false)
     private Category category;
+
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Review> reviews = new ArrayList<>();
 
     public Product() {
     }
@@ -55,8 +59,7 @@ public class Product {
         return this;
     }
 
-
-        public Product setImage_link(String image_link) {
+    public Product setImage_link(String image_link) {
         this.image_link = image_link;
         return this;
     }
@@ -94,6 +97,12 @@ public class Product {
         return category;
     }
 
+    // Getter and setter for reviews
+    public List<Review> getReviews() {
+        return reviews;
+    }
 
-
+    public void setReviews(List<Review> reviews) {
+        this.reviews = reviews;
+    }
 }
