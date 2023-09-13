@@ -50,7 +50,6 @@ public class Role {
         return description;
     }
 
-
     public DoubleStream stream() {
         return stream();
     }

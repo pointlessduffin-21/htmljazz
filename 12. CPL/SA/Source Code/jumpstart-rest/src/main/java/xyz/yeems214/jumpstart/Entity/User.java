@@ -2,6 +2,8 @@ package xyz.yeems214.jumpstart.Entity;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class User {
@@ -20,6 +22,10 @@ public class User {
     @ManyToOne
     @JoinColumn(name = "role_id")
     private Role role_id;
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
+    private Set<Role> roles = new HashSet<>();
 
     public User() {
     }
@@ -113,6 +119,15 @@ public User(String name, String username, String address, Long phoneNumber, Stri
     
     public User setRole_id(Role role_id) {
         this.role_id = role_id;
+        return this;
+    }
+
+    public Set<Role> getRole() {
+        return roles;
+    }
+
+    public User setRole(Set<Role> roles) {
+        this.roles = roles;
         return this;
     }
 

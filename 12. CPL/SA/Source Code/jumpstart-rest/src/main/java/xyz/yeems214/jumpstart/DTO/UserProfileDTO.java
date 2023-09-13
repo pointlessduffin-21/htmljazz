@@ -1,8 +1,7 @@
 package xyz.yeems214.jumpstart.DTO;
 
 public class UserProfileDTO {
-	private String firstName;
-	private String lastName;
+	private String userName;
 	private String phoneNumber;
 	private String address;
 	private String email;
@@ -11,30 +10,21 @@ public class UserProfileDTO {
 	public UserProfileDTO() {
 	}
 
-	public UserProfileDTO(String firstName, String lastName, String phoneNumber, String address, String email,
+	public UserProfileDTO(String userName, String phoneNumber, String address, String email,
 			String role) {
-		this.firstName = firstName;
-		this.lastName = lastName;
+		this.userName = userName;
 		this.phoneNumber = phoneNumber;
 		this.address = address;
 		this.email = email;
 		this.role = role;
 	}
 
-	public String getFirstName() {
-		return firstName;
+	public String getUserName() {
+		return userName;
 	}
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
 	public String getPhoneNumber() {
@@ -71,7 +61,7 @@ public class UserProfileDTO {
 
 	@Override
 	public String toString() {
-		return "UserProfileDTO [firstName=" + firstName + ", lastName=" + lastName + ", phoneNumber=" + phoneNumber
+		return "UserProfileDTO [userName=" + userName + ", phoneNumber=" + phoneNumber
 				+ ", address=" + address + ", email=" + email + ", role=" + role + "]";
 	}
 	
