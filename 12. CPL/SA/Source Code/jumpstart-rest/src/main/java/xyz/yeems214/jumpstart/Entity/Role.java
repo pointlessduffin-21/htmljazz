@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.stream.DoubleStream;
 
 @Entity
 public class Role {
@@ -50,4 +51,7 @@ public class Role {
     }
 
 
+    public DoubleStream stream() {
+        return stream();
+    }
 }
