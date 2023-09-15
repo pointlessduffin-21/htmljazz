@@ -1,5 +1,6 @@
 package xyz.yeems214.jumpstart.Controller;
 
+import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
@@ -48,6 +49,11 @@ public class StoreController {
         return new ResponseEntity<>(savedCategory, HttpStatus.CREATED);
     }
 
+    @GetMapping("/category/{id}")
+    public ResponseEntity<Category> viewCategory(@RequestParam Long id) {
+        return new ResponseEntity<>(categoryRepository.findById(id).orElseThrow(() -> new RuntimeException("Category not found")), HttpStatus.OK);
+    }
+
     @PostMapping("/add")
     public ResponseEntity<Product> addProduct(@RequestParam("name") String name, @RequestParam("store") String store, @RequestParam("price") long price, @RequestParam("description") String description, @RequestParam("category_id") Long categoryId, @RequestParam("image") MultipartFile image) {
         // Fetch the Category entity using the provided ID
@@ -84,6 +90,11 @@ public class StoreController {
     public ResponseEntity<List<Product>> viewProductByName(@RequestParam String name) {
         List<Product> products = productRepository.findByName(name);
         return new ResponseEntity<>(products, HttpStatus.OK);
+    }
+
+    @GetMapping("/product/{id}")
+    public ResponseEntity<Product> viewProduct(@RequestParam Long id) {
+        return new ResponseEntity<>(productRepository.findById(id).orElseThrow(() -> new RuntimeException("Product not found")), HttpStatus.OK);
     }
 
     @PostMapping("/review/{id}")

@@ -2,50 +2,50 @@ import React, { Component } from 'react';
 
 class Register extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            name: '',
-            username: '',
-            address: '',
-            phoneNumber: '',
-            email: '',
-            password: ''
-        };
-    }
+//     constructor(props) {
+//         super(props);
+//         this.state = {
+//             name: '',
+//             username: '',
+//             address: '',
+//             phoneNumber: '',
+//             email: '',
+//             password: ''
+//         };
+//     }
 
-    handleInputChange = (event) => {
-        this.setState({
-            [event.target.id]: event.target.value
-        });
-    }
+//     handleInputChange = (event) => {
+//         this.setState({
+//             [event.target.id]: event.target.value
+//         });
+//     }
 
-    handleSubmit(event) {
-    event.preventDefault();
+//     handleSubmit(event) {
+//     event.preventDefault();
 
-    const data = {
-        name: this.state.name,
-        username: this.state.username,
-        address: this.state.address,
-        phoneNumber: this.state.phoneNumber,
-        email: this.state.email,
-        password: this.state.password,
-        confirmPassword: this.state.confirmPassword
-    };
+//     const data = {
+//         name: this.state.name,
+//         username: this.state.username,
+//         address: this.state.address,
+//         phoneNumber: this.state.phoneNumber,
+//         email: this.state.email,
+//         password: this.state.password,
+//         confirmPassword: this.state.confirmPassword
+//     };
 
-    fetch('http://localhost:9583/api/user/register', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-    })
-    .then(response => response.json())
-    .then(data => console.log(data))
-    .catch((error) => {
-      console.error('Error:', error);
-    });
-}
+//     fetch('http://localhost:9583/api/user/register', {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify(data)
+//     })
+//     .then(response => response.json())
+//     .then(data => console.log(data))
+//     .catch((error) => {
+//       console.error('Error:', error);
+//     });
+// }
 
     render() {
         return (

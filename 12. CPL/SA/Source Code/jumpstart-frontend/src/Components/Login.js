@@ -3,51 +3,51 @@ import React,  { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 class Login extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            email: '',
-            password: ''
-        };
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //         email: '',
+    //         password: ''
+    //     };
 
-        this.handleInputChange = this.handleInputChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-    }
+    //     this.handleInputChange = this.handleInputChange.bind(this);
+    //     this.handleSubmit = this.handleSubmit.bind(this);
+    // }
 
-    handleInputChange(event) {
-        this.setState({
-            [event.target.id]: event.target.value
-        });
-    }
+    // handleInputChange(event) {
+    //     this.setState({
+    //         [event.target.id]: event.target.value
+    //     });
+    // }
 
-    handleSubmit(event) {
-        event.preventDefault();
+    // handleSubmit(event) {
+    //     event.preventDefault();
     
-        const data = {
-            email: this.state.email,
-            password: this.state.password
-        };
+    //     const data = {
+    //         email: this.state.email,
+    //         password: this.state.password
+    //     };
     
-        fetch('http://localhost:9583/api/user/login', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        })
-        .then(response => {
-            if (response.ok) {
-                // Login successful
-                console.log('Login successful');
-            } else {
-                // Login failed
-                console.log('Login failed');
-            }
-        })
-        .catch((error) => {
-          console.error('Error:', error);
-        });
-    }
+    //     fetch('http://localhost:9583/api/user/login', {
+    //         method: 'POST',
+    //         headers: {
+    //             'Content-Type': 'application/json'
+    //         },
+    //         body: JSON.stringify(data)
+    //     })
+    //     .then(response => {
+    //         if (response.ok) {
+    //             // Login successful
+    //             console.log('Login successful');
+    //         } else {
+    //             // Login failed
+    //             console.log('Login failed');
+    //         }
+    //     })
+    //     .catch((error) => {
+    //       console.error('Error:', error);
+    //     });
+    // }
 
     render() {
         return (
