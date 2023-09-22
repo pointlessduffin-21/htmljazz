@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Switch } from 'react-router-dom';
 import Home from './Components/Home';
 import Login from './Components/Login';
 import Register from './Components/Register';
@@ -19,7 +19,7 @@ function App() {
           <Route exact path="/login" element={<Login />} component={Login}/>
           <Route exact path="/register" element={<Register />} component={Register}/>
           <Route exact path="/chat" element={<Chat />} component={Chat}/>
-          <Route exact path="/product" element={<Product />} component={Product}/>
+          <Route path="/product/:id" component={Product} />
         </Routes>
       </div>
     </Router>
