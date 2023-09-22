@@ -70,23 +70,23 @@ public class UserController {
     @Autowired
     JwtTokenProvider tokenProvider;
 
-    @PostMapping("/register")
-    public ResponseEntity<?> registerUser(@RequestBody User user) {
-        // Check if a user with the same username already exists
-        Optional<User> existingUser = userRepository.findByUsername(user.getUsername());
-        if (existingUser.isPresent()) {
-            // If a user is found, return a ResponseEntity with an appropriate message
-            return new ResponseEntity<>("A user with this username already exists.", HttpStatus.BAD_REQUEST);
-        } else {
-            Role role = new Role();
-            role.setId(1L);
-            user.setRegistrationDateTime(LocalDateTime.now());
-            user.setRole_id(role); // Sets the role id of a newly created user as Customer
-            user.setPassword(passwordEncoder.encode(user.getPassword())); // Encodes the password before saving it to the database
-            User registered = userRepository.save(user);
-            return new ResponseEntity<>(registered, HttpStatus.CREATED);
-        }
-    }
+//    @PostMapping("/register")
+//    public ResponseEntity<?> registerUser(@RequestBody User user) {
+//        // Check if a user with the same username already exists
+//        Optional<User> existingUser = userRepository.findByUsername(user.getUsername());
+//        if (existingUser.isPresent()) {
+//            // If a user is found, return a ResponseEntity with an appropriate message
+//            return new ResponseEntity<>("A user with this username already exists.", HttpStatus.BAD_REQUEST);
+//        } else {
+//            Role role = new Role();
+//            role.setId(1L);
+//            user.setRegistrationDateTime(LocalDateTime.now());
+//            user.setRole_id(role); // Sets the role id of a newly created user as Customer
+//            user.setPassword(passwordEncoder.encode(user.getPassword())); // Encodes the password before saving it to the database
+//            User registered = userRepository.save(user);
+//            return new ResponseEntity<>(registered, HttpStatus.CREATED);
+//        }
+//    }
 
     @PostMapping("/loginOld")
         public ResponseEntity<?> login(@RequestBody Map<String, String> credentials, HttpServletResponse response) {

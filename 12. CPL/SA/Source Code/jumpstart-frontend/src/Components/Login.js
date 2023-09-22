@@ -1,4 +1,4 @@
-import Register from './register';
+import Register from './Register';
 import React,  { Component } from 'react';
 import { Link } from 'react-router-dom';
 
