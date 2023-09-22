@@ -22,13 +22,14 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.List;
+import java.util.UUID;
 
 import static org.aspectj.weaver.tools.cache.SimpleCacheFactory.path;
 
 @RestController
 @RequestMapping("/api/store")
 public class StoreController {
-    @Value("src/main/resources/images")
+    @Value("${jumpstart.upload-dir}")
     private String uploadPath;
 
     @Autowired
@@ -47,6 +48,31 @@ public class StoreController {
         Category savedCategory = categoryRepository.save(category);
         return new ResponseEntity<>(savedCategory, HttpStatus.CREATED);
     }
+    // Old Add
+//    @PostMapping("/add")
+//    public ResponseEntity<Product> addProduct(@RequestParam("name") String name, @RequestParam("store") String store, @RequestParam("price") long price, @RequestParam("description") String description, @RequestParam("category_id") Long categoryId, @RequestParam("image") MultipartFile image) {
+//        // Fetch the Category entity using the provided ID
+//        Category category = categoryRepository.findById(categoryId).orElseThrow(() -> new RuntimeException("Category not found"));
+//
+//        Product product = new Product();
+//        product.setName(name);
+//        product.setStore(store);
+//        product.setPrice(price);
+//        product.setDescription(description);
+//        product.setCategory(category);
+//
+//        try {
+//            String fileName = StringUtils.cleanPath(image.getOriginalFilename());
+//            Path path = Paths.get(uploadPath + File.separator + fileName);
+//            Files.copy(image.getInputStream(), path, StandardCopyOption.REPLACE_EXISTING);
+//            product.setImage_link(fileName);
+//        } catch (IOException e) {
+//            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+//        }
+//
+//        Product savedProduct = productRepository.save(product);
+//        return new ResponseEntity<>(savedProduct, HttpStatus.CREATED);
+//    }
 
     @PostMapping("/add")
     public ResponseEntity<Product> addProduct(@RequestParam("name") String name, @RequestParam("store") String store, @RequestParam("price") long price, @RequestParam("description") String description, @RequestParam("category_id") Long categoryId, @RequestParam("image") MultipartFile image) {
@@ -61,16 +87,23 @@ public class StoreController {
         product.setCategory(category);
 
         try {
-            String fileName = StringUtils.cleanPath(image.getOriginalFilename());
+            String originalFileName = StringUtils.cleanPath(image.getOriginalFilename());
+            String fileName = generateUniqueFileName(originalFileName);
             Path path = Paths.get(uploadPath + File.separator + fileName);
             Files.copy(image.getInputStream(), path, StandardCopyOption.REPLACE_EXISTING);
-            product.setImage_link(fileName);
+            product.setImage_link(path.toString());
         } catch (IOException e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
 
         Product savedProduct = productRepository.save(product);
         return new ResponseEntity<>(savedProduct, HttpStatus.CREATED);
+    }
+
+    private String generateUniqueFileName(String originalFileName) {
+        String extension = originalFileName.substring(originalFileName.lastIndexOf("."));
+        String uniqueID = UUID.randomUUID().toString();
+        return uniqueID + extension;
     }
 
 

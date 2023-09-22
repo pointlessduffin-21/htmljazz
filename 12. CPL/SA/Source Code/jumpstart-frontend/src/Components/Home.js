@@ -21,7 +21,7 @@ const Home = () => {
                 {products.map((product, index) => (
                     <Col key={index} xs={12} sm={6} md={4} lg={3}>
                         <Card>
-                            <Card.Img variant="top" src={product.image_link} />
+                        <Card.Img variant="top" src={`http://localhost:9583/api/image/${product.id}`} />
                             <Card.Body>
                                 <Card.Title>{product.name}</Card.Title>
                                 <Card.Text>
