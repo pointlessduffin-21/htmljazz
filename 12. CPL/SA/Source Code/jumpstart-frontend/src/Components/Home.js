@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
+import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 
 const Home = () => {
     const [products, setProducts] = useState([]);
@@ -17,25 +16,25 @@ const Home = () => {
     }, []);
 
     return (
-        <div>
-            <h1>Home</h1>
-            {products.map((product) => (
-                <Card style={{ width: '18rem', margin: '10px' }} key={product.id}>
-                    <Card.Img variant="top" src={product.image_link} />
-                    <Card.Body>
-                        <Card.Title>{product.name}</Card.Title>
-                        <Card.Text>
-                            {product.description}
-                            <br/>
-                            Store: {product.store}
-                            <br/>
-                            Price: {product.price}
-                        </Card.Text>
-                        <Button variant="primary" onClick={() => window.location.href=`/product/${product.id}`}>Go to Product Page</Button>
-                    </Card.Body>
-                </Card>
-            ))}
-        </div>
+        <Container>
+            <Row>
+                {products.map((product, index) => (
+                    <Col key={index} xs={12} sm={6} md={4} lg={3}>
+                        <Card>
+                            <Card.Img variant="top" src={product.image_link} />
+                            <Card.Body>
+                                <Card.Title>{product.name}</Card.Title>
+                                <Card.Text>
+                                    Store: {product.store}<br/>
+                                    Price: ${product.price}
+                                </Card.Text>
+                                <Button variant="primary" href={`/product/${product.id}`}>View Product</Button>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                ))}
+            </Row>
+        </Container>
     );
 };
 
