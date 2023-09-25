@@ -27,8 +27,8 @@ class Header extends Component {
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
             <Nav>
                 <Nav.Link as={Link} to="/">Home</Nav.Link>
-                {/* <Nav.Link as={Link} to="/Login">Login</Nav.Link>
-                <Nav.Link as={Link} to="/Register">Register</Nav.Link> */}
+                {/* <Nav.Link as={Link} to="/Login">Login</Nav.Link>  */}
+                <Nav.Link as={Link} to="/Register">Register</Nav.Link> 
                 <Nav.Link as={Link} to="/Chat">Chat</Nav.Link>
             </Nav>
         </Navbar.Collapse>
