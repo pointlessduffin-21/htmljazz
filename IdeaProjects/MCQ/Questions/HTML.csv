@@ -1,0 +1,10 @@
+﻿1. What does HTML stand for?,HyperLink Markup Language,HyperText Markup Language,HypoText Markup Language,HypoLink Markup Language,B,HyperText Markup Language
+2. HTML tags are enclosed in?,{ },< >,!!,==,B,< >
+3. What does CSS stand for?,Computer Systems Servicing,Corporate Structure Servicing,Cascading Style Sheet,Cascading Systems Servicing,C,Cascading Style Sheet
+4. What is the purpose of the <b> tag?,It is used to change the font color.,It is used to highlight text.,It converts the text within it to a bold font.,It is used to add a break line.,C,It converts the text within it to a bold font.
+5. Which attribure is used to provide a unique name to an HTML element?,class,String,id,type,C,id
+6. Which of the following CSS property is used to change the text font?,font-size,font-type,font-style,font-family,D,font-family
+7. Which of the following tags is used to render an image on the webpage?,src,picture,image,img,D,img
+8. Which is the correct syntax to write a comment inside HTML?,//Comment,#Comment,/* Comment */,<!-- Comment -->,D,<!-- Comment -->
+9. Which of the following is the most necessary when creating an HTML page?,Text Editor,Web Browser,Java Development Kit,Both A and B,D,Both A and B
+10. Which of the following is the root element of and HTML document?,<script>,<style>,<html>,<htm>,C,<html>

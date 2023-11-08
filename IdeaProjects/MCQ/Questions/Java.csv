@@ -1,0 +1,10 @@
+﻿1. Who developed Java?,Bjarne Stroustrup,Linus Torvalds,Ryan Gosling,James Gosling,D,James Gosling
+2. What does JDK means ?,Java Development Kit,Java Decompression Kit,Java Devices Kit,Java Developing Kit,A,Java Development Kit
+3. Which tool is used to run a Java Program?,Java Virtual Machine,Java Development Kit,Java Runtime Environment,Java Just-in-Time Compiler,C,Java Runtime Environment
+4. What is the extension of Java Source Files?,.cpp,.jar,.py,.java,D,.java
+"5. Which of the following boolean expressions will evaluate to true if x is between lower and upper, inclusive, and false otherwise.",(x<=lower) || (x>=upper),(x>=lower) && (x<=upper),lower <= x <= upper,(x<=lower) && (x>=upper),B,(x>=lower) && (x<=upper)
+6. Which of this interface must contain a unique element?,Collection,List,Array,Set,D,Set
+7. Which of the following declarations does not compile?,"double num1, int num2 = 0;","int num1, num2;","int num1, num2 = 0;","int num1 = 0, num2 = 0;",D,"int num1 = 0, num2 = 0;"
+8. Which statement about a valid .java file is true?,It can only contain one class declaration.,It may define at most one public class.,It can contain one pulic class declaration and one public interface definition.,It must define at least one public class.,B,It may define at most one public class.
+9. Which is correct about an instance variable of type String?,It will not compile without initializing on the declaration line,It defaults to an empty string.,It defaults to null.,It does not have a default value.,C,It defaults to null.
+10. In which of the following is toString() method defined?,java.lang.Object,java.lang.util,java.lang.String,java.lang.Integer,A,java.lang.Object

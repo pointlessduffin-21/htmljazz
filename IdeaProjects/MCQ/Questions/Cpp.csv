@@ -1,0 +1,10 @@
+﻿1. Who developed C++?,Bjarne Stroustrup,Linus Torvalds,Ryan Gosling,Grace Hopper,A,Bjarne Stroustrup
+2. Which of the following user-defined header file extension used in c++?,hg,h,cpp,hf,B,h
+3. Which of the following is a correct identifier in C++?,7var_name,$var_name,7VARNAME,VAR_1234,D,VAR_1234
+4. What is virtual inheritance in C++?,C++ technique to ensure that a private member of the base class can be accessed somehow,C++ technique to avoid multiple inheritances of classes,C++ technique to enhance multiple inheritance,C++ technique to avoid multiple copies of the base class into children/derived class,D,C++ technique to avoid multiple copies of the base class into children/derived class
+5. Which of the following type is provided by C++ but not C?,double,bool,int,float,B,bool
+6. Pick the incorrect statement about inline functions in C++?,They reduce function call overheads,Saves overhead of a return call from a function,These functions are inserted/substituted at the point of call,They are generally very large and complicated function,D,Text
+7. Which is more effective while calling the C++ functions?,call by object,call by value,call by pointer,call by reference,D,call by reference
+8. What is the use of the indentation in c++?,r distinguishes between comments and inner data,distinguishes between comments and code,distinguishes between comments and outer data,r distinguishes between comments and outer data,B,distinguishes between comments and code
+9. Which of the following correctly declares an array in C++?,array{10};,int array[10];,int array;,array array[10];,C,int array;
+10. The C++ code which causes abnormal termination/behaviour of a program should be written under _________ block.,try,finally,throw,catch,A,try

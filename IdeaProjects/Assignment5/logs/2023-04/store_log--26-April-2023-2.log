@@ -1,0 +1,61 @@
+2023-04-26 10:59:44,509 INFO o.s.b.StartupInfoLogger [restartedMain] Starting Assignment5Application using Java 19.0.2 on kaelyn with PID 32280 (C:\Users\USER\IdeaProjects\Assignment5\target\classes started by USER in C:\Users\USER\IdeaProjects\Assignment5)
+2023-04-26 10:59:44,524 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2023-04-26 10:59:44,576 INFO o.s.b.l.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-04-26 10:59:44,576 INFO o.s.b.l.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-04-26 10:59:45,290 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-26 10:59:45,350 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 51 ms. Found 3 JPA repository interfaces.
+2023-04-26 10:59:45,991 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 9094 (http)
+2023-04-26 10:59:45,992 INFO o.a.j.l.DirectJDKLog [restartedMain] Loaded Apache Tomcat Native library [1.2.35] using APR version [1.7.0].
+2023-04-26 10:59:45,992 INFO o.a.j.l.DirectJDKLog [restartedMain] APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2023-04-26 10:59:45,993 INFO o.a.j.l.DirectJDKLog [restartedMain] APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2023-04-26 10:59:45,998 INFO o.a.j.l.DirectJDKLog [restartedMain] OpenSSL successfully initialized [OpenSSL 1.1.1q  5 Jul 2022]
+2023-04-26 10:59:46,007 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-9094"]
+2023-04-26 10:59:46,008 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2023-04-26 10:59:46,009 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.64]
+2023-04-26 10:59:46,279 INFO o.a.j.l.DirectJDKLog [restartedMain] At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-04-26 10:59:46,290 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2023-04-26 10:59:46,290 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 1712 ms
+2023-04-26 10:59:46,483 INFO o.h.j.i.u.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-26 10:59:46,550 INFO o.h.Version [restartedMain] HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-04-26 10:59:46,781 INFO o.h.a.c.r.j.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-26 10:59:46,888 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2023-04-26 10:59:47,254 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2023-04-26 10:59:47,270 INFO o.h.d.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-04-26 10:59:48,071 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-26 10:59:48,081 INFO o.s.o.j.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-26 10:59:48,593 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-26 10:59:48,824 INFO o.s.s.w.DefaultSecurityFilterChain [restartedMain] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@222434d, org.springframework.security.web.context.SecurityContextPersistenceFilter@3af9e029, org.springframework.security.web.header.HeaderWriterFilter@4614d74f, org.springframework.security.web.csrf.CsrfFilter@33b045e2, org.springframework.security.web.authentication.logout.LogoutFilter@7226d668, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@23f6a90f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@a871323, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@60e58e2b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2b4aaead, org.springframework.security.web.session.SessionManagementFilter@62fdea56, org.springframework.security.web.access.ExceptionTranslationFilter@7c677fc0, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@637049c1]
+2023-04-26 10:59:49,062 INFO o.s.b.a.w.s.WelcomePageHandlerMapping [restartedMain] Adding welcome page template: index
+2023-04-26 10:59:49,221 INFO o.s.b.d.a.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2023-04-26 10:59:49,242 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-9094"]
+2023-04-26 10:59:49,277 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat started on port(s): 9094 (http) with context path ''
+2023-04-26 10:59:49,291 INFO o.s.b.StartupInfoLogger [restartedMain] Started Assignment5Application in 5.152 seconds (JVM running for 6.517)
+2023-04-26 11:00:00,056 INFO o.a.j.l.DirectJDKLog [http-nio-9094-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-26 11:00:00,056 INFO o.s.w.s.FrameworkServlet [http-nio-9094-exec-1] Initializing Servlet 'dispatcherServlet'
+2023-04-26 11:00:00,057 INFO o.s.w.s.FrameworkServlet [http-nio-9094-exec-1] Completed initialization in 1 ms
+2023-04-26 11:51:03,431 INFO c.y.a.c.StoreController [http-nio-9094-exec-1] before calling Service to fetch all store details
+2023-04-26 11:51:03,469 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-9094-exec-1] Resolved [com.yeems214.assignment5.exception.StoreNotFoundException: No store available at this moment]
+2023-04-26 11:51:43,884 INFO c.y.a.c.StoreController [http-nio-9094-exec-8] before calling Service to fetch all store details
+2023-04-26 11:51:43,890 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-9094-exec-8] Resolved [com.yeems214.assignment5.exception.StoreNotFoundException: No store available at this moment]
+2023-04-26 11:51:48,083 INFO c.y.a.c.StoreController [http-nio-9094-exec-9] before calling Service to fetch all store details
+2023-04-26 11:51:48,095 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-9094-exec-9] Resolved [com.yeems214.assignment5.exception.StoreNotFoundException: No store available at this moment]
+2023-04-26 11:51:50,106 INFO c.y.a.c.StoreController [http-nio-9094-exec-10] before calling Service to fetch all store details
+2023-04-26 11:51:50,114 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-9094-exec-10] Resolved [com.yeems214.assignment5.exception.StoreNotFoundException: No store available at this moment]
+2023-04-26 11:52:42,529 INFO c.y.a.c.StoreController [http-nio-9094-exec-6] before calling Service to fetch all store details
+2023-04-26 11:52:42,536 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-9094-exec-6] Resolved [com.yeems214.assignment5.exception.StoreNotFoundException: No store available at this moment]
+2023-04-26 11:52:48,146 INFO c.y.a.c.StoreController [http-nio-9094-exec-7] before calling Service to fetch all store details
+2023-04-26 11:52:48,151 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-9094-exec-7] Resolved [com.yeems214.assignment5.exception.StoreNotFoundException: No store available at this moment]
+2023-04-26 11:53:34,189 INFO c.y.a.c.StoreController [http-nio-9094-exec-6] before calling Service to fetch all store details
+2023-04-26 11:53:34,194 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-9094-exec-6] Resolved [com.yeems214.assignment5.exception.StoreNotFoundException: No store available at this moment]
+2023-04-26 11:53:56,455 INFO c.y.a.c.StoreController [http-nio-9094-exec-5] before calling Service to fetch all store details
+2023-04-26 11:53:56,462 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-9094-exec-5] Resolved [com.yeems214.assignment5.exception.StoreNotFoundException: No store available at this moment]
+2023-04-26 11:58:30,222 INFO c.y.a.c.StoreController [http-nio-9094-exec-9] before calling Service to fetch all store details
+2023-04-26 11:58:30,227 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-9094-exec-9] Resolved [com.yeems214.assignment5.exception.StoreNotFoundException: No store available at this moment]
+2023-04-26 11:58:37,746 INFO c.y.a.c.StoreController [http-nio-9094-exec-6] before calling Service to fetch all store details
+2023-04-26 11:58:37,752 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-9094-exec-6] Resolved [com.yeems214.assignment5.exception.StoreNotFoundException: No store available at this moment]
+2023-04-26 11:59:55,588 INFO c.y.a.c.StoreController [http-nio-9094-exec-6] before calling Service to fetch all store details
+2023-04-26 11:59:55,595 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-9094-exec-6] Resolved [com.yeems214.assignment5.exception.StoreNotFoundException: No store available at this moment]
+2023-04-26 12:00:14,255 INFO c.y.a.c.StoreController [http-nio-9094-exec-3] before calling Service to fetch all store details
+2023-04-26 12:00:14,260 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-9094-exec-3] Resolved [com.yeems214.assignment5.exception.StoreNotFoundException: No store available at this moment]
+2023-04-26 17:27:35,414 WARN c.z.h.p.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=42m12s479ms242µs400ns).
+2023-04-26 17:32:04,258 WARN c.z.h.p.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4m28s849ms731µs400ns).

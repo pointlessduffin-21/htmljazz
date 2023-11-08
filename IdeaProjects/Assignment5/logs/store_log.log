@@ -1,0 +1,35 @@
+2023-05-03 09:18:11,537 INFO o.s.b.StartupInfoLogger [restartedMain] Starting Assignment5Application using Java 19.0.2 on kaelyn with PID 17100 (C:\Users\USER\IdeaProjects\Assignment5\target\classes started by USER in C:\Users\USER\IdeaProjects\Assignment5)
+2023-05-03 09:18:11,544 DEBUG o.s.b.StartupInfoLogger [restartedMain] Running with Spring Boot v2.6.9, Spring v5.3.21
+2023-05-03 09:18:11,546 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2023-05-03 09:18:11,585 INFO o.s.b.l.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-05-03 09:18:11,585 INFO o.s.b.l.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-05-03 09:18:12,101 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-03 09:18:12,146 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 39 ms. Found 3 JPA repository interfaces.
+2023-05-03 09:18:12,632 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 9094 (http)
+2023-05-03 09:18:12,633 INFO o.a.j.l.DirectJDKLog [restartedMain] Loaded Apache Tomcat Native library [1.2.35] using APR version [1.7.0].
+2023-05-03 09:18:12,634 INFO o.a.j.l.DirectJDKLog [restartedMain] APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2023-05-03 09:18:12,634 INFO o.a.j.l.DirectJDKLog [restartedMain] APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2023-05-03 09:18:12,637 INFO o.a.j.l.DirectJDKLog [restartedMain] OpenSSL successfully initialized [OpenSSL 1.1.1q  5 Jul 2022]
+2023-05-03 09:18:12,644 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-9094"]
+2023-05-03 09:18:12,644 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2023-05-03 09:18:12,645 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.64]
+2023-05-03 09:18:12,829 INFO o.a.j.l.DirectJDKLog [restartedMain] At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-05-03 09:18:12,836 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2023-05-03 09:18:12,836 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 1250 ms
+2023-05-03 09:18:12,971 INFO o.h.j.i.u.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-03 09:18:13,011 INFO o.h.Version [restartedMain] HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-05-03 09:18:13,147 INFO o.h.a.c.r.j.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-05-03 09:18:13,228 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2023-05-03 09:18:13,458 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2023-05-03 09:18:13,471 INFO o.h.d.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-05-03 09:18:14,017 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-03 09:18:14,024 INFO o.s.o.j.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-03 09:18:14,389 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-03 09:18:14,570 INFO o.s.s.w.DefaultSecurityFilterChain [restartedMain] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@237abcc0, org.springframework.security.web.context.SecurityContextPersistenceFilter@54eaa0d6, org.springframework.security.web.header.HeaderWriterFilter@10cb822c, org.springframework.security.web.csrf.CsrfFilter@7f97265e, org.springframework.security.web.authentication.logout.LogoutFilter@6cbb6c3a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@45b933c4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@38f11004, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3fc5b3f7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@346f9d11, org.springframework.security.web.session.SessionManagementFilter@6d719a4a, org.springframework.security.web.access.ExceptionTranslationFilter@5a4467f6, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@24eace5c]
+2023-05-03 09:18:14,725 INFO o.s.b.a.w.s.WelcomePageHandlerMapping [restartedMain] Adding welcome page template: index
+2023-05-03 09:18:14,827 INFO o.s.b.d.a.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2023-05-03 09:18:14,841 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-9094"]
+2023-05-03 09:18:14,861 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat started on port(s): 9094 (http) with context path ''
+2023-05-03 09:18:14,869 INFO o.s.b.StartupInfoLogger [restartedMain] Started Assignment5Application in 3.601 seconds (JVM running for 4.586)
+2023-05-03 10:00:28,082 WARN c.z.h.p.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m13s883ms97µs100ns).
+2023-05-03 10:49:48,408 WARN c.z.h.p.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=49m20s326ms508µs800ns).

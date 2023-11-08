@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Constructors/Constructors.iml" filepath="$PROJECT_DIR$/Constructors/Constructors.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Expression/Expression.iml" filepath="$PROJECT_DIR$/Expression/Expression.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GUIBasic/GUIBasic.iml" filepath="$PROJECT_DIR$/GUIBasic/GUIBasic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MathBasics/HypotenuseProg/HypotenuseProg.iml" filepath="$PROJECT_DIR$/MathBasics/HypotenuseProg/HypotenuseProg.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Inheritance/Inheritance.iml" filepath="$PROJECT_DIR$/Inheritance/Inheritance.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaTutorial.iml" filepath="$PROJECT_DIR$/JavaTutorial.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LogicalOperators/LogicalOperators.iml" filepath="$PROJECT_DIR$/LogicalOperators/LogicalOperators.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MathBasics/MathBasics.iml" filepath="$PROJECT_DIR$/MathBasics/MathBasics.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Random/Random.iml" filepath="$PROJECT_DIR$/Random/Random.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Scanner/Scanner.iml" filepath="$PROJECT_DIR$/Scanner/Scanner.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Statements/Statements.iml" filepath="$PROJECT_DIR$/Statements/Statements.iml" />
+      <module fileurl="file://$PROJECT_DIR$/String/String.iml" filepath="$PROJECT_DIR$/String/String.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Switches/Switches.iml" filepath="$PROJECT_DIR$/Switches/Switches.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Variables/Variables.iml" filepath="$PROJECT_DIR$/Variables/Variables.iml" />
+      <module fileurl="file://$PROJECT_DIR$/array/array.iml" filepath="$PROJECT_DIR$/array/array.iml" />
+      <module fileurl="file://$PROJECT_DIR$/customException/customException.iml" filepath="$PROJECT_DIR$/customException/customException.iml" />
+      <module fileurl="file://$PROJECT_DIR$/exception/exception.iml" filepath="$PROJECT_DIR$/exception/exception.iml" />
+      <module fileurl="file://$PROJECT_DIR$/forLoops/forLoops.iml" filepath="$PROJECT_DIR$/forLoops/forLoops.iml" />
+      <module fileurl="file://$PROJECT_DIR$/multidimensionalArray/multidimensionalArray.iml" filepath="$PROJECT_DIR$/multidimensionalArray/multidimensionalArray.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nestedLoops/nestedLoops.iml" filepath="$PROJECT_DIR$/nestedLoops/nestedLoops.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oop/oop.iml" filepath="$PROJECT_DIR$/oop/oop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/variable/variable.iml" filepath="$PROJECT_DIR$/variable/variable.iml" />
+      <module fileurl="file://$PROJECT_DIR$/whileLoops/whileLoops.iml" filepath="$PROJECT_DIR$/whileLoops/whileLoops.iml" />
+    </modules>
+  </component>
+</project>

@@ -7,6 +7,7 @@ import Register from './Components/Register';
 import Chat from './Components/Chat';
 import Product from './Components/Product';
 import Header from './Components/Header';
+import Feedback from './Components/Feedback';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route exact path="/login" element={<Login />} component={Login}/>
           <Route exact path="/register" element={<Register />} component={Register}/>
           <Route exact path="/chat" element={<Chat />} component={Chat}/>
+          <Route exact path="/feedback" element={<Feedback />} component={Feedback}/>
           <Route path="/product/:id" component={Product} />
         </Routes>
       </div>

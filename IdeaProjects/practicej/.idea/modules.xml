@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Operator2/Operator2.iml" filepath="$PROJECT_DIR$/Operator2/Operator2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/calculator2/calculator2.iml" filepath="$PROJECT_DIR$/calculator2/calculator2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/divisiondeez/divisiondeez.iml" filepath="$PROJECT_DIR$/divisiondeez/divisiondeez.iml" />
+      <module fileurl="file://$PROJECT_DIR$/prac1/prac1.iml" filepath="$PROJECT_DIR$/prac1/prac1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/practicej.iml" filepath="$PROJECT_DIR$/practicej.iml" />
+    </modules>
+  </component>
+</project>

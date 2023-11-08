@@ -1,0 +1,45 @@
+2023-04-27 07:32:15,059 INFO o.s.b.StartupInfoLogger [restartedMain] Starting Assignment5Application using Java 19.0.2 on kaelyn with PID 6580 (C:\Users\USER\IdeaProjects\Assignment5\target\classes started by USER in C:\Users\USER\IdeaProjects\Assignment5)
+2023-04-27 07:32:15,097 DEBUG o.s.b.StartupInfoLogger [restartedMain] Running with Spring Boot v2.6.9, Spring v5.3.21
+2023-04-27 07:32:15,101 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2023-04-27 07:32:15,211 INFO o.s.b.l.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-04-27 07:32:15,213 INFO o.s.b.l.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-04-27 07:32:16,953 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-27 07:32:17,116 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 138 ms. Found 3 JPA repository interfaces.
+2023-04-27 07:32:18,789 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 9094 (http)
+2023-04-27 07:32:18,793 INFO o.a.j.l.DirectJDKLog [restartedMain] Loaded Apache Tomcat Native library [1.2.35] using APR version [1.7.0].
+2023-04-27 07:32:18,796 INFO o.a.j.l.DirectJDKLog [restartedMain] APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2023-04-27 07:32:18,796 INFO o.a.j.l.DirectJDKLog [restartedMain] APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2023-04-27 07:32:18,808 INFO o.a.j.l.DirectJDKLog [restartedMain] OpenSSL successfully initialized [OpenSSL 1.1.1q  5 Jul 2022]
+2023-04-27 07:32:18,831 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-9094"]
+2023-04-27 07:32:18,832 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2023-04-27 07:32:18,833 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.64]
+2023-04-27 07:32:19,449 INFO o.a.j.l.DirectJDKLog [restartedMain] At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-04-27 07:32:19,473 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2023-04-27 07:32:19,473 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 4259 ms
+2023-04-27 07:32:19,974 INFO o.h.j.i.u.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-27 07:32:20,104 INFO o.h.Version [restartedMain] HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-04-27 07:32:20,551 INFO o.h.a.c.r.j.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-27 07:32:20,826 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2023-04-27 07:32:21,598 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2023-04-27 07:32:21,640 INFO o.h.d.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-04-27 07:32:23,656 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-27 07:32:23,679 INFO o.s.o.j.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-27 07:32:24,994 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-27 07:32:25,646 INFO o.s.s.w.DefaultSecurityFilterChain [restartedMain] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5fe476cb, org.springframework.security.web.context.SecurityContextPersistenceFilter@344ebc9b, org.springframework.security.web.header.HeaderWriterFilter@1f4d4453, org.springframework.security.web.csrf.CsrfFilter@2dd1b166, org.springframework.security.web.authentication.logout.LogoutFilter@4ceb0363, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4dc1abea, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@49769977, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@30dc8caa, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@26890134, org.springframework.security.web.session.SessionManagementFilter@5dcd015a, org.springframework.security.web.access.ExceptionTranslationFilter@7a597c28, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@36b9ed82]
+2023-04-27 07:32:26,134 INFO o.s.b.a.w.s.WelcomePageHandlerMapping [restartedMain] Adding welcome page template: index
+2023-04-27 07:32:26,456 INFO o.s.b.d.a.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2023-04-27 07:32:26,499 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-9094"]
+2023-04-27 07:32:26,567 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat started on port(s): 9094 (http) with context path ''
+2023-04-27 07:32:26,595 INFO o.s.b.StartupInfoLogger [restartedMain] Started Assignment5Application in 12.399 seconds (JVM running for 15.394)
+2023-04-27 07:32:47,908 INFO o.a.j.l.DirectJDKLog [http-nio-9094-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-27 07:32:47,909 INFO o.s.w.s.FrameworkServlet [http-nio-9094-exec-1] Initializing Servlet 'dispatcherServlet'
+2023-04-27 07:32:47,911 INFO o.s.w.s.FrameworkServlet [http-nio-9094-exec-1] Completed initialization in 2 ms
+2023-04-27 07:32:48,208 WARN o.a.j.l.DirectJDKLog [http-nio-9094-exec-2] Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [137] milliseconds.
+2023-04-27 07:46:50,092 INFO c.y.a.c.StoreController [http-nio-9094-exec-9] before calling Service to fetch all store details
+2023-04-27 07:46:50,147 INFO c.y.a.c.StoreController [http-nio-9094-exec-9] after calling Service to fetch all store details
+2023-04-27 07:50:48,528 WARN c.z.h.p.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m26s510ms563µs300ns).
+2023-04-27 10:09:09,154 WARN c.z.h.p.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=5m17s283ms162µs500ns).
+2023-04-27 10:16:09,618 WARN c.z.h.p.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m379ms590µs800ns).
+2023-04-27 12:31:39,837 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-27 12:31:39,853 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-04-27 12:31:39,861 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.

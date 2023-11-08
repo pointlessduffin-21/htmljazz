@@ -3,6 +3,7 @@ import Login from './Login';
 import Register from './Register';
 import Chat from './Chat';
 import Product from './Product';
+import Feedback from './Feedback';
 import React, { Component } from 'react';
 import { Navbar, Nav, Container, Button, Form, FormControl } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -30,6 +31,7 @@ class Header extends Component {
                 {/* <Nav.Link as={Link} to="/Login">Login</Nav.Link>  */}
                 <Nav.Link as={Link} to="/Register">Register</Nav.Link> 
                 <Nav.Link as={Link} to="/Chat">Chat</Nav.Link>
+                <Nav.Link as={Link} to="/Feedback">Feedback</Nav.Link>
             </Nav>
         </Navbar.Collapse>
     </Container>
