@@ -1,0 +1,35 @@
+<p>
+
+1. Read the assignment brief carefully <br>
+
+2. Try to attempt all the tasks as stated in the assignment brief <br>
+
+3. Approach the faculty for clarification as and when required without waiting for the last minute <br>
+
+4. Use the submission declaration template to submit your work. To edit, download the template as a source document in word format <br>
+
+5. Use the fonts and size recommended in the template <br>
+
+6. Fill up the particulars without fail <br>
+
+7. Try to capture the images using low resolution <br>
+
+8. Capture only the images required to answer<br>
+
+9.  Submit the template with your  edX user name and  Registered email in the event of submitting the file under the submission point, over 3.5 MB. Otherwise, your submission will not be graded<br>
+
+10. Submission file name convention - module code-student no-name-Assignment-assignment no   <br>
+
+EX <br>
+
+  Assignment 1 - SEC-0719EF01X-John Peter-Assignment 1<br>
+
+  Assignment 2 - SEC-0719EF01X-John Peter-Assignment 2<br>
+
+  Presentation - SEC-0719EF01X-John Peter-Presentation<br>
+
+PS:<br>
+
+  Student No will be sent to in a separate email with the project environment credentials after SOC. <br>
+
+</p>

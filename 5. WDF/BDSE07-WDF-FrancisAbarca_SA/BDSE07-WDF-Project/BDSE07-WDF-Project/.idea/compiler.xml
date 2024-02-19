@@ -11,7 +11,6 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="abcjobs" target="1.6" />
       <module name="BDSE07-WDF-Project" target="1.5" />
     </bytecodeTargetLevel>
   </component>
