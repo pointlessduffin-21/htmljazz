@@ -5,98 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="14c37881-bed4-4200-8a5c-e9bf409f7baa" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/abcjobs_war.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/abcjobs_war_exploded.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__cglib_cglib_nodep_2_2_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_3_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_protobuf_protobuf_java_3_19_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_istack_istack_commons_runtime_3_0_7.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_mail_javax_mail_1_6_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_xml_fastinfoset_FastInfoset_1_2_15.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_activation_1_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_javax_activation_api_1_2_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_persistence_javax_persistence_api_2_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_javax_servlet_api_3_1_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_jsp_javax_servlet_jsp_api_2_3_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_xml_bind_jaxb_api_2_3_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jstl_jstl_1_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_3_8_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_30.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_9_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_9_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjrt_1_9_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_dom4j_dom4j_2_1_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jaxb_jaxb_runtime_2_3_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jaxb_txw2_2_3_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_5_1_0_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_core_5_4_1_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_24_0_GA.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_jandex_2_0_5_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_3_2_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_spec_javax_transaction_jboss_transaction_api_1_2_spec_1_1_1_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_8_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_8_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_8_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_8_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jvnet_staxex_stax_ex_1_8.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_core_2_23_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_junit_jupiter_2_23_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_objenesis_objenesis_2_6.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_25.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_2_1_5_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_jpa_2_1_5_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_1_5_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_1_5_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_1_5_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_5_1_5_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_1_5_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_1_5_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_1_5_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_5_1_5_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_orm_5_1_5_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_5_1_5_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_1_5_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_5_1_5_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_5_1_5_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../14. ISE/mini-assignments/~$SE07-ISE-0922_FrancisAbarca_A1.docx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/abcjobs.iml" beforeDir="false" afterPath="$PROJECT_DIR$/abcjobs.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/abcjobs/config/EmailConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/abcjobs/config/EmailConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/abcjobs/config/JPAConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/abcjobs/config/JPAConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/abcjobs/config/WebAppInit.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/abcjobs/config/WebAppInit.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/abcjobs/config/WebConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/abcjobs/config/WebConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/abcjobs/controller/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/abcjobs/controller/AdminController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/abcjobs/controller/AuthController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/abcjobs/controller/AuthController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/abcjobs/controller/DashboardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/abcjobs/controller/DashboardController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/abcjobs/controller/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/abcjobs/controller/HomeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/abcjobs/controller/SearchController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/abcjobs/controller/SearchController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/abcjobs/model/BulkEmail.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/abcjobs/model/BulkEmail.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/abcjobs/model/City.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/abcjobs/model/City.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/abcjobs/model/Countries.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/abcjobs/model/Countries.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/abcjobs/model/Educations.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/abcjobs/model/Educations.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/abcjobs/model/Experiences.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/abcjobs/model/Experiences.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/abcjobs/model/Posts.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/abcjobs/model/Posts.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/abcjobs/model/UserDetails.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/abcjobs/model/UserDetails.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/abcjobs/model/Users.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/abcjobs/model/Users.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/abcjobs/repository/BulkEmailRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/abcjobs/repository/BulkEmailRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/abcjobs/repository/CityRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/abcjobs/repository/CityRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/abcjobs/repository/EducationsRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/abcjobs/repository/EducationsRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/abcjobs/repository/ExperiencesRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/abcjobs/repository/ExperiencesRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/abcjobs/repository/PostsRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/abcjobs/repository/PostsRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/abcjobs/repository/UserDetailsRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/abcjobs/repository/UserDetailsRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/abcjobs/repository/UsersRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/abcjobs/repository/UsersRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/abcjobs/service/BulkEmailService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/abcjobs/service/BulkEmailService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/abcjobs/service/EducationsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/abcjobs/service/EducationsService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/abcjobs/service/ExperiencesService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/abcjobs/service/ExperiencesService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/abcjobs/service/UserDetailsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/abcjobs/service/UserDetailsService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/abcjobs/service/UsersService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/abcjobs/service/UsersService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/helper/Profile.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/helper/Profile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/abcjobs/test/ServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/abcjobs/test/ServiceTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -251,6 +162,8 @@
       <workItem from="1690169642542" duration="51000" />
       <workItem from="1706631787630" duration="950000" />
       <workItem from="1706633461382" duration="2125000" />
+      <workItem from="1708645940601" duration="610000" />
+      <workItem from="1708859962305" duration="19000" />
     </task>
     <servers />
   </component>
