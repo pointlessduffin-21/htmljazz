@@ -23,10 +23,17 @@ public class Main {
 
     public static void userInput(String birthDay, String birthMonth, String birthYear) throws Exception {
         Scanner scan = new Scanner(System.in);
-        
+        System.out.println("Enter your birth day: ");
+        birthDay = scan.nextLine();
+        System.out.println("Enter your birth month: ");
+        birthMonth = scan.nextLine();
+        System.out.println("Enter your birth year: ");
+        birthYear = scan.nextLine();
+        scan.close();
     }
 
     public static void main(String[] args) {
         titleScreen();
+        userInput();
     }
 }
