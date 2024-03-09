@@ -66,18 +66,18 @@ public class Main {
 
         public ZodiacCalc() {
             zodiacEntity = new ZodiacEntity[]{
-                    new ZodiacEntity("Rat", "2", "Blue", "Dragon", "Rats are quick-witted, resourceful, and versatile. They're like the 'This is fine' meme, always adapting to chaos."),
-                    new ZodiacEntity("Ox", "1", "Red", "Rat", "Oxen are known for diligence, dependability, strength, and determination. They're like the 'Doge' meme, always reliable."),
-                    new ZodiacEntity("Tiger", "1", "Green", "Horse", "Tigers are brave, competitive, unpredictable, and confident. They're like the 'Distracted Boyfriend' meme, always looking for the next challenge."),
-                    new ZodiacEntity("Rabbit", "3", "Pink", "Goat", "Rabbits are gentle, quiet, elegant, and alert. They're like the 'Mocking SpongeBob' meme, always aware of their surroundings."),
-                    new ZodiacEntity("Dragon", "1", "Gold", "Rat", "Dragons are confident, intelligent, and enthusiastic. They're like the 'Expanding Brain' meme, always evolving and growing."),
-                    new ZodiacEntity("Snake", "2", "Red", "Rooster", "Snakes are enigmatic, intelligent, and wise. They're like the 'Two Buttons' meme, always making calculated decisions."),
-                    new ZodiacEntity("Horse", "2", "Brown", "Tiger", "Horses are hardworking, intelligent, and friendly. They're like the 'Wholesome' meme, always spreading positivity."),
-                    new ZodiacEntity("Goat", "3", "Green", "Rabbit", "Goats are calm, gentle, and sympathetic. They're like the 'Arthur Fist' meme, always keeping their cool."),
-                    new ZodiacEntity("Monkey", "1", "White", "Rabbit", "Monkeys are sharp, smart, but naughty. They're like the 'Pepe the Frog' meme, always up to mischief."),
-                    new ZodiacEntity("Rooster", "5", "Gold", "Rat", "Roosters are observant, hardworking, resourceful, courageous. They're like the 'Change My Mind' meme, always standing their ground."),
-                    new ZodiacEntity("Dog", "3", "Green", "Tiger", "Dogs are loyal, honest, but not good at communication. They're like the 'Doge' meme, always loyal but sometimes misunderstood."),
-                    new ZodiacEntity("Pig", "2", "Yellow", "Rabbit", "Pigs are diligent, compassionate, and generous. They're like the 'Kermit Sipping Tea' meme, always minding their own business but still caring for others.")
+                    new ZodiacEntity("Rat", "2", "Sky-Blue", "Dragon", "Rats are quick-witted, resourceful, and versatile. They're like the 'This is fine' meme, always adapting to chaos."),
+                    new ZodiacEntity("Ox", "1", "Red-Pink", "Rat", "Oxen are known for diligence, dependability, strength, and determination. They're like the 'Doge' meme, always reliable."),
+                    new ZodiacEntity("Tiger", "1", "Green-Maroon", "Horse", "Tigers are brave, competitive, unpredictable, and confident. They're like the 'Distracted Boyfriend' meme, always looking for the next challenge."),
+                    new ZodiacEntity("Rabbit", "3", "Pink-Blue", "Goat", "Rabbits are gentle, quiet, elegant, and alert. They're like the 'Mocking SpongeBob' meme, always aware of their surroundings."),
+                    new ZodiacEntity("Dragon", "1", "Gold-Yellow", "Rat", "Dragons are confident, intelligent, and enthusiastic. They're like the 'Expanding Brain' meme, always evolving and growing."),
+                    new ZodiacEntity("Snake", "2", "Red-Orange", "Rooster", "Snakes are enigmatic, intelligent, and wise. They're like the 'Two Buttons' meme, always making calculated decisions."),
+                    new ZodiacEntity("Horse", "2", "Brown-Red", "Tiger", "Horses are hardworking, intelligent, and friendly. They're like the 'Wholesome' meme, always spreading positivity."),
+                    new ZodiacEntity("Goat", "3", "Green-Violet", "Rabbit", "Goats are calm, gentle, and sympathetic. They're like the 'Arthur Fist' meme, always keeping their cool."),
+                    new ZodiacEntity("Monkey", "1", "White-Amber", "Rabbit", "Monkeys are sharp, smart, but naughty. They're like the 'Pepe the Frog' meme, always up to mischief."),
+                    new ZodiacEntity("Rooster", "5", "Gold-Pink", "Rat", "Roosters are observant, hardworking, resourceful, courageous. They're like the 'Change My Mind' meme, always standing their ground."),
+                    new ZodiacEntity("Dog", "3", "Green-Black", "Tiger", "Dogs are loyal, honest, but not good at communication. They're like the 'Doge' meme, always loyal but sometimes misunderstood."),
+                    new ZodiacEntity("Pig", "2", "Yellow-White", "Rabbit", "Pigs are diligent, compassionate, and generous. They're like the 'Kermit Sipping Tea' meme, always minding their own business but still caring for others.")
             };
         }
 
