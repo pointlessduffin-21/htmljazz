@@ -13,6 +13,7 @@ Added a bonus feature:
 */
 package SourceCode;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import static java.lang.System.exit;
@@ -122,11 +123,30 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         int birthMonth;
         int birthDate;
+        boolean validInput = false;
 
-        System.out.println("\nEnter your birth month (MM): ");
-        birthMonth = scan.nextInt();
-        System.out.println("\nEnter your birth date (DD): ");
-        birthDate = scan.nextInt();
+        while (!validInput) {
+            try {
+                System.out.println("\nEnter your birth month (MM): ");
+                birthMonth = scan.nextInt();
+                if (birthMonth > 12 || birthMonth < 1) {
+                    throw new IllegalArgumentException("Invalid month. Please enter a value between 1 and 12.");
+                }
+
+                System.out.println("\nEnter your birth date (DD): ");
+                birthDate = scan.nextInt();
+                if (birthDate > 31 || birthDate < 1) {
+                    throw new IllegalArgumentException("Invalid date. Please enter a value between 1 and 31.");
+                }
+
+                validInput = true;
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input! Please enter the appropriate input (MM/DD).");
+                scan.nextLine();
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+            }
+        }
     }
 
     // Handle user input for birth years
@@ -137,7 +157,7 @@ public class Main {
         while (!validInput) {
             try {
                 specificDate();
-                System.out.println("\nEnter your birth year: ");
+                System.out.println("\nEnter your birth year (YYYY): ");
                 birthYear = Integer.parseInt(scan.nextLine());
                 if (birthYear < 1900 || birthYear > 9999) {
                     throw new IllegalArgumentException("You're too old! Enter a valid birth year (YYYY).");
