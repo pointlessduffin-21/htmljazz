@@ -1,3 +1,3 @@
 cls
 
-javac SourceCode/Main.java && java SourceCode/Main.java
+javac -encoding UTF8 SourceCode/Main.java && java SourceCode/Main.java
