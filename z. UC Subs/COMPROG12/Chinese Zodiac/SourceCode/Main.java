@@ -135,7 +135,11 @@ public class Main {
 
                 System.out.println("\nEnter your birth date (DD): ");
                 birthDate = scan.nextInt();
-                if (birthDate > 31 || birthDate < 1) {
+                if (birthMonth == 2 && birthDate > 29) {
+                    throw new IllegalArgumentException("Invalid date. February only has 28 or 29 days.");
+                } else if ((birthMonth == 4 || birthMonth == 6 || birthMonth == 9 || birthMonth == 11) && birthDate > 30) {
+                    throw new IllegalArgumentException("Invalid date. April, June, September, and November only have 30 days.");
+                } else if (birthDate > 31 || birthDate < 1) {
                     throw new IllegalArgumentException("Invalid date. Please enter a value between 1 and 31.");
                 }
 
