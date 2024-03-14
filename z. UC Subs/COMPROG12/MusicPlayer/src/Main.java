@@ -1,50 +1,76 @@
 import java.io.File;
+import java.io.IOException;
+import java.util.Map;
 import java.util.Scanner;
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Clip;
+import javax.sound.sampled.*;
 
 public class Main {
-    private static String mediaLocation;
-
-    private static void FileFinder() {
+    public static Clip clip;
+    public static boolean isPaused = false;
+    public static String Directory = "../Media/";
+    public static String filePath;
+    public static void musicPlayer() {
+        System.out.println("Welcome to the Basic Java Music Player!");
+        System.out.println("Please select a song to play");
         Scanner input = new Scanner(System.in);
+        File dir = new File(Directory);
+        String [] files = dir.list();
+        for (String file : files) {
+            if (file.endsWith(".wav")) {
+                System.out.println(file.replace(".wav", ""));
+            }
+        }
+        System.out.println("Select the song you want: ");
+        String filePath = Directory + input.nextLine() + ".wav";
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the path to the music file: ");
+
+        NowPlaying.main(filePath);
     }
 
-    private static void loop() { // Loops the Music Player (Repeat)
-        while (true) {
-            musicPlayer();
+    public static void clearConsole() {
+        try {
+            if (System.getProperty("os.name").contains("Windows")) {
+                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+            } else {
+                new ProcessBuilder("bash", "-c", "clear").inheritIO().start().waitFor();
+            }
+        } catch (Exception e) {
+            System.out.println("Error clearing console: " + e.getMessage());
         }
     }
-    private static void musicPlayer() {
+
+    public static void audioMetadataTest() {
         try {
-            System.out.println("Welcome to the Basic Java Music Player!");
-            File wavFile = new File(mediaLocation);     // Reads the WAV file
-            AudioInputStream wavStream = AudioSystem.getAudioInputStream(wavFile);
-            Clip wavClip = AudioSystem.getClip();
-            wavClip.open(wavStream);    // Opens the WAV File
-            wavClip.start();    // Reads and Plays the WAV File
-            System.out.println("Now Playing: " + wavFile.getName().replace(".wav", ""));     // Prints a Now Playing text onto the CLI
-            while (!wavClip.isRunning()) {     // Detects when the song is still playing
-                Thread.sleep(10); // Prevents the CPU from overloading itself by putting the thread to sleep every 10 milliseconds.
-            }
-            while (wavClip.isRunning()) {     // Detects when the song has stopped playing
-                    int currentDuration = (int) wavClip.getMicrosecondPosition() / 1000000; // Reads the currentDuration of the wavClip then converts it into seconds
-                    int totalDuration = (int) wavClip.getMicrosecondLength() / 1000000; // Reads the totalDuration of the wavClip then converts it into seconds
-                    int currentMinutes = currentDuration / 60;
-                    int currentSeconds = currentDuration % 60;
-                    int totalMinutes = totalDuration / 60;
-                    int totalSeconds = totalDuration % 60;
-                    System.out.println(String.format("%02d:%02d", currentMinutes, currentSeconds) + " / " + String.format("%02d:%02d", totalMinutes, totalSeconds)); // Prints the value of the song duration and the total duration
-                    Thread.sleep(1000); // Allows println to refresh every 1 second (1000ms = 1s)
-            }
-            System.out.println("Stopped Playing: " + wavFile.getName().replace(".wav", ""));
-            wavClip.close();
+            Scanner scan = new Scanner(System.in);
+            System.out.println("Please enter a song to check its metadata here!");
+
+            String fileDeez = scan.nextLine();
+            File file = new File(fileDeez);
+            AudioFileFormat fileFormat = AudioSystem.getAudioFileFormat(file);
+            Map<?, ?> properties = fileFormat.properties();
+
+            String title = (String) properties.get("title");
+            String artist = (String) properties.get("author");
+            String album = (String) properties.get("album");
+            String genre = (String) properties.get("mp3.id3tag.genre");
+            String year = (String) properties.get("date");
+            String composer = (String) properties.get("mp3.id3tag.composer");
+
+            System.out.println("Title: " + title);
+            System.out.println("Artist: " + artist);
+            System.out.println("Album: " + album);
+            System.out.println("Genre: " + genre);
+            System.out.println("Year: " + year);
+            System.out.println("Composer: " + composer);
         } catch (Exception e) {
-            System.out.println("Error playing audio: " + e.getMessage());
+            System.out.println("Error: " + e.getMessage());
         }
     }
     public static void main(String[] args) {
+        clearConsole();
+//        audioMetadataTest();
         musicPlayer();
     }
 }
