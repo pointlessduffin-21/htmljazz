@@ -25,8 +25,11 @@ public class FileManager extends Main {
         public String genre;
         public String year;
         public String composers;
+        public int trackNumber;
+        public int discNumber;
+        public String lyricsFile;
 
-        public Entity(String filePath, String title, String artist, String album, String genre, String year, String composers) {
+        public Entity(String filePath, String title, String artist, String album, String genre, String year, String composers, String lyricsFile, int trackNumber, int discNumber) {
             this.filePath = filePath;
             this.title = title;
             this.artist = artist;
@@ -34,6 +37,9 @@ public class FileManager extends Main {
             this.genre = genre;
             this.year = year;
             this.composers = composers;
+            this.lyricsFile = lyricsFile;
+            this.trackNumber = trackNumber;
+            this.discNumber = discNumber;
         }
 
         public String getFilePath() {
@@ -63,6 +69,15 @@ public class FileManager extends Main {
         public String getComposers() {
             return composers;
         }
+        public String getLyricsFile() {
+            return lyricsFile;
+        }
+        public int getTrackNumber() {
+            return trackNumber;
+        }
+        public int getDiscNumber() {
+            return discNumber;
+        }
 
         public void setFilePath(String filePath) {
             this.filePath = filePath;
@@ -91,9 +106,26 @@ public class FileManager extends Main {
         public void setComposers(String composers) {
             this.composers = composers;
         }
-
-        public String toString() {
-            return "Title: " + title + "\nArtist: " + artist + "\nAlbum: " + album + "\nGenre: " + genre + "\nYear: " + year + "\nComposers: " + composers;
+        public void setLyricsFile(String lyricsFile) {
+            this.lyricsFile = lyricsFile;
+        }
+        public void setTrackNumber(int trackNumber) {
+            this.trackNumber = trackNumber;
+        }
+        public void setDiscNumber(int discNumber) {
+            this.discNumber = discNumber;
+        }
+        public void setMetadata(String filePath, String title, String artist, String album, String genre, String year, String composers, String lyricsFile, int trackNumber, int discNumber) {
+            this.filePath = filePath;
+            this.title = title;
+            this.artist = artist;
+            this.album = album;
+            this.genre = genre;
+            this.year = year;
+            this.composers = composers;
+            this.lyricsFile = lyricsFile;
+            this.trackNumber = trackNumber;
+            this.discNumber = discNumber;
         }
     }
 
@@ -160,18 +192,19 @@ public class FileManager extends Main {
     }
 
     public static void songOptions(String filePath) throws Exception {
-        clearConsole();
-        System.out.println("You have selected: " + filePath);
-        System.out.println("Enter your choice: ");
-        System.out.println("1. Play");
-        System.out.println("2. Check Metadata");
-        System.out.println("3. Pick another song");
-        System.out.println("4. Play non-WAV file");
-        System.out.println("4. Exit");
+        while (true) { // Keep this loop to allow for multiple choices
+            clearConsole();
+            System.out.println("You have selected: " + filePath);
+            System.out.println("Enter your choice: ");
+            System.out.println("1. Play");
+            System.out.println("2. Check Metadata");
+            System.out.println("3. Pick another song");
+            System.out.println("4. Play non-WAV file");
+            System.out.println("5. Exit");
 
-        Scanner input = new Scanner(System.in);
-        int choice = input.nextInt();
-        while (true) {
+            Scanner input = new Scanner(System.in);
+            int choice = input.nextInt();
+
             switch (choice) {
                 case 1:
                     NowPlaying.Player(filePath);
@@ -185,9 +218,10 @@ public class FileManager extends Main {
                 case 4:
                     nonWAVPlayer.play(filePath);
                     break;
+                case 5: // Add option 5 for Exit
+                    System.exit(0); // Properly exit the application
                 default:
                     System.out.println("Invalid choice.");
-                    break;
             }
         }
     }
@@ -201,25 +235,33 @@ public class FileManager extends Main {
             Tag tag = audioFile.getTag();
 
             if (tag != null) {
-                System.out.println("Metadata reading is not supported for this audio file format.");
-                return;
+                System.out.println("Here's the metadata for: " + filePath);
+                System.out.println("Title: " + tag.getFirst(FieldKey.TITLE));
+                System.out.println("Artist: " + tag.getFirst(FieldKey.ARTIST));
+                System.out.println("Album: " + tag.getFirst(FieldKey.ALBUM));
+                System.out.println("Genre: " + tag.getFirst(FieldKey.GENRE));
+                System.out.println("Year: " + tag.getFirst(FieldKey.YEAR));
+                System.out.println("Composers: " + tag.getFirst(FieldKey.COMPOSER));
+
+                // Scanner and switch case for metadata options
+                Scanner input = new Scanner(System.in);
+                System.out.println("Enter m to go back to song options, p to play the song, or e to exit:");
+                String action = input.nextLine();
+                switch (action.toLowerCase()) {
+                    case "m":
+                        songOptions(filePath); // Return to song options
+                        break;
+                    case "p":
+                        NowPlaying.Player(filePath); // Play the song
+                        break;
+                    case "e":
+                        System.exit(0); // Exit the application
+                    default:
+                        System.out.println("Invalid action.");
+                }
+            } else {
+                System.out.println("Failed to read metadata from " + filePath);
             }
-
-            String title = tag.getFirst(FieldKey.TITLE);
-            String artist = tag.getFirst(FieldKey.ARTIST);
-            String album = tag.getFirst(FieldKey.ALBUM);
-            String genre = tag.getFirst(FieldKey.GENRE);
-            String year = tag.getFirst(FieldKey.YEAR);
-            String composers = tag.getFirst(FieldKey.COMPOSER);
-
-            System.out.println("Title: " + title);
-            System.out.println("Artist: " + artist);
-            System.out.println("Album: " + album);
-            System.out.println("Genre: " + genre);
-            System.out.println("Year: " + year);
-            System.out.println("Composers: " + composers);
-
-            songOptions(filePath);
         } catch (Exception e) {
             e.printStackTrace();
         }
