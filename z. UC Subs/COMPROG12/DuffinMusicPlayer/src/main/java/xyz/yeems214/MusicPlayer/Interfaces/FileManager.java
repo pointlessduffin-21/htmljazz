@@ -218,7 +218,7 @@ public class FileManager extends Main {
                     Picker();
                     break;
                 case 4:
-                    new playByLink();
+                    playByLink.address();
                     break;
                 case 5:
                     mainMenu();
