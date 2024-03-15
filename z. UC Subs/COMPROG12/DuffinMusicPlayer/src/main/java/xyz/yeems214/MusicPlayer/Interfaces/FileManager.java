@@ -201,7 +201,8 @@ public class FileManager extends Main {
             System.out.println("1. Play");
             System.out.println("2. Check Metadata");
             System.out.println("3. Pick another song");
-            System.out.println("4. Exit");
+            System.out.println("4. Pick another link");
+            System.out.println("5. Main Menu");
 
             Scanner input = new Scanner(System.in);
             int choice = input.nextInt();
@@ -217,8 +218,11 @@ public class FileManager extends Main {
                     Picker();
                     break;
                 case 4:
-                    System.out.println("Goodbye!");
-                    System.exit(0);
+                    new playByLink();
+                    break;
+                case 5:
+                    mainMenu();
+                    break;
                 default:
                     System.out.println("Invalid choice.");
             }

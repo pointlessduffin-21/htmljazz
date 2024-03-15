@@ -1,20 +1,10 @@
 package xyz.yeems214.MusicPlayer;
 
-import org.jaudiotagger.audio.AudioFile;
-import org.jaudiotagger.audio.AudioFileIO;
-import org.jaudiotagger.tag.FieldKey;
-import org.jaudiotagger.tag.Tag;
+import xyz.yeems214.MusicPlayer.Interfaces.playByLink;
 
 import java.io.File;
-import java.io.IOException;
-import java.util.Scanner;
 import java.nio.file.Paths;
-import java.util.logging.LogManager;
-
-import xyz.yeems214.MusicPlayer.Interfaces.NowPlaying;
-
-import javax.sound.sampled.LineUnavailableException;
-import javax.sound.sampled.UnsupportedAudioFileException;
+import java.util.Scanner;
 
 import static xyz.yeems214.MusicPlayer.Interfaces.FileManager.Picker;
 import static xyz.yeems214.MusicPlayer.Interfaces.NowPlaying.Player;
@@ -49,10 +39,11 @@ public class Main {
         System.out.println("Welcome to Duffin's Java Music Player!");
         while (true) {
 
-            System.out.println("1. Look for a song to play!");
-            System.out.println("2. Check out Now Playing");
-            System.out.println("3. Check Lyrics");
-            System.out.println("4. Exit");
+            System.out.println("1. Library View");
+            System.out.println("2. Play via Link");
+            System.out.println("3. Check out Now Playing");
+            System.out.println("4. Check Lyrics");
+            System.out.println("5. Exit");
             System.out.print("Enter your choice: ");
             Scanner scan = new Scanner(System.in);
             int choice = scan.nextInt();
@@ -62,6 +53,9 @@ public class Main {
                     Picker();
                     break;
                 case 2:
+                    playByLink.address();
+                    break;
+                case 3:
                     if (songEnded == true) {
                         Player(filePath);
                         break;
@@ -69,11 +63,12 @@ public class Main {
                         System.out.println("No song is currently playing!");
                         break;
                     }
-                case 3:
+                case 4:
                     // Lyrics();
                     break;
-                case 4:
+                case 5:
                     System.exit(0);
+                    System.out.println("Goodbye!");
                     break;
                 default:
                     System.out.println("Invalid choice.");
