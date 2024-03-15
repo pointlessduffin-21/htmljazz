@@ -1,10 +1,12 @@
 package xyz.yeems214.MusicPlayer.Interfaces;
 
+import javazoom.jl.player.Player;
 import org.jaudiotagger.audio.AudioFile;
 import org.jaudiotagger.audio.AudioFileIO;
 import org.jaudiotagger.tag.FieldKey;
 import org.jaudiotagger.tag.Tag;
 
+import org.jflac.sound.spi.FlacAudioFileReader;
 import xyz.yeems214.MusicPlayer.Main;
 import xyz.yeems214.MusicPlayer.Interfaces.FileManager.*;
 import xyz.yeems214.MusicPlayer.Extensions.ElapsedTimeTracker;
@@ -14,7 +16,9 @@ import javax.sound.midi.Receiver;
 import javax.sound.midi.Sequence;
 import javax.sound.midi.Synthesizer;
 import javax.sound.sampled.*;
+import java.io.BufferedInputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Map;
 import java.util.Scanner;
@@ -26,6 +30,9 @@ import static xyz.yeems214.MusicPlayer.Main.*;
 public class NowPlaying {
     public static Clip clip;
     public static boolean isPaused = false;
+    private static volatile boolean isPlaying = false;
+    private boolean repeat;
+
     public static void Player(String filePath) {
         if (filePath == null) {
             System.out.println("No music file loaded. Please select a song to play.");
@@ -42,7 +49,11 @@ public class NowPlaying {
                     handleWav(filePath);
                     break;
                 case "mp3":
+                    playMp3(file);
+                    break;
                 case "flac":
+                    playFlac(file);
+                    break;
                 default:
                     System.out.println("Unsupported file format.");
                     break;
@@ -66,8 +77,6 @@ public class NowPlaying {
         try {
                 clearConsole();
                 Scanner scan = new Scanner(System.in);
-
-                audioMetadata(filePath);
 
                 AudioInputStream audioStream = AudioSystem.getAudioInputStream(file);
                 clip = AudioSystem.getClip();
@@ -193,89 +202,101 @@ public class NowPlaying {
             }
         }
 
+    private static void playAudioStream(AudioInputStream stream) throws LineUnavailableException, IOException, InterruptedException {
+        if (clip != null && clip.isOpen()) {
+            clip.close(); // Close existing clip if open
+        }
+        clip = AudioSystem.getClip();
+        try {
+            clip.open(stream);
+            if (clip.isOpen()) {
+                clip.start();
+                long startTime = System.currentTimeMillis(); // Record start time
+                long totalLength = stream.getFrameLength() * (long) (1000000.0 / stream.getFormat().getFrameRate()); // Calculate total duration in microseconds
+                System.out.println("Audio format: " + stream.getFormat()); // Print audio format details
+                System.out.println("Total length (ms): " + totalLength / 1000); // Print total length in milliseconds
+                while (clip.isRunning()) {
+                    long currentPosition = clip.getMicrosecondPosition();
+                    double progress = (double) currentPosition / totalLength * 100;
+                    System.out.println("Playback Progress: " + progress + "%"); // Update progress information
+                    Thread.sleep(100); // Sleep for a short duration before checking again
+                }
+                long endTime = System.currentTimeMillis();
+                System.out.println("Playback completed in: " + (endTime - startTime) + " ms");
+            } else {
+                System.err.println("Failed to open clip"); // Log error if clip didn't open
+            }
+        } catch (Exception e) {
+            e.printStackTrace(); // Print any exceptions for analysis
+        } finally {
+            stream.close();
+        }
+    }
 
-//    private static String getFileExtension(File file) {
-//        String fileName = file.getName();
-//        int dotIndex = fileName.lastIndexOf('.');
-//        return (dotIndex == -1) ? "" : fileName.substring(dotIndex + 1);
-//    }
+    private static void playMp3(File file) throws Exception {
+        FileInputStream fis = new FileInputStream(file);
+        BufferedInputStream bis = new BufferedInputStream(fis);
+        Player player = new Player(bis);
+        player.play();
+    }
 
-//    private static void handleMp3OggFlacM4a(File file, Scanner scan) throws IOException, UnsupportedAudioFileException, CannotReadException, TagException, ReadOnlyFileException, InvalidAudioFrameException {
-//        org.jaudiotagger.audio.AudioFile audioFile = AudioFileIO.read(file);
-//        Tag tag = audioFile.getTag();
-//
-//        String title = tag.getFirst(FieldKey.TITLE);
-//        String artist = tag.getFirst(FieldKey.ARTIST);
-//        String album = tag.getFirst(FieldKey.ALBUM);
-//        String genre = tag.getFirst(FieldKey.GENRE);
-//        String year = tag.getFirst(FieldKey.YEAR);
-//        String composer = tag.getFirst(FieldKey.COMPOSER);
-//
-//        System.out.println("Title: " + title);
-//        System.out.println("Artist: " + artist);
-//        System.out.println("Album: " + album);
-//        System.out.println("Genre: " + genre);
-//        System.out.println("Year: " + year);
-//        System.out.println("Composer: " + composer);
-//        System.out.println(" ");
-//
-//        AudioFileFormat fileFormat = AudioSystem.getAudioFileFormat(file);
-//        AudioInputStream audioStream = AudioSystem.getAudioInputStream(fileFormat);
-//        clip = AudioSystem.getClip();
-//        clip.open(audioStream);
-//
-//        System.out.println("Music player commands:");
-//        System.out.println("1. Play");
-//        System.out.println("2. Pause");
-//        System.out.println("3. Resume");
-//        System.out.println("4. Stop");
-//        System.out.println("5. Repeat");
-//        System.out.println("6. Exit");
-//
-//        while (true) {
-//            System.out.print("Enter your choice: ");
-//            int choice = scan.nextInt();
-//
-//            switch (choice) {
-//                case 1:
-//                    playMusic();
-//                    break;
-//                case 2:
-//                    pauseMusic();
-//                    break;
-//                case 3:
-//                    resumeMusic();
-//                    break;
-//                case 4:
-//                    stopMusic();
-//                    break;
-//                case 5:
-//                    repeatMusic();
-//                    break;
-//                case 6:
-//                    stopMusic();
-//                    scan.close();
-//                    System.out.println("Exiting music player...");
-//                    System.exit(0);
-//                default:
-//                    System.out.println("Invalid choice. Please try again.");
-//            }
-//        }
-//    }
+    private static void playFlac(File file) throws Exception {
+        if (isPlaying) {
+            stopAudio();
+        }
 
-//    private static void handleMidi(File file, Scanner scan) throws IOException, InvalidMidiDataException, MidiUnavailableException {
-//        Sequence sequence = MidiSystem.getSequence(file);
-//        Synthesizer synthesizer = MidiSystem.getSynthesizer();
-//        synthesizer.open();
-//        Receiver receiver = synthesizer.getReceiver();
-//        receiver.send(sequence, -1);
-//
-//        System.out.println("MIDI file loaded.");
-//
-//        // ... (display music player commands)
-//
-//        // ... (handle user input and call playMidi, pauseMidi, etc.)
-//    }
+        AudioInputStream originalStream = new FlacAudioFileReader().getAudioInputStream(file);
+        AudioFormat baseFormat = originalStream.getFormat();
+        AudioFormat decodedFormat = new AudioFormat(AudioFormat.Encoding.PCM_SIGNED,
+                baseFormat.getSampleRate(),
+                16,
+                baseFormat.getChannels(),
+                baseFormat.getChannels() * 2,
+                baseFormat.getSampleRate(),
+                false);
+        AudioInputStream decodedStream = AudioSystem.getAudioInputStream(decodedFormat, originalStream);
+        playAudioStream(decodedStream);
+        originalStream.close();
+        isPlaying = true;
+    }
+
+    private static String getExtension(File file) {
+        String name = file.getName();
+        int dotIndex = name.lastIndexOf('.');
+        return (dotIndex == -1) ? "" : name.substring(dotIndex + 1);
+    }
+
+    public void pause() {
+        if (clip != null && clip.isRunning()) {
+            clip.stop();
+        }
+    }
+
+    public void resume() {
+        if (clip != null && !clip.isRunning()) {
+            clip.start();
+        }
+    }
+
+    public void stop() {
+        if (clip != null) {
+            clip.stop();
+            clip.setFramePosition(0);
+        }
+    }
+
+    private static void stopAudio() {
+        if (clip != null && clip.isRunning()) {
+            clip.stop();
+            clip.setFramePosition(0);
+            clip.close();
+            clip = null;
+        }
+    }
+
+    public void setRepeat(boolean repeat) {
+        this.repeat = repeat;
+    }
 private static String getFileExtension(File file) {
     String fileName = file.getName();
     int dotIndex = fileName.lastIndexOf('.');

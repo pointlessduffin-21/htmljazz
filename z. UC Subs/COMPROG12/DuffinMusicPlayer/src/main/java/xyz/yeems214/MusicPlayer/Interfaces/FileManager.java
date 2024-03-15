@@ -1,5 +1,6 @@
 package xyz.yeems214.MusicPlayer.Interfaces;
 
+import org.apache.commons.io.IOUtils;
 import org.jaudiotagger.audio.AudioFile;
 import org.jaudiotagger.audio.AudioFileIO;
 import org.jaudiotagger.tag.FieldKey;
@@ -9,6 +10,7 @@ import xyz.yeems214.MusicPlayer.Main;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 import java.util.Scanner;
@@ -199,8 +201,7 @@ public class FileManager extends Main {
             System.out.println("1. Play");
             System.out.println("2. Check Metadata");
             System.out.println("3. Pick another song");
-            System.out.println("4. Play non-WAV file");
-            System.out.println("5. Exit");
+            System.out.println("4. Exit");
 
             Scanner input = new Scanner(System.in);
             int choice = input.nextInt();
@@ -216,10 +217,8 @@ public class FileManager extends Main {
                     Picker();
                     break;
                 case 4:
-                    nonWAVPlayer.play(filePath);
-                    break;
-                case 5: // Add option 5 for Exit
-                    System.exit(0); // Properly exit the application
+                    System.out.println("Goodbye!");
+                    System.exit(0);
                 default:
                     System.out.println("Invalid choice.");
             }
@@ -227,6 +226,27 @@ public class FileManager extends Main {
     }
 
     public static void audioMetadata(String filePath) {
+        clearConsole();
+        LogManager.getLogManager().reset();
+        try {
+            File file = new File(filePath);
+            AudioFile audioFile = AudioFileIO.read(file);
+            Tag tag = audioFile.getTag();
+
+            if (filePath.endsWith(".wav") || filePath.endsWith(".WAV")) {
+                wavChunkInfo(filePath);
+            } else if (filePath.endsWith(".mp3") || filePath.endsWith(".flac")) {
+                jAudioMetadata(filePath);
+            } else {
+                System.out.println("File not supported!");
+                return;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void jAudioMetadata(String filePath) {
         clearConsole();
         LogManager.getLogManager().reset();
         try {
@@ -242,28 +262,45 @@ public class FileManager extends Main {
                 System.out.println("Genre: " + tag.getFirst(FieldKey.GENRE));
                 System.out.println("Year: " + tag.getFirst(FieldKey.YEAR));
                 System.out.println("Composers: " + tag.getFirst(FieldKey.COMPOSER));
-
-                // Scanner and switch case for metadata options
-                Scanner input = new Scanner(System.in);
-                System.out.println("Enter m to go back to song options, p to play the song, or e to exit:");
-                String action = input.nextLine();
-                switch (action.toLowerCase()) {
-                    case "m":
-                        songOptions(filePath); // Return to song options
-                        break;
-                    case "p":
-                        NowPlaying.Player(filePath); // Play the song
-                        break;
-                    case "e":
-                        System.exit(0); // Exit the application
-                    default:
-                        System.out.println("Invalid action.");
-                }
             } else {
                 System.out.println("Failed to read metadata from " + filePath);
             }
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    public static void wavChunkInfo(String filePath) {
+        File file = new File(filePath);
+        byte[] data;
+
+        try {
+            data = IOUtils.toByteArray(new FileInputStream(file));
+
+            // Check for RIFF signature (4 bytes)
+            if (data[0] != 'R' || data[1] != 'I' || data[2] != 'F' || data[3] != 'F') {
+                throw new IOException("Not a WAV file");
+            }
+
+            // Skip chunk size (4 bytes)
+            int chunkStartPosition = 8;
+
+            while (chunkStartPosition < data.length - 8) {
+                // Print Chunk ID and Size
+                String chunkId = new String(data, chunkStartPosition, 4);
+                int chunkSize = (data[chunkStartPosition + 4] << 24) +
+                        (data[chunkStartPosition + 5] << 16) +
+                        (data[chunkStartPosition + 6] << 8) +
+                        data[chunkStartPosition + 7];
+                System.out.printf("Chunk ID: %s, Size: %d\n", chunkId, chunkSize);
+
+                // Update chunk start position for next iteration
+                chunkStartPosition += 8 + chunkSize;
+            }
+        } catch (IOException e) {
+            System.err.println("Error reading file: " + e.getMessage());
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
     }
 }

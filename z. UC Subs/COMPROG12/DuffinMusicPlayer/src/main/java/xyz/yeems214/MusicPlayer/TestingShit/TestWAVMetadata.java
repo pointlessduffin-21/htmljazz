@@ -62,6 +62,5 @@ public class TestWAVMetadata {
 
     public static void main(String[] args) throws CannotReadException, TagException, InvalidAudioFrameException, ReadOnlyFileException, IOException {
         printChunkInfo("src/main/resources/music-files/Queen of Wands.wav");
-        readMetadata("src/main/resources/music-files/Queen of Wands.wav");
     }
 }
