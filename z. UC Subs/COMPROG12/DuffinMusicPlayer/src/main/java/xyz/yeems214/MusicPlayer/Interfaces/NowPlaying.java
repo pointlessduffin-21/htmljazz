@@ -42,15 +42,7 @@ public class NowPlaying {
                     handleWav(filePath);
                     break;
                 case "mp3":
-                case "ogg":
                 case "flac":
-                case "m4a":
-//                    handleMp3OggFlacM4a(filePath);
-                    break;
-                case "mid":
-                case "midi":
-//                    handleMidi(filePath);
-                    break;
                 default:
                     System.out.println("Unsupported file format.");
                     break;
@@ -119,7 +111,7 @@ public class NowPlaying {
 
         }
 
-    public static void playMusic() {
+    public static void playMusic() throws Exception {
         if (clip != null || songEnded == true) {
             if (clip.getFramePosition() == clip.getFrameLength()) { // Check if the song has ended
                 System.out.println("The song has already ended. What would you like to do next?");
@@ -192,7 +184,7 @@ public class NowPlaying {
             }
         }
 
-        private static void repeatMusic() {
+        private static void repeatMusic() throws Exception {
             if (clip != null) {
                 stopMusic();
                 playMusic();

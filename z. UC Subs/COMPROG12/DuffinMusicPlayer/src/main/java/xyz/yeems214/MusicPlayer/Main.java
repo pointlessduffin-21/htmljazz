@@ -6,11 +6,15 @@ import org.jaudiotagger.tag.FieldKey;
 import org.jaudiotagger.tag.Tag;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Scanner;
 import java.nio.file.Paths;
 import java.util.logging.LogManager;
 
 import xyz.yeems214.MusicPlayer.Interfaces.NowPlaying;
+
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 
 import static xyz.yeems214.MusicPlayer.Interfaces.FileManager.Picker;
 import static xyz.yeems214.MusicPlayer.Interfaces.NowPlaying.Player;
@@ -41,7 +45,7 @@ public class Main {
         }
     }
 
-    public static void mainMenu() {
+    public static void mainMenu() throws Exception {
         System.out.println("Welcome to Duffin's Java Music Player!");
         while (true) {
 
@@ -79,7 +83,7 @@ public class Main {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         clearConsole();
         mainMenu();
     }
