@@ -63,6 +63,7 @@ public class NowPlaying {
         }
     }
 
+    // Handles WAV playback
     public static void handleWav(String filePath) throws IOException, UnsupportedAudioFileException, LineUnavailableException {
         if (filePath == null || filePath.isEmpty()) {
             System.out.println("File path is null or empty.");
@@ -233,6 +234,7 @@ public class NowPlaying {
         }
     }
 
+    // Handles MP3 playback
     private static void playMp3(File file) throws Exception {
         FileInputStream fis = new FileInputStream(file);
         BufferedInputStream bis = new BufferedInputStream(fis);
@@ -240,11 +242,11 @@ public class NowPlaying {
         player.play();
     }
 
+    // Handles FLAC playback
     private static void playFlac(File file) throws Exception {
         if (isPlaying) {
             stopAudio();
         }
-
         AudioInputStream originalStream = new FlacAudioFileReader().getAudioInputStream(file);
         AudioFormat baseFormat = originalStream.getFormat();
         AudioFormat decodedFormat = new AudioFormat(AudioFormat.Encoding.PCM_SIGNED,

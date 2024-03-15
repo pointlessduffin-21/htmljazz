@@ -1,5 +1,8 @@
 package xyz.yeems214.MusicPlayer.Extensions;
 
+import org.jaudiotagger.tag.FieldKey;
+import xyz.yeems214.MusicPlayer.Interfaces.FileManager;
+
 import javax.sound.sampled.Clip;
 
 import java.util.Scanner;
@@ -30,7 +33,7 @@ public class ElapsedTimeTracker extends Thread {
         running = false;
     }
 
-    public void run() {
+    public void run(String filePath) {
         try {
             while (running && (clip.isRunning() || isPaused)) {
                 if (!isPaused) {
@@ -42,7 +45,8 @@ public class ElapsedTimeTracker extends Thread {
                     int totalMinutes = totalDuration / 60;
                     int totalSeconds = totalDuration % 60;
                     System.out.print(" ");
-                    System.out.print("\r" + String.format("%02d:%02d", currentMinutes, currentSeconds) + " / " + String.format("%02d:%02d", totalMinutes, totalSeconds) + "              "); // Prints the value of the song duration and the total duration
+                    System.out.print("\r" + "Now Playing: " + String.format("%02d:%02d", currentMinutes, currentSeconds) + " / " + String.format("%02d:%02d", totalMinutes, totalSeconds) + "              "); // Prints the value of the song duration and the total duration
+                    System.out.print("\n\r" + "Music player commands:" + "1. Play" + "2. Pause" + "3. Stop" + "4. Repeat" + "5. Main Menu");
                 }
                 Thread.sleep(1000); // Allows println to refresh every 1 second (1000ms = 1s)
             }
