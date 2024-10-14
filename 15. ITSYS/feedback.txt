@@ -1,0 +1,4 @@
+interview 1 (sir eric ortega):
+change the 2nd floor into a star topology
+add a firewall before the main server (server -> firewall -> switch)
+create a vlan (all Publishing Teams are isolated from each other) on the main switch
