@@ -2,6 +2,7 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/12. CPL/SA/Source Code/ReactChatGPTChatbot" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/apple-music-discord-rpc" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/apple-music-discord-rpc/apple-music-discord-rpc" vcs="Git" />
   </component>
 </project>
